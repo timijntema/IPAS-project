@@ -1,0 +1,37 @@
+[Config]
+Compilator.FileName=bmptk-build.bat
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+Prog1=Clean,cmd /C "bmptk-make clean "
+Prog2=Run,cmd /C "bmptk-make run "
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			main.c
+		+others
+			Makefile
+[Open project files]
+0=Makefile
+1=main.c
+[Selected Project Files]
+Main=
+Selected=main.c
+[Makefile]
+TopLine=1
+Caret=3,17
+[main.c]
+TopLine=67
+Caret=19,79

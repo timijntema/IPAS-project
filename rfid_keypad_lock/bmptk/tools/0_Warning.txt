@@ -1,0 +1,12 @@
+
+PACKER DETECTION ALERT
+
+The anti-virus scanner has detected a packer program.  The file was not cleaned and has been removed.
+Context: 'V1OOPC code.zip\V1OOPC code\bmptk\tools\Terminal.exe'
+Detection(s): 'UPX (compressed file)'
+
+
+For further information, contact your system administrator. 
+Copyright 1999-2014 McAfee, Inc.
+All Rights Reserved.
+http://www.mcafee.com

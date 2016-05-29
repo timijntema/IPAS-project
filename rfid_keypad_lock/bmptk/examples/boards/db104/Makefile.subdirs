@@ -1,0 +1,15 @@
+#############################################################################
+# 
+# Makfile 'chain' that just passes the work to for subdirectories
+# to the next-higher-level Makefile.subdirs
+#
+# (c) Wouter van Ooijen (www.voti.nl) 2015
+#
+# This file is in the public domain.
+# 
+#############################################################################
+
+# let the higher level Makefile.subdirs do the work
+BMPTK := $(BMPTK)../
+include $(BMPTK)Makefile.subdirs
+

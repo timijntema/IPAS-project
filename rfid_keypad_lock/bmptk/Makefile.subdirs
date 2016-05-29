@@ -1,0 +1,45 @@
+#############################################################################
+# 
+# Bmptk makefile include for a directory that must make its subdirectories.
+#
+# The Makefile in such a sirectory must define the SUBDIRS and then
+# include this file.
+#
+# Copyright (c) 2012 .. 2015 Wouter van Ooijen (wouter@voti.nl)
+# 
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or copy at 
+# http://www.boost.org/LICENSE_1_0.txt)
+# 
+#############################################################################
+
+REMOVE        ?= "bmptk-rm.exe" -f
+
+BUILD-DIRS       = $(SUBDIRS:%=build-%)
+DOXY-DIRS        = $(DOXYGENDIRS:%=build-%)
+BUILD-CLEAN-DIRS = $(SUBDIRS:%=clean-%) 
+DOXY-CLEAN-DIRS  = $(DOXYGENDIRS:%=clean-%)
+
+.phony: clean build mef 
+.phony: $(BUILD-DIRS) $(DOXY-DIRS) 
+.phony: $(BUILD-CLEAN-DIRS) $(DOXY-CLEAN-DIRS)
+
+build: $(BUILD-DIRS) $(DOXY-DIRS)
+
+$(BUILD-DIRS):
+	bmptk-make -C $(@:build-%=%) build
+   
+$(DOXY-DIRS):
+	bmptk-make -C $(@:build-%=%) doxygen
+
+clean: $(BUILD-CLEAN-DIRS) $(DOXY-CLEAN-DIRS)
+
+$(BUILD-CLEAN-DIRS): 
+	-$(REMOVE) -rf .clang 
+	-$(REMOVE) -rf .codelite 
+	bmptk-make -C $(@:clean-%=%) clean
+   
+$(DOXY-CLEAN-DIRS): 
+	bmptk-make -C $(@:clean-%=%) doxyclean
+
+

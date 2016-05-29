@@ -1,0 +1,21 @@
+#############################################################################
+#
+# makefile.due common settings for Arduino Due projects
+#
+# (c) Wouter van Ooijen (www.voti.nl) 2016
+#
+# This file is in the public domain.
+# 
+#############################################################################
+
+# settings for Arduino Due projects
+TARGET            := arduino_due
+SERIAL_PORT       := COM2
+CONSOLE_BAUDRATE  := 2400
+SEARCH            += ../hwlib
+
+# set BMPTK to the bmptk subdirectory
+BMPTK := $(BMPTK)bmptk/
+
+# Defer to the bmptk/Makefile.inc to do the work
+include $(BMPTK)Makefile.inc
