@@ -6,13 +6,13 @@
       <Project Name="change_keypad_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="create_pinsetup_due" Path="create_pinsetup_due/_codelite.project" Active="No"/>
+  <Project Name="create_PWM_lib" Path="create_PWM_lib/_codelite.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
-      <Project Name="create_pinsetup_due" ConfigName="Release"/>
+      <Project Name="create_PWM_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="create_rfid_lib" Path="create_rfid_lib/_codelite.project" Active="Yes"/>
+  <Project Name="create_rfid_lib" Path="create_rfid_lib/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="create_rfid_lib" ConfigName="Release"/>

@@ -43,6 +43,7 @@ int read_rfid(){
 
 int main()
 {
+	WDT->WDT_MR = WDT_MR_WDDIS;
 	byte data_in[8];
 	auto SDA = hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto SCK = hwlib::target::pin_out(hwlib::target::pins::d9);
