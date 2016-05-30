@@ -1,3 +1,10 @@
+/*
+* File:   servo.cpp
+* Author: Tim IJntema
+*
+* Created on 30 may 2016, 10:04
+*/
+
 #include "servo.hpp"
 
 servo::servo(PWM_signal & pwmSignal):

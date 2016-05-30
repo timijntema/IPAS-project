@@ -1,3 +1,10 @@
+/*
+* File:   servo.hpp
+* Author: Tim IJntema
+*
+* Created on 30 may 2016, 10:04
+*/
+
 #ifndef SERVO_HPP
 #define SERVO_HPP
 

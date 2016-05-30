@@ -10,6 +10,7 @@
 #define	MATRIXKEYPAD_HPP
 
 #include "hwlib.hpp"
+#include <string>
 
 ///Obtain pressed keys from 4x4 keypad
 //
@@ -69,7 +70,7 @@ public:
 	/// it protects you from going out of the array. To stop with getting characters 
 	/// before the array is full you have to press the '#' character. This will stops the
 	/// process and adds a '\0' after the last character.
-	void getString(char *chararray, int lenCharArray);
+	void getString(std::string & tmpString);
 };
 
 
