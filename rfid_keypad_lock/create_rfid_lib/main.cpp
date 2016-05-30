@@ -17,7 +17,7 @@ int read_rfid(){
 	auto MISO = hwlib::target::pin_in(hwlib::target::pins::d7);
 	
 	SDA.set(0);
-	int tmp = 0;
+	int tmp;
 	for(int i1=1; i1 > 0; i1--){
 		for(int i2 = 7; i2 >= 0; i2--){
 			tmp = 0;
@@ -44,7 +44,7 @@ int read_rfid(){
 int main()
 {
 	WDT->WDT_MR = WDT_MR_WDDIS;
-	byte data_in[8];
+	/*byte data_in[8];
 	auto SDA = hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto SCK = hwlib::target::pin_out(hwlib::target::pins::d9);
 	auto MOSI = hwlib::target::pin_out(hwlib::target::pins::d8);
@@ -70,6 +70,15 @@ int main()
 		hwlib::cout << "\nend of bit set" << '\n';
 		hwlib::wait_ms(2000);
 		
+	}*/
+	
+	
+	
+	int result = 0;
+	while(1){
+		result = read_rfid();
+		hwlib::cout << result << '\n';
+		hwlib::wait_ms(2000);
 	}
 	return 0;
 }

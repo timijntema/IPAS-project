@@ -1,65 +1,25 @@
-#include "sam.h"
 #include "hwlib.hpp"
+#include "servo.hpp"
 
-void turn_oneeighty(hwlib::target::pin_out &servo){
-	for (int i =0; i<20000; i++){
-		servo.set(1);
-		hwlib::wait_ms(0.05);//0.1
-		servo.set(0);
-		hwlib::wait_ms(0.9);
-	}
-}
-void turn_degrees(hwlib::target::pin_out &servo, const int degrees){
-	double y = (20000/180)*degrees/4;
-	for (int i =0; i<y; i++){
-		servo.set(1);
-		hwlib::wait_ms(0.1);
-		servo.set(0);
-		hwlib::wait_ms(0.9);
-	}
-}
-
-void turnservorevised(hwlib::target::pin_out &servo, const int degrees){
-	/*for (int i = 0; i<(100*degrees); i++){
-		servo.set(1);
-		hwlib::wait_ms(0.01);//0.1
-		servo.set(0);
-		hwlib::wait_ms(1-0.01);
-	}*/
-	for (int i = 0; i<15000; i++){
-		servo.set(1);
-		hwlib::wait_ms(0.002);//0.1
-		servo.set(0);
-		hwlib::wait_ms(0.02);
-	}
-}
-
-void pulse(double mark, double space)
-{
-    servo = 1;
-    __delay32(mark * 30000.0);
-    _LATD0 = 0;
-    __delay32(space * 30000.0);
-}
+//add comments
+//make decorator?
+//use value max higher then 2
+//check degrees for to high value
 
 int main()
 {
 	WDT->WDT_MR = WDT_MR_WDDIS;
 	
-	/*auto servo = hwlib::target::pin_out(hwlib::target::pins::d2);
-	//turn_degrees(servo, 90);
-	//turn_oneeighty(servo);
-	turnservorevised(servo, 80);
-	while(1){
+	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d2);
+	PWM_signal signal1(servoPin);
+	servo servo1(signal1);
+	
+	while(1) {
+		servo1.turnDegrees(0);
+		hwlib::wait_ms(1000);
+		servo1.turnDegrees(90);
+		hwlib::wait_ms(1000);
 	}
-	return 0;*/
-	int n;
-    TRISD = 0;
-   
-    while(1)
-    {
-        for (n=0 ; n<100 ; ++n)  pulse(1 + (n/100.0), 19 - (n/100.0));
-    }
-   
-    return 0;
+	
+	return 0;
 }

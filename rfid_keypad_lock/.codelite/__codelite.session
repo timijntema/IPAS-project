@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\__codelite.workspace">
+<Session Name="C:\Users\Tim\Documents\GitHub\IPAS-project\rfid_keypad_lock\__codelite.workspace">
   <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\__codelite.workspace" Name="m_workspaceName"/>
+  <wxString Value="C:\Users\Tim\Documents\GitHub\IPAS-project\rfid_keypad_lock\__codelite.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\create_PWM_lib\main.cpp" Name="FileName"/>
-      <int Value="18" Name="FirstVisibleLine"/>
-      <int Value="38" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\create_rfid_lib\main.cpp" Name="FileName"/>
-      <int Value="12" Name="FirstVisibleLine"/>
-      <int Value="48" Name="CurrentLine"/>
+      <wxString Value="C:\Users\Tim\Documents\GitHub\IPAS-project\rfid_keypad_lock\create_rfid_lib\main.cpp" Name="FileName"/>
+      <int Value="63" Name="FirstVisibleLine"/>
+      <int Value="79" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

@@ -23,27 +23,6 @@ rowsize(rowsize),
 columnsize(columnsize)
 {}
 
-void matrixKeypad::blink(){
-	for (int i = 0; i < columnsize; i++){
-		(pinColumn[i])->direction_set_output();
-		(pinColumn[i])->set(0);
-		(pinRow[i])->direction_set_output();
-		(pinRow[i])->set(0);
-	}
-	while(1){
-		for (int i = 0; i < columnsize; i++){
-			(pinColumn[i])->set(1);
-			(pinRow[i])->set(1);
-		}
-		hwlib::wait_ms(500);
-		for (int i = 0; i < columnsize; i++){
-			(pinColumn[i])->set(0);
-			(pinRow[i])->set(0);
-		}
-		hwlib::wait_ms(500);
-	}
-}
-
 char matrixKeypad::getKey(){
 	while (1){
 		//Set al the columns as output and turn them off.
