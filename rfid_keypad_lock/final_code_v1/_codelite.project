@@ -35,6 +35,10 @@
     <File Name="matrixKeypad.hpp"/>
     <File Name="passwordOperations.cpp"/>
     <File Name="passwordOperations.hpp"/>
+    <File Name="PWM_signal.cpp"/>
+    <File Name="PWM_signal.hpp"/>
+    <File Name="servo.cpp"/>
+    <File Name="servo.hpp"/>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">
     <GlobalSettings>
@@ -123,4 +127,6 @@
       </Completion>
     </Configuration>
   </Settings>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

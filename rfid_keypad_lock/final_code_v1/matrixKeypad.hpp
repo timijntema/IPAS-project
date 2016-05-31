@@ -10,13 +10,12 @@
 #define	MATRIXKEYPAD_HPP
 
 #include "hwlib.hpp"
-#include <string>
 
 ///Obtain pressed keys from 4x4 keypad
 //
-///This class that can be used to obtain pressed keys from a keypad using an Arduino Uno board.
+///This class that can be used to obtain pressed keys from a keypad using an Arduino Due board.
 ///The seperate keypresses can be obtained or an array of characters can be filled with pressed characters.
-///It uses a second class i created to use the Arduino Uno pins.
+///It uses a second class that make it capable of using Arduino Due pins.
 class matrixKeypad{
 private:
 	int keypadRow = -1;
@@ -39,7 +38,7 @@ private:
 public:
 	///Default constructor
 	//
-	///This constructor sets up all the pins on the Arduino Uno.
+	///This constructor sets up all the pins on the Arduino Due.
 	///It calls the constructor from the pinsetup class and sends the bitnumbers and letters to specifi wich port is wich.
 	matrixKeypad( hwlib::pin_in_out & p0,
 				hwlib::pin_in_out & p1,
@@ -70,7 +69,7 @@ public:
 	/// it protects you from going out of the array. To stop with getting characters 
 	/// before the array is full you have to press the '#' character. This will stops the
 	/// process and adds a '\0' after the last character.
-	void getString(std::string & tmpString);
+	int getString(char * chararray, int lenCharArray);
 };
 
 

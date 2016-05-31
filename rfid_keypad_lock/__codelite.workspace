@@ -3,12 +3,6 @@
   <Project Name="change_keypad_lib" Path="change_keypad_lib/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
-      <Project Name="change_keypad_lib" ConfigName="Release"/>
-    </WorkspaceConfiguration>
-  </BuildMatrix>
-  <Project Name="Checkout_pwm" Path="Checkout_pwm/_codelite.project" Active="No"/>
-  <BuildMatrix>
-    <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Checkout_pwm" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
@@ -28,6 +22,12 @@
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="final_code_v1" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="change_keypad_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

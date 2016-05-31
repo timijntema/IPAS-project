@@ -7,30 +7,40 @@
 
 #include "passwordOperations.hpp"
 
-passwordOperations::passwordOperations(matrixKeypad & keypad, std::string & rootPWD):
+passwordOperations::passwordOperations(matrixKeypad & keypad, char * rootPWDf, int lenRootPWD):
 		keypad(keypad),
-		rootPWD(rootPWD)
-{}
-
-bool passwordOperations::getPassword(std::string & clientPWD){
-	std::string tmpPwd;
-	keypad.getString(tmpPwd);
-	
-	if (tmpPwd == clientPWD){
-		hwlib::cout << "true";
-		return true;
-	}
-	else{
-		hwlib::cout << "false";
-		return false;
-	}
+		lenRootPWD(lenRootPWD),
+		rootPWD(rootPWDf)
+{
+	//rootPWD = rootPWDf;
 }
-bool passwordOperations::setPassword(std::string & clientPWD){
-	if (getPassword(rootPWD)){
-		keypad.getString(clientPWD);
-		return true;
-	}
-	else {
+
+bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
+	int lenCharArrayTmp = lenCharArrayClient+10;
+	char tempArray[lenCharArrayTmp];
+	lenCharArrayTmp = keypad.getString(tempArray, lenCharArrayTmp);
+	
+	if (lenCharArrayTmp != lenCharArrayClient){
+		hwlib::cout <<  lenCharArrayTmp << ' ' << lenCharArrayClient << "\nsizes unequal\n";
 		return false;
 	}
+	
+	for(int i = 0; i < lenCharArrayTmp; i++) {
+		//hwlib::cout << tempArray[i] << '\n';
+		if (tempArray[i] != clientPWD[i]){
+			hwlib::cout << "false\n";
+			return false;
+		}
+	}
+	hwlib::cout << "true\n";
+	return true;
+}
+bool passwordOperations::setPassword(char * clientPWD, int lenCharArray){
+	if (getPassword(rootPWD, lenRootPWD)){
+		hwlib::cout << "type the client PASSWORD\n";
+		hwlib::wait_ms(1000);
+		keypad.getString(clientPWD, lenCharArray);
+		return true;
+	}
+	return false;
 }

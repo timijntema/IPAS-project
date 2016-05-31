@@ -9,16 +9,17 @@
 #define PASSWORDOPERATIONS_HPP
 
 #include "matrixKeypad.hpp"
-#include <string>
+#include "hwlib.hpp"
 
 class passwordOperations{
 private:
 	matrixKeypad & keypad;
-	std::string & rootPWD;
+	int lenRootPWD;
+	char * rootPWD;
 public:
-	passwordOperations(matrixKeypad & keypad, std::string & rootPWD);
-	bool getPassword(std::string & clientPWD);
-	bool setPassword(std::string & clientPWD);
+	passwordOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD);
+	bool getPassword(char * chararray, int lenCharArray);
+	bool setPassword(char * clientPWD, int lenCharArray);
 };
 
 #endif // PASSWORDOPERATIONS_HPP

@@ -1,10 +1,9 @@
 #include "hwlib.hpp"
 #include "servo.hpp"
 
-//add comments
 //make decorator?
-//use value max higher then 2
-//check degrees for to high value
+
+//between 180 and 110 for the lock 
 
 int main()
 {
@@ -15,10 +14,10 @@ int main()
 	servo servo1(signal1);
 	
 	while(1) {
-		servo1.turnDegrees(0);
-		hwlib::wait_ms(1000);
-		servo1.turnDegrees(90);
-		hwlib::wait_ms(1000);
+		servo1.turnDegrees(180);
+		hwlib::wait_ms(3000);
+		servo1.turnDegrees(110);
+		hwlib::wait_ms(3000);
 	}
 	
 	return 0;

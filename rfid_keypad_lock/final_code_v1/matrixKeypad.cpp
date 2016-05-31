@@ -85,16 +85,19 @@ char matrixKeypad::getKey(){
 	}
 }
 
-void matrixKeypad::getString(std::string & tmpString){
+int matrixKeypad::getString(char * chararray, int lenCharArray){
 	char pressedKey;
 	int i = 0;
 	
-	//Continue to check for pressed keys until the # character has been pressed.
-	while((pressedKey = getKey()) != '#'){
-		tmpString[i] = pressedKey;
+	//Continue to check for pressed keys until the # character has been pressed of the length of the loop -1 has been reached.
+	//This prevents you from accidentally going out of the array. It also makes sure you always have 1 more spot left for the \0 character.
+	while((pressedKey = getKey()) != '#' && i < (lenCharArray-1)){
+		chararray[i] = pressedKey;
 		i++;
+		hwlib::cout << pressedKey;
 		//Wait time.
 		hwlib::wait_ms(300);
 	}
-	tmpString[i] = '\0';//Add the \0 to mark the end of the set of characters that has been obtained.
+	chararray[i] = '\0';//Add the \0 to mark the end of the set of characters that has been obtained.
+	return i+1;
 }

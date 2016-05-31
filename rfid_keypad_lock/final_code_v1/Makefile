@@ -9,10 +9,10 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := matrixKeypad.cpp passwordOperations.cpp
+SOURCES := matrixKeypad.cpp passwordOperations.cpp PWM_signal.cpp servo.cpp
 
 # header files in this project
-HEADERS := matrixKeypad.hpp passwordOperations.hpp
+HEADERS := matrixKeypad.hpp passwordOperations.hpp PWM_signal.hpp servo.hpp
 
 # other places to look for files for this project
 SEARCH  := 
