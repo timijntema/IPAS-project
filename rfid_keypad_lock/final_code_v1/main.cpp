@@ -51,19 +51,23 @@ int main(){
 		tempChar = 'k';//make sure tempChar is not something we are using in the program
 		tempChar = keypad.getKey();
 		ledRed.set(1);
+		
 		if (tempChar == '#'){//set a password with #
 			hwlib::cout << "caught #\n";
 			hwlib::wait_ms(500);
 			hwlib::cout << "type root pwd\n";
-			while(!(pswd.setPassword(userPWD, lenUserPWD))){
-				hwlib::cout << "\ntry again\n";
+			
+			if(!(pswd.setPassword(userPWD, lenUserPWD))){
+				hwlib::cout << "You need the root password to set a user password\n";
 				for(int i = 0; i < 4; i++){
 					ledRed.set(0);
 					hwlib::wait_ms(100);
 					ledRed.set(1);
 					hwlib::wait_ms(100);
 				}
+				continue;
 			}
+			
 			hwlib::cout << "password set\n";
 			ledRed.set(0);
 			for(int i = 0; i < 4; i++){
@@ -79,22 +83,35 @@ int main(){
 			lenUserPWD = i+1;
 			hwlib::wait_ms(100);
 		}
+		
+		
 		else if (tempChar == '*'){
 			hwlib::cout << "caught *\n";
 			hwlib::wait_ms(500);
 			hwlib::cout << "type user pwd\n";
-			for (int i = 0; i < 3; i++){
-				if(pswd.getPassword(userPWD, lenUserPWD)){
-					//flash green (v2 of the code)
-					//turn on green (v1 of the code)
-					hwlib::cout << "opening box\n";
-					servo1.turnDegrees(50);
-					tempChar = keypad.getKey();
-					hwlib::cout << "closing box\n";
-					servo1.turnDegrees(160);
-				}
-				else{
-					//flash red
+			
+			//in v2 code first check rfid and then set a bool value true or false and make sure you know what the user id is
+			//then check password (see below) && previously set bool value. The password check needs to get the user of the pass.
+			//if user not in the "database" flash red.
+			
+			if(pswd.getPassword(userPWD, lenUserPWD)){
+				//flash green and then check rfid (v2 of the code)
+				//turn on green and turn off red
+				ledRed.set(0);
+				ledGreen.set(1);
+				
+				hwlib::cout << "opening box\n";
+				servo1.turnDegrees(50);
+				tempChar = keypad.getKey();
+				hwlib::cout << "closing box\n";
+				servo1.turnDegrees(160);
+			}
+			else{
+				for(int i = 0; i < 4; i++){
+					ledRed.set(0);
+					hwlib::wait_ms(100);
+					ledRed.set(1);
+					hwlib::wait_ms(100);
 				}
 			}
 		}
