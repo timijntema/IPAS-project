@@ -49,41 +49,37 @@ int read_rfid(){
 int main()
 {
 	WDT->WDT_MR = WDT_MR_WDDIS;
-	/*byte data_in[8];
+	byte data_in[8];
+	byte data_out[8] = {0b10010010, 0b10000010, 0b10000100, 0b10000110, 0b10001000, 0b10001010, 0b10001110};//, (0x09 << 1), (0x09 << 1), (0x09 << 1), (0x09 << 1), (0x09 << 1), (0x09 << 1)};
 	auto SDA = hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto SCK = hwlib::target::pin_out(hwlib::target::pins::d9);
 	auto MOSI = hwlib::target::pin_out(hwlib::target::pins::d8);
 	auto MISO = hwlib::target::pin_in(hwlib::target::pins::d7);
 	
 	auto RFID = hwlib::spi_bus_bit_banged_sclk_mosi_miso(SCK, MOSI, MISO);
-	
-	int result = 0;
+	int integer_in[78];
 	
 	while(1){
-		//read_rfid();
-		//hwlib::wait_ms(2000);
 		hwlib::cout << "reading\n";
-		RFID.write_and_read(SDA, 8, nullptr, data_in);
-		//for(auto &row : data_in){
-			//result = (data_in[1] << 8) | data_in[0];
-			//hwlib::cout << row << '\n';
-			
-			for (unsigned n = 0; n < sizeof( result ); n++)
-				result = (result << 8) +data_in[ n ];
-			//}
-			hwlib::cout << "a: " << result << '\n';
+		RFID.write_and_read(SDA, 8, data_out, data_in);
+		
+		for(int j = 0; j < 8; j++){
+			integer_in[j] = data_in[j];
+			hwlib::cout << integer_in[j] << '\n';
+		}
 		hwlib::cout << "\nend of bit set" << '\n';
 		hwlib::wait_ms(2000);
 		
-	}*/
+	}
 	
 	
-	
+	/*
 	int result = 0;
 	while(1){
 		result = read_rfid();
 		hwlib::cout << result << '\n';
 		hwlib::wait_ms(2000);
 	}
+	*/
 	return 0;
 }

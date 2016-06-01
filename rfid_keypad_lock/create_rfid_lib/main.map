@@ -33,6 +33,9 @@ Discarded input sections
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -76,6 +79,8 @@ Discarded input sections
                 0x00000000       0xe8 main.o
  .text._ZN5hwlib23graphics_random_circlesERNS_6windowE
                 0x00000000       0x8c main.o
+ .text._Z9read_rfidv
+                0x00000000       0xa4 main.o
  .rodata._ZTVN5hwlib19_pin_in_dummy_classE
                 0x00000000        0xc main.o
  .rodata._ZTVN5hwlib20_pin_out_dummy_classE
@@ -149,7 +154,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0x52c
+.text           0x00000000      0x5e4
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -181,94 +186,99 @@ END GROUP
  .text._ZN3due14port_registersEi
                 0x000000d8       0x48 main.o
                 0x000000d8                due::port_registers(int)
- .text._ZN3due7pin_outC2ENS_4pinsE
+ .text._ZN3due6pin_inC2ENS_4pinsE
                 0x00000120       0x34 main.o
-                0x00000120                due::pin_out::pin_out(due::pins)
-                0x00000120                due::pin_out::pin_out(due::pins)
- *fill*         0x00000154        0xc 
+                0x00000120                due::pin_in::pin_in(due::pins)
+                0x00000120                due::pin_in::pin_in(due::pins)
+ .text._ZN3due7pin_outC2ENS_4pinsE
+                0x00000154       0x34 main.o
+                0x00000154                due::pin_out::pin_out(due::pins)
+                0x00000154                due::pin_out::pin_out(due::pins)
+ *fill*         0x00000188        0x8 
  .text._ZN5hwlib7wait_usEi
-                0x00000160       0x28 main.o
-                0x00000160                hwlib::wait_us(int)
+                0x00000190       0x28 main.o
+                0x00000190                hwlib::wait_us(int)
  .text._ZN5hwlib24uart_putc_bit_banged_pinEcRNS_7pin_outE
-                0x00000188       0x5c main.o
-                0x00000188                hwlib::uart_putc_bit_banged_pin(char, hwlib::pin_out&)
+                0x000001b8       0x5c main.o
+                0x000001b8                hwlib::uart_putc_bit_banged_pin(char, hwlib::pin_out&)
+ .text._ZN5hwlib33spi_bus_bit_banged_sclk_mosi_miso14write_and_readERNS_7pin_outEiPKhPh
+                0x00000214       0xa2 main.o
+                0x00000214                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
  .text._ZN5hwlib7wait_msEi
-                0x000001e4       0x16 main.o
-                0x000001e4                hwlib::wait_ms(int)
- *fill*         0x000001fa        0x2 
+                0x000002b6       0x16 main.o
+                0x000002b6                hwlib::wait_ms(int)
  .text._ZN5hwlib9uart_putcEc
-                0x000001fc       0x3c main.o
-                0x000001fc                hwlib::uart_putc(char)
+                0x000002cc       0x3c main.o
+                0x000002cc                hwlib::uart_putc(char)
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
-                0x00000238        0xa main.o
-                0x00000238                hwlib::cout_using_uart_putc::putc(char)
- *fill*         0x00000242        0x2 
- .text._Z9read_rfidv
-                0x00000244       0xc4 main.o
-                0x00000244                read_rfid()
+                0x00000308        0xa main.o
+                0x00000308                hwlib::cout_using_uart_putc::putc(char)
+ *fill*         0x00000312        0x2 
  .text.startup.main
-                0x00000308       0xf4 main.o
-                0x00000308                main
+                0x00000314      0x17c main.o
+                0x00000314                main
  .text.__startup
-                0x000003fc       0x48 bmptk_cortex.o
-                0x000003fc                __startup
-                0x00000444                . = ALIGN (0x4)
+                0x00000490       0x48 bmptk_cortex.o
+                0x00000490                __startup
+                0x000004d8                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00000444        0x0 linker stubs
- .glue_7t       0x00000444        0x0 linker stubs
-                0x00000444                . = ALIGN (0x4)
+ .glue_7        0x000004d8        0x0 linker stubs
+ .glue_7t       0x000004d8        0x0 linker stubs
+                0x000004d8                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00000444       0x10 main.o
-                0x00000444                vtable for hwlib::cout_using_uart_putc
+                0x000004d8       0x10 main.o
+                0x000004d8                vtable for hwlib::cout_using_uart_putc
+ .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
+                0x000004e8        0xc main.o
+                0x000004e8                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
  .rodata._ZTVN3due6pin_inE
-                0x00000454        0xc main.o
-                0x00000454                vtable for due::pin_in
+                0x000004f4        0xc main.o
+                0x000004f4                vtable for due::pin_in
  .rodata._ZTVN3due7pin_outE
-                0x00000460        0xc main.o
-                0x00000460                vtable for due::pin_out
+                0x00000500        0xc main.o
+                0x00000500                vtable for due::pin_out
  .rodata.str1.1
-                0x0000046c       0x1b main.o
+                0x0000050c       0x34 main.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x00000487       0xa4 main.o
-                0x0000052c                . = ALIGN (0x4)
- *fill*         0x0000052b        0x1 
+                0x00000540       0xa4 main.o
+                0x000005e4                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000052c                . = ALIGN (0x4)
+                0x000005e4                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x0000052c                . = ALIGN (0x4)
+                0x000005e4                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x0000052c                . = ALIGN (0x4)
+                0x000005e4                . = ALIGN (0x4)
  *(.eh_frame)
-                0x0000052c                . = ALIGN (0x4)
-                0x0000052c                __text_end = .
+                0x000005e4                . = ALIGN (0x4)
+                0x000005e4                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x0000052c        0x0
- .vfp11_veneer  0x0000052c        0x0 linker stubs
+.vfp11_veneer   0x000005e4        0x0
+ .vfp11_veneer  0x000005e4        0x0 linker stubs
 
-.v4_bx          0x0000052c        0x0
- .v4_bx         0x0000052c        0x0 linker stubs
+.v4_bx          0x000005e4        0x0
+ .v4_bx         0x000005e4        0x0 linker stubs
 
-.iplt           0x0000052c        0x0
- .iplt          0x0000052c        0x0 main.o
+.iplt           0x000005e4        0x0
+ .iplt          0x000005e4        0x0 main.o
 
-.rel.dyn        0x0000052c        0x0
- .rel.iplt      0x0000052c        0x0 main.o
+.rel.dyn        0x000005e4        0x0
+ .rel.iplt      0x000005e4        0x0 main.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x0000052c                . = ALIGN (0x4)
-                0x0000052c                __exidx_start = .
+                0x000005e4                . = ALIGN (0x4)
+                0x000005e4                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000052c                . = ALIGN (0x4)
-                0x0000052c                __exidx_end = .
+                0x000005e4                . = ALIGN (0x4)
+                0x000005e4                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -300,9 +310,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x0000052c
+.data           0x20012010       0x14 load address 0x000005e4
                 0x20012010                . = ALIGN (0x4)
-                0x0000052c                __data_init_start = LOADADDR (.data)
+                0x000005e4                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -314,13 +324,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x0000052c                __data_init_end = LOADADDR (.data)
+                0x000005e4                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x00000540
+.igot.plt       0x20012024        0x0 load address 0x000005f8
  .igot.plt      0x20012024        0x0 main.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .
