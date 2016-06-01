@@ -24,17 +24,19 @@ bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 		lenAfter = keypad.getString(tempArray, lenCharArrayTmp);
 		
 		if (lenAfter != lenCharArrayClient){
-			hwlib::cout  << "Try again\n";
+			hwlib::cout  << "Try again1\n";
+			hwlib::wait_ms(300);
 			continue;
 		}
 		
-		for(int i = 0; i < lenCharArrayTmp; i++) {
+		for(int i = 0; i < lenAfter; i++) {
 			//hwlib::cout << tempArray[i] << '\n';
 			if (tempArray[i] != clientPWD[i]){
-				hwlib::cout << "Try again\n";
+				hwlib::cout << "Try again2\n";
+				hwlib::wait_ms(300);
 				break;
 			}
-			else if (i == (lenCharArrayTmp-1) && tempArray[i] == clientPWD[i]){
+			else if (i == (lenAfter-1) && tempArray[i] == clientPWD[i]){
 				return true;
 			}
 		}

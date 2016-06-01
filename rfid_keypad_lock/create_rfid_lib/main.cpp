@@ -13,18 +13,21 @@
 int read_rfid(){
 	auto SDA = hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto SCK = hwlib::target::pin_out(hwlib::target::pins::d9);
-	//auto MOSI = hwlib::target::pin_out(hwlib::target::pins::d8);
+	auto MOSI = hwlib::target::pin_out(hwlib::target::pins::d8);
 	auto MISO = hwlib::target::pin_in(hwlib::target::pins::d7);
-	
+	MOSI.set(1);
 	SDA.set(0);
+	hwlib::wait_ms(3);
 	int tmp;
 	for(int i1=1; i1 > 0; i1--){
 		for(int i2 = 7; i2 >= 0; i2--){
 			tmp = 0;
 			SCK.set(0);
-			hwlib::wait_ms(1);
+			hwlib::wait_ms(3);
 			SCK.set(1);
+			hwlib::wait_ms(3);
 			tmp = MISO.get();
+			hwlib::wait_ms(3);
 			if (tmp == 1){
 				hwlib::cout << "1";
 				//tmp |=(1<<i2);
@@ -33,9 +36,11 @@ int read_rfid(){
 				hwlib::cout << "0";
 				//tmp &= ~(1<<i2);
 			}
+			hwlib::wait_ms(3);
 		}
 		hwlib::cout << '\n';
 	}
+	MOSI.set(0);
 	SDA.set(1);
 	SCK.set(1);
 	return tmp;

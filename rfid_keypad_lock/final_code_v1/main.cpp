@@ -16,23 +16,23 @@ int main(){
 	WDT->WDT_MR = WDT_MR_WDDIS;
 	
 	char rootPWD[] = "D97A3";
-	char userPWD[20];
+	char userPWD[] = "A";
 	int lenUserPWD = sizeof(userPWD)/sizeof(userPWD[0]);
 	int lenRootPWD = sizeof(rootPWD)/sizeof(rootPWD[0]);
 	
 	char tempChar;
 	
 	//columns
-	auto keypad0 = hwlib::target::pin_in_out(hwlib::target::pins::d32);
-	auto keypad1 = hwlib::target::pin_in_out(hwlib::target::pins::d34);
-	auto keypad2 = hwlib::target::pin_in_out(hwlib::target::pins::d36);
-	auto keypad3 = hwlib::target::pin_in_out(hwlib::target::pins::d38);
+	auto keypad0 = hwlib::target::pin_in_out(hwlib::target::pins::d23);
+	auto keypad1 = hwlib::target::pin_in_out(hwlib::target::pins::d25);
+	auto keypad2 = hwlib::target::pin_in_out(hwlib::target::pins::d27);
+	auto keypad3 = hwlib::target::pin_in_out(hwlib::target::pins::d29);
 	
 	//rows
-	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d40);
-	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d42);
-	auto keypad6 = hwlib::target::pin_in_out(hwlib::target::pins::d44);
-	auto keypad7 = hwlib::target::pin_in_out(hwlib::target::pins::d46);
+	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d22);
+	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d24);
+	auto keypad6 = hwlib::target::pin_in_out(hwlib::target::pins::d26);
+	auto keypad7 = hwlib::target::pin_in_out(hwlib::target::pins::d28);
 	
 	//remaining pins
 	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d2);
@@ -49,8 +49,8 @@ int main(){
 	
 	while(1){
 		tempChar = 'k';//make sure tempChar is not something we are using in the program
-		tempChar = keypad.getKey();
 		ledRed.set(1);
+		tempChar = keypad.getKey();
 		
 		if (tempChar == '#'){//set a password with #
 			hwlib::cout << "caught #\n";
@@ -80,7 +80,9 @@ int main(){
 			while(userPWD[i] != '\0'){
 				i++;
 			}
+			hwlib::cout << "\nhier komt hij\n";
 			lenUserPWD = i+1;
+			ledGreen.set(0);
 			hwlib::wait_ms(100);
 		}
 		
@@ -115,6 +117,7 @@ int main(){
 				}
 			}
 		}
+		ledGreen.set(0);
 		hwlib::wait_ms(100);
 	}
 	return 0;
