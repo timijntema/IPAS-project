@@ -7,8 +7,8 @@
 
 #include "servo.hpp"
 
-servo::servo(PWM_signal & pwmSignal):
-pwmSignal(pwmSignal)
+servo::servo(hwlib::target::pin_out & pwmPin):
+PWM_signal(pwmPin)
 {}
 
 void servo::turnDegrees(int degrees){
@@ -18,6 +18,6 @@ void servo::turnDegrees(int degrees){
 	int pulseWidth = ((degrees*2170)/180);
 	
 	for(int i = 0; i<20; i++){
-		pwmSignal.PWM_pulse(pulseWidth);
+		PWM_pulse(pulseWidth);
 	}
 }

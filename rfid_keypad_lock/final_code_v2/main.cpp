@@ -44,9 +44,8 @@ int main(){
 	matrixKeypad keypad(keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, buzzerPin);
 	passwordOperations pswd(keypad, rootPWD, lenRootPWD);
 	
-	//servo objects
-	PWM_signal signal1(servoPin);
-	servo servo1(signal1);
+	//servo object
+	servo servo1(servoPin);
 	
 	while(1){
 		tempChar = 'k';//make sure tempChar is not something we are using in the program

@@ -21,16 +21,14 @@
 ///This class is meant to act as a decorator class to the PWM_signal class.
 ///The idea is that it takes the pulse function and modifies it to send the
 /// correct signal for a servo.
-class servo{ // : public PWM_signal
-private:
-	PWM_signal & pwmSignal;
+class servo : public PWM_signal{
 public:
 	
 	///Default constructor
 	//
 	///This constructor gets a reference to the already existing PWM signal
 	/// taken from the PWM_signal class.
-	servo(PWM_signal & pwmSignal);
+	servo(hwlib::target::pin_out & pwmPin);
 	
 	///Turn the servo to a amount of degrees
 	//
@@ -38,7 +36,7 @@ public:
 	/// time. This wait time is beeing given to the pulse function. It also
 	/// makes sure the servo gets more then one pulse to make sure it has
 	/// enough time to turn to the set amount of degrees.
-	void turnDegrees(int degrees);// override;
+	void turnDegrees(int degrees);
 };
 
 #endif // SERVO_HPP
