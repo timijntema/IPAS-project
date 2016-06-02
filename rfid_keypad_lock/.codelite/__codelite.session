@@ -2,15 +2,7 @@
 <Session Name="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\__codelite.workspace">
   <int Value="0" Name="m_selectedTab"/>
   <wxString Value="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\__codelite.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray">
-    <TabInfo>
-      <wxString Value="D:\programmeren\Projecten\IPAS-project\rfid_keypad_lock\create_rfid_lib\main.cpp" Name="FileName"/>
-      <int Value="42" Name="FirstVisibleLine"/>
-      <int Value="68" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-  </TabInfoArray>
+  <TabInfoArray Name="TabInfoArray"/>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>

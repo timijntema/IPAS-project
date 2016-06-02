@@ -2,7 +2,7 @@
 * File:   main.cpp
 * Author: Tim IJntema
 *
-* Created on 30 may 2016, 17:09
+* Created on 2 june 2016, 11:26
 */
 
 #include "hwlib.hpp"
@@ -38,9 +38,10 @@ int main(){
 	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d2);
 	auto ledGreen = hwlib::target::pin_out(hwlib::target::pins::d3);
 	auto ledRed = hwlib::target::pin_out(hwlib::target::pins::d4);
+	auto buzzerPin = hwlib::target::pin_out(hwlib::target::pins::d5);
 	
 	//keypad objects
-	matrixKeypad keypad(keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, 4, 4);
+	matrixKeypad keypad(keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, buzzerPin);
 	passwordOperations pswd(keypad, rootPWD, lenRootPWD);
 	
 	//servo objects
