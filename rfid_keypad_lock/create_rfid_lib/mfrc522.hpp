@@ -14,8 +14,8 @@ public:
 	byte FIFODataReg = (0x09 << 1);
 	byte TModeReg = (0x2A << 1);
 	byte TPrescalerReg = (0x2B << 1);
-	byte TReloadRegH = (0x2C << 1);//checken
-	byte TReloadRegL = (0x2D << 1);//checken
+	byte TReloadRegH = (0x2C << 1);
+	byte TReloadRegL = (0x2D << 1);
 	byte TxASKReg = (0x15 << 1);
 	byte ModeReg = (0x11 << 1);
 	byte TxControlReg = (0x14 << 1);

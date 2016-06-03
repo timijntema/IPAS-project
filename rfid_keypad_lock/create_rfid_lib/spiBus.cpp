@@ -24,11 +24,6 @@ byte spiBus::receiveByteFromAddr(byte addr){
 	int tmp;
 	byte returnByte = 0b00000000;
 	
-	//temporary
-	//int integer_in;
-	//integer_in = addr;
-	//hwlib::cout << integer_in << '\n';
-	
 	for(int i = 0; i < 8; i++){
 		tmp = 0;
 		CLK.set(0);

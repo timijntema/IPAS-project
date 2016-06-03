@@ -1,3 +1,7 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+                              main.o (memset)
 
 Allocating common symbols
 Common symbol       size              file
@@ -71,6 +75,12 @@ Discarded input sections
                 0x00000000       0xe8 spiBus.o
  .text._ZN5hwlib23graphics_random_circlesERNS_6windowE
                 0x00000000       0x8c spiBus.o
+ .text._ZN6spiBusC2ERN3due7pin_outERNS0_6pin_inES2_
+                0x00000000       0x16 spiBus.o
+ .text._ZN6spiBus8sendByteEh
+                0x00000000       0x48 spiBus.o
+ .text._ZN6spiBus19receiveByteFromAddrEh
+                0x00000000       0x76 spiBus.o
  .text._ZN6spiBus19receiveByteFromAddrEPhiS0_i
                 0x00000000       0x24 spiBus.o
  .rodata._ZTVN5hwlib19_pin_in_dummy_classE
@@ -178,6 +188,12 @@ Discarded input sections
                 0x00000000       0x3c mfrc522.o
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
                 0x00000000        0xa mfrc522.o
+ .text._ZN7mfrc522C2ER6spiBusRN3due7pin_outES4_
+                0x00000000       0x28 mfrc522.o
+ .text._ZN7mfrc5224InitEv
+                0x00000000       0xa0 mfrc522.o
+ .text._ZN7mfrc52210readCardIDEPhiS0_i
+                0x00000000       0x5c mfrc522.o
  .rodata._ZTVN5hwlib19_pin_in_dummy_classE
                 0x00000000        0xc mfrc522.o
  .rodata._ZTVN5hwlib20_pin_out_dummy_classE
@@ -194,6 +210,7 @@ Discarded input sections
                 0x00000000        0xc mfrc522.o
  .rodata._ZTVN3due7pin_outE
                 0x00000000        0xc mfrc522.o
+ .rodata        0x00000000        0x6 mfrc522.o
  .data._ZN5hwlib12pin_in_dummyE
                 0x00000000        0x4 mfrc522.o
  .data._ZN5hwlib16pin_in_out_dummyE
@@ -214,6 +231,8 @@ Discarded input sections
                 0x00000000       0xa4 mfrc522.o
  .data._ZN5hwlib12pin_oc_dummyE
                 0x00000000        0x4 mfrc522.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
@@ -352,6 +371,9 @@ Discarded input sections
  .text          0x00000000        0x0 bmptk_fixed_size_stack.o
  .data          0x00000000        0x0 bmptk_fixed_size_stack.o
  .bss           0x00000000        0x0 bmptk_fixed_size_stack.o
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
 
 Memory Configuration
 
@@ -389,7 +411,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0x734
+.text           0x00000000      0x710
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -428,109 +450,95 @@ END GROUP
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
                 0x00000178        0xa spiBus.o
                 0x00000178                hwlib::cout_using_uart_putc::putc(char)
- .text._ZN6spiBusC2ERN3due7pin_outERNS0_6pin_inES2_
-                0x00000182       0x16 spiBus.o
-                0x00000182                spiBus::spiBus(due::pin_out&, due::pin_in&, due::pin_out&)
-                0x00000182                spiBus::spiBus(due::pin_out&, due::pin_in&, due::pin_out&)
- .text._ZN6spiBus8sendByteEh
-                0x00000198       0x48 spiBus.o
-                0x00000198                spiBus::sendByte(unsigned char)
- .text._ZN6spiBus19receiveByteFromAddrEh
-                0x000001e0       0x76 spiBus.o
-                0x000001e0                spiBus::receiveByteFromAddr(unsigned char)
- .text._ZN7mfrc522C2ER6spiBusRN3due7pin_outES4_
-                0x00000256       0x28 mfrc522.o
-                0x00000256                mfrc522::mfrc522(spiBus&, due::pin_out&, due::pin_out&)
-                0x00000256                mfrc522::mfrc522(spiBus&, due::pin_out&, due::pin_out&)
- *fill*         0x0000027e        0x2 
- .text._ZN7mfrc5224InitEv
-                0x00000280       0xa0 mfrc522.o
-                0x00000280                mfrc522::Init()
- .text._ZN7mfrc52210readCardIDEPhiS0_i
-                0x00000320       0x5c mfrc522.o
-                0x00000320                mfrc522::readCardID(unsigned char*, int, unsigned char*, int)
  .text._ZN3due6pin_in3getEv
-                0x0000037c       0x10 main.o
-                0x0000037c                due::pin_in::get()
+                0x00000182       0x10 main.o
+                0x00000182                due::pin_in::get()
  .text._ZN5hwlib7ostreamlsEc
-                0x0000038c        0xe main.o
-                0x0000038c                hwlib::ostream::operator<<(char)
+                0x00000192        0xe main.o
+                0x00000192                hwlib::ostream::operator<<(char)
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x0000039a       0x68 main.o
-                0x0000039a                hwlib::operator<<(hwlib::ostream&, char const*)
- *fill*         0x00000402        0x2 
+                0x000001a0       0x68 main.o
+                0x000001a0                hwlib::operator<<(hwlib::ostream&, char const*)
  .text._ZN3due7pin_outC2ENS_4pinsE
-                0x00000404       0x34 main.o
-                0x00000404                due::pin_out::pin_out(due::pins)
-                0x00000404                due::pin_out::pin_out(due::pins)
+                0x00000208       0x34 main.o
+                0x00000208                due::pin_out::pin_out(due::pins)
+                0x00000208                due::pin_out::pin_out(due::pins)
+ .text._ZN5hwlib33spi_bus_bit_banged_sclk_mosi_miso14write_and_readERNS_7pin_outEiPKhPh
+                0x0000023c       0xa2 main.o
+                0x0000023c                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
+ *fill*         0x000002de        0x2 
  .text.startup.main
-                0x00000438      0x1ac main.o
-                0x00000438                main
+                0x000002e0      0x254 main.o
+                0x000002e0                main
  .text.__startup
-                0x000005e4       0x48 bmptk_cortex.o
-                0x000005e4                __startup
-                0x0000062c                . = ALIGN (0x4)
+                0x00000534       0x48 bmptk_cortex.o
+                0x00000534                __startup
+ .text.memset   0x0000057c       0x9c c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+                0x0000057c                memset
+                0x00000618                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x0000062c        0x0 linker stubs
- .glue_7t       0x0000062c        0x0 linker stubs
-                0x0000062c                . = ALIGN (0x4)
+ .glue_7        0x00000618        0x0 linker stubs
+ .glue_7t       0x00000618        0x0 linker stubs
+                0x00000618                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x0000062c       0x10 spiBus.o
-                0x0000062c                vtable for hwlib::cout_using_uart_putc
+                0x00000618       0x10 spiBus.o
+                0x00000618                vtable for hwlib::cout_using_uart_putc
  .rodata._ZTVN3due7pin_outE
-                0x0000063c        0xc spiBus.o
-                0x0000063c                vtable for due::pin_out
+                0x00000628        0xc spiBus.o
+                0x00000628                vtable for due::pin_out
  .rodata.str1.1
-                0x00000648       0x17 spiBus.o
+                0x00000634       0x17 spiBus.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000065f       0xa4 spiBus.o
- .rodata        0x00000703        0x6 mfrc522.o
- *fill*         0x00000709        0x3 
+                0x0000064b       0xa4 spiBus.o
+ *fill*         0x000006ef        0x1 
+ .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
+                0x000006f0        0xc main.o
+                0x000006f0                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
  .rodata._ZTVN3due6pin_inE
-                0x0000070c        0xc main.o
-                0x0000070c                vtable for due::pin_in
+                0x000006fc        0xc main.o
+                0x000006fc                vtable for due::pin_in
  .rodata.str1.1
-                0x00000718       0x19 main.o
-                                 0x30 (size before relaxing)
-                0x00000734                . = ALIGN (0x4)
- *fill*         0x00000731        0x3 
+                0x00000708        0x7 main.o
+                                 0x1e (size before relaxing)
+                0x00000710                . = ALIGN (0x4)
+ *fill*         0x0000070f        0x1 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000734                . = ALIGN (0x4)
+                0x00000710                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000734                . = ALIGN (0x4)
+                0x00000710                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000734                . = ALIGN (0x4)
+                0x00000710                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000734                . = ALIGN (0x4)
-                0x00000734                __text_end = .
+                0x00000710                . = ALIGN (0x4)
+                0x00000710                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000734        0x0
- .vfp11_veneer  0x00000734        0x0 linker stubs
+.vfp11_veneer   0x00000710        0x0
+ .vfp11_veneer  0x00000710        0x0 linker stubs
 
-.v4_bx          0x00000734        0x0
- .v4_bx         0x00000734        0x0 linker stubs
+.v4_bx          0x00000710        0x0
+ .v4_bx         0x00000710        0x0 linker stubs
 
-.iplt           0x00000734        0x0
- .iplt          0x00000734        0x0 spiBus.o
+.iplt           0x00000710        0x0
+ .iplt          0x00000710        0x0 spiBus.o
 
-.rel.dyn        0x00000734        0x0
- .rel.iplt      0x00000734        0x0 spiBus.o
+.rel.dyn        0x00000710        0x0
+ .rel.iplt      0x00000710        0x0 spiBus.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000734                . = ALIGN (0x4)
-                0x00000734                __exidx_start = .
+                0x00000710                . = ALIGN (0x4)
+                0x00000710                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000734                . = ALIGN (0x4)
-                0x00000734                __exidx_end = .
+                0x00000710                . = ALIGN (0x4)
+                0x00000710                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -562,9 +570,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x00000734
+.data           0x20012010       0x14 load address 0x00000710
                 0x20012010                . = ALIGN (0x4)
-                0x00000734                __data_init_start = LOADADDR (.data)
+                0x00000710                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -576,13 +584,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000734                __data_init_end = LOADADDR (.data)
+                0x00000710                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x00000748
+.igot.plt       0x20012024        0x0 load address 0x00000724
  .igot.plt      0x20012024        0x0 spiBus.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .
@@ -624,8 +632,18 @@ END GROUP
 .debug_line
  *(.debug_line)
 
-.debug_frame
+.debug_frame    0x00000000       0x34
  *(.debug_frame)
+ .debug_frame   0x00000000       0x34 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e spiBus.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f mfrc522.o
+ .comment       0x0000006e       0x6f main.o
+ .comment       0x0000006e       0x6f bmptk_cortex.o
+ .comment       0x0000006e       0x6f bmptk_heap_none.o
+ .comment       0x0000006e       0x6f bmptk_fixed_size_stack.o
 
 .debug_str
  *(.debug_str)
@@ -666,6 +684,8 @@ END GROUP
                 0x000000cc       0x33 bmptk_heap_none.o
  .ARM.attributes
                 0x000000ff       0x33 bmptk_fixed_size_stack.o
+ .ARM.attributes
+                0x00000132       0x2d c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
 
 /DISCARD/
  *(.note.GNU-stack)
@@ -675,12 +695,3 @@ END GROUP
                 [!provide]                PROVIDE (__stack_size, (__stack_end - __stack_start))
                 [!provide]                PROVIDE (__heap_size, (__heap_end - __heap_start))
 OUTPUT(main.elf elf32-littlearm)
-
-.comment        0x00000000       0x6e
- .comment       0x00000000       0x6e spiBus.o
-                                 0x6f (size before relaxing)
- .comment       0x0000006e       0x6f mfrc522.o
- .comment       0x0000006e       0x6f main.o
- .comment       0x0000006e       0x6f bmptk_cortex.o
- .comment       0x0000006e       0x6f bmptk_heap_none.o
- .comment       0x0000006e       0x6f bmptk_fixed_size_stack.o
