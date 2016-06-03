@@ -251,6 +251,8 @@ Discarded input sections
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -401,7 +403,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0x2dc
+.text           0x00000000      0x320
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -443,70 +445,76 @@ END GROUP
  .text._ZN5servo11turnDegreesEi
                 0x00000128       0x26 servo.o
                 0x00000128                servo::turnDegrees(int)
- *fill*         0x0000014e        0x2 
+ .text._ZN3due6pin_in3getEv
+                0x0000014e       0x10 main.o
+                0x0000014e                due::pin_in::get()
+ *fill*         0x0000015e        0x2 
  .text.startup.main
-                0x00000150       0x64 main.o
-                0x00000150                main
+                0x00000160       0x8c main.o
+                0x00000160                main
  .text.__startup
-                0x000001b4       0x48 bmptk_cortex.o
-                0x000001b4                __startup
-                0x000001fc                . = ALIGN (0x4)
+                0x000001ec       0x48 bmptk_cortex.o
+                0x000001ec                __startup
+                0x00000234                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x000001fc        0x0 linker stubs
- .glue_7t       0x000001fc        0x0 linker stubs
-                0x000001fc                . = ALIGN (0x4)
+ .glue_7        0x00000234        0x0 linker stubs
+ .glue_7t       0x00000234        0x0 linker stubs
+                0x00000234                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN3due7pin_outE
-                0x000001fc        0xc PWM_signal.o
-                0x000001fc                vtable for due::pin_out
+                0x00000234        0xc PWM_signal.o
+                0x00000234                vtable for due::pin_out
  .rodata.str1.1
-                0x00000208       0x17 PWM_signal.o
+                0x00000240       0x17 PWM_signal.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000021f       0xa4 PWM_signal.o
- *fill*         0x000002c3        0x1 
+                0x00000257       0xa4 PWM_signal.o
+ *fill*         0x000002fb        0x1 
  .rodata._ZTV10PWM_signal
-                0x000002c4        0xc PWM_signal.o
-                0x000002c4                vtable for PWM_signal
+                0x000002fc        0xc PWM_signal.o
+                0x000002fc                vtable for PWM_signal
  .rodata._ZTV5servo
-                0x000002d0        0xc servo.o
-                0x000002d0                vtable for servo
-                0x000002dc                . = ALIGN (0x4)
+                0x00000308        0xc servo.o
+                0x00000308                vtable for servo
+ .rodata._ZTVN3due6pin_inE
+                0x00000314        0xc main.o
+                0x00000314                vtable for due::pin_in
+                0x00000320                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000002dc                . = ALIGN (0x4)
+                0x00000320                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x000002dc                . = ALIGN (0x4)
+                0x00000320                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x000002dc                . = ALIGN (0x4)
+                0x00000320                . = ALIGN (0x4)
  *(.eh_frame)
-                0x000002dc                . = ALIGN (0x4)
-                0x000002dc                __text_end = .
+                0x00000320                . = ALIGN (0x4)
+                0x00000320                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x000002dc        0x0
- .vfp11_veneer  0x000002dc        0x0 linker stubs
+.vfp11_veneer   0x00000320        0x0
+ .vfp11_veneer  0x00000320        0x0 linker stubs
 
-.v4_bx          0x000002dc        0x0
- .v4_bx         0x000002dc        0x0 linker stubs
+.v4_bx          0x00000320        0x0
+ .v4_bx         0x00000320        0x0 linker stubs
 
-.iplt           0x000002dc        0x0
- .iplt          0x000002dc        0x0 PWM_signal.o
+.iplt           0x00000320        0x0
+ .iplt          0x00000320        0x0 PWM_signal.o
 
-.rel.dyn        0x000002dc        0x0
- .rel.iplt      0x000002dc        0x0 PWM_signal.o
+.rel.dyn        0x00000320        0x0
+ .rel.iplt      0x00000320        0x0 PWM_signal.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x000002dc                . = ALIGN (0x4)
-                0x000002dc                __exidx_start = .
+                0x00000320                . = ALIGN (0x4)
+                0x00000320                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000002dc                . = ALIGN (0x4)
-                0x000002dc                __exidx_end = .
+                0x00000320                . = ALIGN (0x4)
+                0x00000320                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12000
@@ -534,9 +542,9 @@ END GROUP
                 0x20012000                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012000        0x0 load address 0x000002dc
+.data           0x20012000        0x0 load address 0x00000320
                 0x20012000                . = ALIGN (0x4)
-                0x000002dc                __data_init_start = LOADADDR (.data)
+                0x00000320                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012000                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -545,13 +553,13 @@ END GROUP
                 0x20012000                . = ALIGN (0x4)
                 0x20012000                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x000002dc                __data_init_end = LOADADDR (.data)
+                0x00000320                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000000                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000000                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012000        0x0 load address 0x000002dc
+.igot.plt       0x20012000        0x0 load address 0x00000320
  .igot.plt      0x20012000        0x0 PWM_signal.o
                 0x20012000                . = ALIGN (0x4)
                 0x20012000                __heap_start = .

@@ -12,7 +12,7 @@
       <Project Name="create_PWM_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="create_rfid_lib" Path="create_rfid_lib/_codelite.project" Active="Yes"/>
+  <Project Name="create_rfid_lib" Path="create_rfid_lib/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="create_rfid_lib" ConfigName="Release"/>
@@ -24,7 +24,7 @@
       <Project Name="final_code_v1" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="final_code_v2" Path="final_code_v2/_codelite.project" Active="No"/>
+  <Project Name="final_code_v2" Path="final_code_v2/_codelite.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="final_code_v2" ConfigName="Release"/>

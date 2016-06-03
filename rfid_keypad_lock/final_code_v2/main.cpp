@@ -103,10 +103,10 @@ int main(){
 				ledGreen.set(1);
 				
 				hwlib::cout << "opening box\n";
-				servo1.turnDegrees(50);
+				servo1.turnDegrees(180);
 				tempChar = keypad.getKey();
 				hwlib::cout << "closing box\n";
-				servo1.turnDegrees(160);
+				servo1.turnDegrees(110);
 			}
 			else{
 				for(int i = 0; i < 4; i++){

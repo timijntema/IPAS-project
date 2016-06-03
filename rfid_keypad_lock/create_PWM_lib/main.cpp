@@ -10,6 +10,7 @@ int main()
 	WDT->WDT_MR = WDT_MR_WDDIS;
 	
 	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d2);
+	auto checkerPin = hwlib::target::pin_in(hwlib::target::pins::d3);
 	
 	servo servo1(servoPin);
 	while(1) {
