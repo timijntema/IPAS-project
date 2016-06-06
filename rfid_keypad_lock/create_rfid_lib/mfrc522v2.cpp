@@ -38,10 +38,10 @@ void mfrc522v2::spiWrite(byte reg, byte value){ //maybe pointer?
 
 byte mfrc522v2::spiRead(byte addr){//possible mistake of only sending 1 item
 	addr = (addr | 0x80);
-	byte addrTemp[1] = {addr};
-	byte temp[1];
-	spi.write_and_read(SDA, 1, addrTemp, temp);
-	return temp[0];
+	byte addrTemp[2] = {addr, 0x00};
+	byte temp[2];
+	spi.write_and_read(SDA, 2, addrTemp, temp);
+	return temp[1];
 }
 
 void mfrc522v2::antennaOn(){
@@ -68,9 +68,8 @@ byte mfrc522v2::request(byte mode, byte * backData){//backdata needs to be max_l
 	
 	spiWrite(BitFramingReg, 0x07);
 	byte cardRetValue[2];//status, backBits
-	toCard(TRANSCEIVE, tagType, 1, cardRetValue, backData);
-	hwlib::cout << (int)cardRetValue[1] << '\n';
-	if ((cardRetValue[0] != MI_OK) | (cardRetValue[1] != 0x10)){
+	toCard(TRANSCEIVE, tagType, 1, cardRetValue, backData);\
+	if ((cardRetValue[0] != MI_OK) || (cardRetValue[1] != 0x10)){
 		cardRetValue[0] = MI_ERR;
 	}
 	return cardRetValue[0];//return status
@@ -173,9 +172,8 @@ byte mfrc522v2::anticoll(byte * backData){
 	spiWrite(BitFramingReg, 0x00);
 	toCard(TRANSCEIVE, serNum, 2, cardRetValue, backData);
 	auto serNumCheck = 0;
-	
 	if (cardRetValue[0] == MI_OK){
-		if(cardRetValue[1] == 5){
+		if((cardRetValue[1]/8) == 5){
 			int i = 0;
 			while(i<4){//why not 5?
 				serNumCheck = serNumCheck ^ backData[i];
@@ -191,4 +189,24 @@ byte mfrc522v2::anticoll(byte * backData){
 	}
 	
 	return cardRetValue[0]; //status
+}
+
+void mfrc522v2::waitForCardID(byte * ID, int lenID){
+	byte backData[MAX_LEN];
+	byte status;
+	while(1){
+		status = request(REQIDL, backData);
+		if(status == MI_OK){
+			status = anticoll(backData);
+		}
+		if(status == MI_OK){
+			hwlib::cout << "Card detected\n";
+			hwlib::cout << "ID: [" << (int)backData[0] << ',' << (int)backData[1] << ',' << (int)backData[2] << ',' << (int)backData[3] << ',' << (int)backData[4] << "]\n";
+			//hwlib::wait_ms(300);
+			break;
+		}
+	}
+	for(int i = 0; i < lenID; i++){
+		ID[i] = backData[i];
+	}
 }

@@ -27,7 +27,7 @@ public:
 	byte REQIDL = 0x26;
 	
 	//request checks
-	byte MI_OK = 0;
+	byte MI_OK = 0x00;
 	byte MI_NOTAGERR = 1;
 	byte MI_ERR = 2;
 	
@@ -60,6 +60,7 @@ public:
 	byte request(byte mode, byte * backData);
 	void toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData);
 	byte anticoll(byte * backData);
+	void waitForCardID(byte * ID, int lenID);
 };
 
 #endif // MFRC522V2_HPP

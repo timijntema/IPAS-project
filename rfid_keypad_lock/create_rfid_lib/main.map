@@ -59,6 +59,8 @@ Discarded input sections
                 0x00000000       0x1a spiBus.o
  .text._ZN5hwlib7wait_nsEi
                 0x00000000       0x10 spiBus.o
+ .text._ZN5hwlib7wait_msEi
+                0x00000000       0x16 spiBus.o
  .text._ZN5hwlib5blinkERNS_7pin_outEi
                 0x00000000       0x28 spiBus.o
  .text._ZN5hwlib4kittERNS_11port_in_outEi
@@ -215,8 +217,6 @@ Discarded input sections
                 0x00000000        0x4 mfrc522v2.o
  .data._ZN5hwlib13pin_out_dummyE
                 0x00000000        0x4 mfrc522v2.o
- .rodata.str1.1
-                0x00000000       0x17 mfrc522v2.o
  .data._ZN5hwlib4coutE
                 0x00000000       0x14 mfrc522v2.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
@@ -339,6 +339,8 @@ Discarded input sections
                 0x00000000        0x4 main.o
  .data._ZN5hwlib13pin_out_dummyE
                 0x00000000        0x4 main.o
+ .rodata.str1.1
+                0x00000000       0x17 main.o
  .data._ZN5hwlib4coutE
                 0x00000000       0x14 main.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
@@ -398,7 +400,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0xa08
+.text           0x00000000      0x9d0
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -427,141 +429,139 @@ END GROUP
  .text._ZN5hwlib24uart_putc_bit_banged_pinEcRNS_7pin_outE
                 0x000000c8       0x5c spiBus.o
                 0x000000c8                hwlib::uart_putc_bit_banged_pin(char, hwlib::pin_out&)
- .text._ZN5hwlib7wait_msEi
-                0x00000124       0x16 spiBus.o
-                0x00000124                hwlib::wait_ms(int)
- *fill*         0x0000013a        0x2 
  .text._ZN5hwlib9uart_putcEc
-                0x0000013c       0x3c spiBus.o
-                0x0000013c                hwlib::uart_putc(char)
+                0x00000124       0x3c spiBus.o
+                0x00000124                hwlib::uart_putc(char)
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
-                0x00000178        0xa spiBus.o
-                0x00000178                hwlib::cout_using_uart_putc::putc(char)
+                0x00000160        0xa spiBus.o
+                0x00000160                hwlib::cout_using_uart_putc::putc(char)
  .text._ZN5hwlib7ostreamlsEc
-                0x00000182        0xe mfrc522v2.o
-                0x00000182                hwlib::ostream::operator<<(char)
+                0x0000016a        0xe mfrc522v2.o
+                0x0000016a                hwlib::ostream::operator<<(char)
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x00000190       0x68 mfrc522v2.o
-                0x00000190                hwlib::operator<<(hwlib::ostream&, char const*)
+                0x00000178       0x68 mfrc522v2.o
+                0x00000178                hwlib::operator<<(hwlib::ostream&, char const*)
  .text._ZN5hwliblsERNS_7ostreamEi
-                0x000001f8       0xd4 mfrc522v2.o
-                0x000001f8                hwlib::operator<<(hwlib::ostream&, int)
+                0x000001e0       0xd4 mfrc522v2.o
+                0x000001e0                hwlib::operator<<(hwlib::ostream&, int)
  .text._ZN9mfrc522v28spiWriteEhh
-                0x000002cc       0x24 mfrc522v2.o
-                0x000002cc                mfrc522v2::spiWrite(unsigned char, unsigned char)
+                0x000002b4       0x24 mfrc522v2.o
+                0x000002b4                mfrc522v2::spiWrite(unsigned char, unsigned char)
  .text._ZN9mfrc522v25resetEv
-                0x000002f0        0x8 mfrc522v2.o
-                0x000002f0                mfrc522v2::reset()
+                0x000002d8        0x8 mfrc522v2.o
+                0x000002d8                mfrc522v2::reset()
  .text._ZN9mfrc522v27spiReadEh
-                0x000002f8       0x28 mfrc522v2.o
-                0x000002f8                mfrc522v2::spiRead(unsigned char)
+                0x000002e0       0x2e mfrc522v2.o
+                0x000002e0                mfrc522v2::spiRead(unsigned char)
  .text._ZN9mfrc522v210setBitMaskEhh
-                0x00000320       0x1e mfrc522v2.o
-                0x00000320                mfrc522v2::setBitMask(unsigned char, unsigned char)
+                0x0000030e       0x1e mfrc522v2.o
+                0x0000030e                mfrc522v2::setBitMask(unsigned char, unsigned char)
  .text._ZN9mfrc522v29antennaOnEv
-                0x0000033e       0x1c mfrc522v2.o
-                0x0000033e                mfrc522v2::antennaOn()
+                0x0000032c       0x1c mfrc522v2.o
+                0x0000032c                mfrc522v2::antennaOn()
  .text._ZN9mfrc522v24initEv
-                0x0000035a       0x70 mfrc522v2.o
-                0x0000035a                mfrc522v2::init()
+                0x00000348       0x70 mfrc522v2.o
+                0x00000348                mfrc522v2::init()
  .text._ZN9mfrc522v2C2ERN5hwlib33spi_bus_bit_banged_sclk_mosi_misoERN3due7pin_outES5_
-                0x000003ca       0xaa mfrc522v2.o
-                0x000003ca                mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
-                0x000003ca                mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
+                0x000003b8       0xaa mfrc522v2.o
+                0x000003b8                mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
+                0x000003b8                mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
  .text._ZN9mfrc522v212clearBitMaskEhh
-                0x00000474       0x1e mfrc522v2.o
-                0x00000474                mfrc522v2::clearBitMask(unsigned char, unsigned char)
- *fill*         0x00000492        0x2 
+                0x00000462       0x1e mfrc522v2.o
+                0x00000462                mfrc522v2::clearBitMask(unsigned char, unsigned char)
  .text._ZN9mfrc522v26toCardEhPhiS0_S0_
-                0x00000494      0x140 mfrc522v2.o
-                0x00000494                mfrc522v2::toCard(unsigned char, unsigned char*, int, unsigned char*, unsigned char*)
+                0x00000480      0x12c mfrc522v2.o
+                0x00000480                mfrc522v2::toCard(unsigned char, unsigned char*, int, unsigned char*, unsigned char*)
  .text._ZN9mfrc522v27requestEhPh
-                0x000005d4       0x5c mfrc522v2.o
-                0x000005d4                mfrc522v2::request(unsigned char, unsigned char*)
+                0x000005ac       0x48 mfrc522v2.o
+                0x000005ac                mfrc522v2::request(unsigned char, unsigned char*)
  .text._ZN9mfrc522v28anticollEPh
-                0x00000630       0x6c mfrc522v2.o
-                0x00000630                mfrc522v2::anticoll(unsigned char*)
+                0x000005f4       0x6e mfrc522v2.o
+                0x000005f4                mfrc522v2::anticoll(unsigned char*)
+ *fill*         0x00000662        0x2 
+ .text._ZN9mfrc522v213waitForCardIDEPhi
+                0x00000664       0xa8 mfrc522v2.o
+                0x00000664                mfrc522v2::waitForCardID(unsigned char*, int)
  .text._ZN3due6pin_in3getEv
-                0x0000069c       0x10 main.o
-                0x0000069c                due::pin_in::get()
+                0x0000070c       0x10 main.o
+                0x0000070c                due::pin_in::get()
  .text._ZN3due7pin_outC2ENS_4pinsE
-                0x000006ac       0x34 main.o
-                0x000006ac                due::pin_out::pin_out(due::pins)
-                0x000006ac                due::pin_out::pin_out(due::pins)
+                0x0000071c       0x34 main.o
+                0x0000071c                due::pin_out::pin_out(due::pins)
+                0x0000071c                due::pin_out::pin_out(due::pins)
  .text._ZN5hwlib33spi_bus_bit_banged_sclk_mosi_miso14write_and_readERNS_7pin_outEiPKhPh
-                0x000006e0       0xa2 main.o
-                0x000006e0                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
- *fill*         0x00000782        0x2 
+                0x00000750       0xa2 main.o
+                0x00000750                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
+ *fill*         0x000007f2        0x2 
  .text.startup.main
-                0x00000784      0x13c main.o
-                0x00000784                main
+                0x000007f4       0x8c main.o
+                0x000007f4                main
  .text.__startup
-                0x000008c0       0x48 bmptk_cortex.o
-                0x000008c0                __startup
-                0x00000908                . = ALIGN (0x4)
+                0x00000880       0x48 bmptk_cortex.o
+                0x00000880                __startup
+                0x000008c8                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00000908        0x0 linker stubs
- .glue_7t       0x00000908        0x0 linker stubs
-                0x00000908                . = ALIGN (0x4)
+ .glue_7        0x000008c8        0x0 linker stubs
+ .glue_7t       0x000008c8        0x0 linker stubs
+                0x000008c8                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00000908       0x10 spiBus.o
-                0x00000908                vtable for hwlib::cout_using_uart_putc
+                0x000008c8       0x10 spiBus.o
+                0x000008c8                vtable for hwlib::cout_using_uart_putc
  .rodata._ZTVN3due7pin_outE
-                0x00000918        0xc spiBus.o
-                0x00000918                vtable for due::pin_out
+                0x000008d8        0xc spiBus.o
+                0x000008d8                vtable for due::pin_out
  .rodata.str1.1
-                0x00000924       0x17 spiBus.o
+                0x000008e4       0x17 spiBus.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000093b       0xa4 spiBus.o
- *fill*         0x000009df        0x1 
- .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
-                0x000009e0        0xc main.o
-                0x000009e0                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
- .rodata._ZTVN3due6pin_inE
-                0x000009ec        0xc main.o
-                0x000009ec                vtable for due::pin_in
+                0x000008fb       0xa4 spiBus.o
  .rodata.str1.1
-                0x000009f8        0xf main.o
-                                 0x26 (size before relaxing)
-                0x00000a08                . = ALIGN (0x4)
- *fill*         0x00000a07        0x1 
+                0x0000099f       0x18 mfrc522v2.o
+                                 0x2f (size before relaxing)
+ *fill*         0x000009b7        0x1 
+ .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
+                0x000009b8        0xc main.o
+                0x000009b8                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
+ .rodata._ZTVN3due6pin_inE
+                0x000009c4        0xc main.o
+                0x000009c4                vtable for due::pin_in
+                0x000009d0                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000a08                . = ALIGN (0x4)
+                0x000009d0                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000a08                . = ALIGN (0x4)
+                0x000009d0                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000a08                . = ALIGN (0x4)
+                0x000009d0                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000a08                . = ALIGN (0x4)
-                0x00000a08                __text_end = .
+                0x000009d0                . = ALIGN (0x4)
+                0x000009d0                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000a08        0x0
- .vfp11_veneer  0x00000a08        0x0 linker stubs
+.vfp11_veneer   0x000009d0        0x0
+ .vfp11_veneer  0x000009d0        0x0 linker stubs
 
-.v4_bx          0x00000a08        0x0
- .v4_bx         0x00000a08        0x0 linker stubs
+.v4_bx          0x000009d0        0x0
+ .v4_bx         0x000009d0        0x0 linker stubs
 
-.iplt           0x00000a08        0x0
- .iplt          0x00000a08        0x0 spiBus.o
+.iplt           0x000009d0        0x0
+ .iplt          0x000009d0        0x0 spiBus.o
 
-.rel.dyn        0x00000a08        0x0
- .rel.iplt      0x00000a08        0x0 spiBus.o
+.rel.dyn        0x000009d0        0x0
+ .rel.iplt      0x000009d0        0x0 spiBus.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000a08                . = ALIGN (0x4)
-                0x00000a08                __exidx_start = .
+                0x000009d0                . = ALIGN (0x4)
+                0x000009d0                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000a08                . = ALIGN (0x4)
-                0x00000a08                __exidx_end = .
+                0x000009d0                . = ALIGN (0x4)
+                0x000009d0                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -593,9 +593,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x00000a08
+.data           0x20012010       0x14 load address 0x000009d0
                 0x20012010                . = ALIGN (0x4)
-                0x00000a08                __data_init_start = LOADADDR (.data)
+                0x000009d0                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -607,13 +607,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000a08                __data_init_end = LOADADDR (.data)
+                0x000009d0                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x00000a1c
+.igot.plt       0x20012024        0x0 load address 0x000009e4
  .igot.plt      0x20012024        0x0 spiBus.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .
