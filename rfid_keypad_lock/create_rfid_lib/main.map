@@ -1,7 +1,3 @@
-Archive member included to satisfy reference by file (symbol)
-
-c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
-                              main.o (memset)
 
 Allocating common symbols
 Common symbol       size              file
@@ -105,134 +101,128 @@ Discarded input sections
                 0x00000000        0x4 spiBus.o
  .data._ZN5hwlib12pin_oc_dummyE
                 0x00000000        0x4 spiBus.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .group         0x00000000        0x8 mfrc522.o
- .text          0x00000000        0x0 mfrc522.o
- .data          0x00000000        0x0 mfrc522.o
- .bss           0x00000000        0x0 mfrc522.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .text          0x00000000        0x0 mfrc522v2.o
+ .data          0x00000000        0x0 mfrc522v2.o
+ .bss           0x00000000        0x0 mfrc522v2.o
  .text._ZN5hwlib19_pin_in_dummy_class3getEv
-                0x00000000        0x4 mfrc522.o
+                0x00000000        0x4 mfrc522v2.o
  .text._ZN5hwlib20_pin_out_dummy_class3setEb
-                0x00000000        0x2 mfrc522.o
+                0x00000000        0x2 mfrc522v2.o
  .text._ZN5hwlib23_pin_in_out_dummy_class3setEb
-                0x00000000        0x2 mfrc522.o
+                0x00000000        0x2 mfrc522v2.o
  .text._ZN5hwlib23_pin_in_out_dummy_class3getEv
-                0x00000000        0x4 mfrc522.o
+                0x00000000        0x4 mfrc522v2.o
  .text._ZN5hwlib23_pin_in_out_dummy_class19direction_set_inputEv
-                0x00000000        0x2 mfrc522.o
+                0x00000000        0x2 mfrc522v2.o
  .text._ZN5hwlib23_pin_in_out_dummy_class20direction_set_outputEv
-                0x00000000        0x2 mfrc522.o
+                0x00000000        0x2 mfrc522v2.o
  .text._ZN5hwlib19_pin_oc_dummy_class3setEb
-                0x00000000        0x2 mfrc522.o
+                0x00000000        0x2 mfrc522v2.o
  .text._ZN5hwlib19_pin_oc_dummy_class3getEv
-                0x00000000        0x4 mfrc522.o
+                0x00000000        0x4 mfrc522v2.o
  .text._ZN5hwlib7ostream5flushEv
-                0x00000000        0x2 mfrc522.o
+                0x00000000        0x2 mfrc522v2.o
  .text._ZN3due7pin_out3setEb
-                0x00000000        0xe mfrc522.o
+                0x00000000        0xe mfrc522v2.o
  .text._ZN5hwlib6window5writeENS_8locationENS_5colorE
-                0x00000000       0x3e mfrc522.o
+                0x00000000       0x3e mfrc522v2.o
  .text._ZN5hwlib4line4drawERNS_6windowE
-                0x00000000       0xa4 mfrc522.o
+                0x00000000       0xa4 mfrc522v2.o
  .text._ZN5hwlib6circle4drawERNS_6windowE
-                0x00000000      0x2ec mfrc522.o
+                0x00000000      0x2ec mfrc522v2.o
  .text._ZN5hwlib4randEv
-                0x00000000       0x20 mfrc522.o
+                0x00000000       0x20 mfrc522v2.o
  .text._ZN5hwlib15random_in_rangeEjj
-                0x00000000       0x1a mfrc522.o
+                0x00000000       0x1a mfrc522v2.o
  .text._ZN3due8pin_infoENS_4pinsE
-                0x00000000       0x20 mfrc522.o
+                0x00000000       0x20 mfrc522v2.o
  .text._ZN3due14port_registersEi
-                0x00000000       0x48 mfrc522.o
+                0x00000000       0x48 mfrc522v2.o
  .text._ZN5hwlib7wait_usEi
-                0x00000000       0x28 mfrc522.o
+                0x00000000       0x28 mfrc522v2.o
  .text._ZN5hwlib24uart_putc_bit_banged_pinEcRNS_7pin_outE
-                0x00000000       0x5c mfrc522.o
+                0x00000000       0x5c mfrc522v2.o
  .text._ZN5hwlib7wait_nsEi
-                0x00000000       0x10 mfrc522.o
+                0x00000000       0x10 mfrc522v2.o
  .text._ZN5hwlib7wait_msEi
-                0x00000000       0x16 mfrc522.o
+                0x00000000       0x16 mfrc522v2.o
  .text._ZN5hwlib5blinkERNS_7pin_outEi
-                0x00000000       0x28 mfrc522.o
+                0x00000000       0x28 mfrc522v2.o
  .text._ZN5hwlib4kittERNS_11port_in_outEi
-                0x00000000       0x54 mfrc522.o
+                0x00000000       0x54 mfrc522v2.o
  .text._ZN5hwlib4kittERNS_8port_outEi
-                0x00000000       0x4e mfrc522.o
+                0x00000000       0x4e mfrc522v2.o
  .text._ZN5hwlib4kittERNS_7port_ocEi
-                0x00000000       0x4e mfrc522.o
+                0x00000000       0x4e mfrc522v2.o
  .text._ZN5hwlib21graphics_random_linesERNS_6windowE
-                0x00000000       0xe8 mfrc522.o
+                0x00000000       0xe8 mfrc522v2.o
  .text._ZN5hwlib23graphics_random_circlesERNS_6windowE
-                0x00000000       0x8c mfrc522.o
+                0x00000000       0x8c mfrc522v2.o
  .text._ZN5hwlib9uart_putcEc
-                0x00000000       0x3c mfrc522.o
+                0x00000000       0x3c mfrc522v2.o
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
-                0x00000000        0xa mfrc522.o
- .text._ZN7mfrc522C2ER6spiBusRN3due7pin_outES4_
-                0x00000000       0x28 mfrc522.o
- .text._ZN7mfrc5224InitEv
-                0x00000000       0xa0 mfrc522.o
- .text._ZN7mfrc52210readCardIDEPhiS0_i
-                0x00000000       0x5c mfrc522.o
+                0x00000000        0xa mfrc522v2.o
  .rodata._ZTVN5hwlib19_pin_in_dummy_classE
-                0x00000000        0xc mfrc522.o
+                0x00000000        0xc mfrc522v2.o
  .rodata._ZTVN5hwlib20_pin_out_dummy_classE
-                0x00000000        0xc mfrc522.o
+                0x00000000        0xc mfrc522v2.o
  .rodata._ZTVN5hwlib23_pin_in_out_dummy_classE
-                0x00000000       0x18 mfrc522.o
+                0x00000000       0x18 mfrc522v2.o
  .rodata._ZTVN5hwlib19_pin_oc_dummy_classE
-                0x00000000       0x10 mfrc522.o
+                0x00000000       0x10 mfrc522v2.o
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00000000       0x10 mfrc522.o
+                0x00000000       0x10 mfrc522v2.o
  .rodata._ZTVN5hwlib4lineE
-                0x00000000        0xc mfrc522.o
+                0x00000000        0xc mfrc522v2.o
  .rodata._ZTVN5hwlib6circleE
-                0x00000000        0xc mfrc522.o
+                0x00000000        0xc mfrc522v2.o
  .rodata._ZTVN3due7pin_outE
-                0x00000000        0xc mfrc522.o
- .rodata        0x00000000        0x6 mfrc522.o
- .data._ZN5hwlib12pin_in_dummyE
-                0x00000000        0x4 mfrc522.o
- .data._ZN5hwlib16pin_in_out_dummyE
-                0x00000000        0x4 mfrc522.o
- .bss._ZZN5hwlib9uart_putcEcE3pin
-                0x00000000        0xc mfrc522.o
- .bss._ZZN5hwlib4randEvE1n
-                0x00000000        0x4 mfrc522.o
- .data._ZN5hwlib13pin_out_dummyE
-                0x00000000        0x4 mfrc522.o
- .rodata.str1.1
-                0x00000000       0x17 mfrc522.o
- .data._ZN5hwlib4coutE
-                0x00000000       0x14 mfrc522.o
+                0x00000000        0xc mfrc522v2.o
  .bss._ZGVZN5hwlib9uart_putcEcE3pin
-                0x00000000        0x4 mfrc522.o
+                0x00000000        0x4 mfrc522v2.o
+ .data._ZN5hwlib12pin_in_dummyE
+                0x00000000        0x4 mfrc522v2.o
+ .data._ZN5hwlib16pin_in_out_dummyE
+                0x00000000        0x4 mfrc522v2.o
+ .bss._ZZN5hwlib9uart_putcEcE3pin
+                0x00000000        0xc mfrc522v2.o
+ .bss._ZZN5hwlib4randEvE1n
+                0x00000000        0x4 mfrc522v2.o
+ .data._ZN5hwlib13pin_out_dummyE
+                0x00000000        0x4 mfrc522v2.o
+ .rodata.str1.1
+                0x00000000       0x17 mfrc522v2.o
+ .data._ZN5hwlib4coutE
+                0x00000000       0x14 mfrc522v2.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x00000000       0xa4 mfrc522.o
+                0x00000000       0xa4 mfrc522v2.o
  .data._ZN5hwlib12pin_oc_dummyE
-                0x00000000        0x4 mfrc522.o
- .group         0x00000000        0x8 main.o
- .group         0x00000000        0x8 main.o
+                0x00000000        0x4 mfrc522v2.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
@@ -371,9 +361,6 @@ Discarded input sections
  .text          0x00000000        0x0 bmptk_fixed_size_stack.o
  .data          0x00000000        0x0 bmptk_fixed_size_stack.o
  .bss           0x00000000        0x0 bmptk_fixed_size_stack.o
- .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
- .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
- .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
 
 Memory Configuration
 
@@ -387,7 +374,7 @@ Linker script and memory map
 
 LOAD c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv7-m\libgcc.a
 LOAD spiBus.o
-LOAD mfrc522.o
+LOAD mfrc522v2.o
 LOAD main.o
 LOAD bmptk_cortex.o
 LOAD bmptk_heap_none.o
@@ -411,7 +398,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0x710
+.text           0x00000000      0xa08
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -450,95 +437,131 @@ END GROUP
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
                 0x00000178        0xa spiBus.o
                 0x00000178                hwlib::cout_using_uart_putc::putc(char)
- .text._ZN3due6pin_in3getEv
-                0x00000182       0x10 main.o
-                0x00000182                due::pin_in::get()
  .text._ZN5hwlib7ostreamlsEc
-                0x00000192        0xe main.o
-                0x00000192                hwlib::ostream::operator<<(char)
+                0x00000182        0xe mfrc522v2.o
+                0x00000182                hwlib::ostream::operator<<(char)
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x000001a0       0x68 main.o
-                0x000001a0                hwlib::operator<<(hwlib::ostream&, char const*)
+                0x00000190       0x68 mfrc522v2.o
+                0x00000190                hwlib::operator<<(hwlib::ostream&, char const*)
+ .text._ZN5hwliblsERNS_7ostreamEi
+                0x000001f8       0xd4 mfrc522v2.o
+                0x000001f8                hwlib::operator<<(hwlib::ostream&, int)
+ .text._ZN9mfrc522v28spiWriteEhh
+                0x000002cc       0x24 mfrc522v2.o
+                0x000002cc                mfrc522v2::spiWrite(unsigned char, unsigned char)
+ .text._ZN9mfrc522v25resetEv
+                0x000002f0        0x8 mfrc522v2.o
+                0x000002f0                mfrc522v2::reset()
+ .text._ZN9mfrc522v27spiReadEh
+                0x000002f8       0x28 mfrc522v2.o
+                0x000002f8                mfrc522v2::spiRead(unsigned char)
+ .text._ZN9mfrc522v210setBitMaskEhh
+                0x00000320       0x1e mfrc522v2.o
+                0x00000320                mfrc522v2::setBitMask(unsigned char, unsigned char)
+ .text._ZN9mfrc522v29antennaOnEv
+                0x0000033e       0x1c mfrc522v2.o
+                0x0000033e                mfrc522v2::antennaOn()
+ .text._ZN9mfrc522v24initEv
+                0x0000035a       0x70 mfrc522v2.o
+                0x0000035a                mfrc522v2::init()
+ .text._ZN9mfrc522v2C2ERN5hwlib33spi_bus_bit_banged_sclk_mosi_misoERN3due7pin_outES5_
+                0x000003ca       0xaa mfrc522v2.o
+                0x000003ca                mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
+                0x000003ca                mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
+ .text._ZN9mfrc522v212clearBitMaskEhh
+                0x00000474       0x1e mfrc522v2.o
+                0x00000474                mfrc522v2::clearBitMask(unsigned char, unsigned char)
+ *fill*         0x00000492        0x2 
+ .text._ZN9mfrc522v26toCardEhPhiS0_S0_
+                0x00000494      0x140 mfrc522v2.o
+                0x00000494                mfrc522v2::toCard(unsigned char, unsigned char*, int, unsigned char*, unsigned char*)
+ .text._ZN9mfrc522v27requestEhPh
+                0x000005d4       0x5c mfrc522v2.o
+                0x000005d4                mfrc522v2::request(unsigned char, unsigned char*)
+ .text._ZN9mfrc522v28anticollEPh
+                0x00000630       0x6c mfrc522v2.o
+                0x00000630                mfrc522v2::anticoll(unsigned char*)
+ .text._ZN3due6pin_in3getEv
+                0x0000069c       0x10 main.o
+                0x0000069c                due::pin_in::get()
  .text._ZN3due7pin_outC2ENS_4pinsE
-                0x00000208       0x34 main.o
-                0x00000208                due::pin_out::pin_out(due::pins)
-                0x00000208                due::pin_out::pin_out(due::pins)
+                0x000006ac       0x34 main.o
+                0x000006ac                due::pin_out::pin_out(due::pins)
+                0x000006ac                due::pin_out::pin_out(due::pins)
  .text._ZN5hwlib33spi_bus_bit_banged_sclk_mosi_miso14write_and_readERNS_7pin_outEiPKhPh
-                0x0000023c       0xa2 main.o
-                0x0000023c                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
- *fill*         0x000002de        0x2 
+                0x000006e0       0xa2 main.o
+                0x000006e0                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
+ *fill*         0x00000782        0x2 
  .text.startup.main
-                0x000002e0      0x254 main.o
-                0x000002e0                main
+                0x00000784      0x13c main.o
+                0x00000784                main
  .text.__startup
-                0x00000534       0x48 bmptk_cortex.o
-                0x00000534                __startup
- .text.memset   0x0000057c       0x9c c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
-                0x0000057c                memset
-                0x00000618                . = ALIGN (0x4)
+                0x000008c0       0x48 bmptk_cortex.o
+                0x000008c0                __startup
+                0x00000908                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00000618        0x0 linker stubs
- .glue_7t       0x00000618        0x0 linker stubs
-                0x00000618                . = ALIGN (0x4)
+ .glue_7        0x00000908        0x0 linker stubs
+ .glue_7t       0x00000908        0x0 linker stubs
+                0x00000908                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00000618       0x10 spiBus.o
-                0x00000618                vtable for hwlib::cout_using_uart_putc
+                0x00000908       0x10 spiBus.o
+                0x00000908                vtable for hwlib::cout_using_uart_putc
  .rodata._ZTVN3due7pin_outE
-                0x00000628        0xc spiBus.o
-                0x00000628                vtable for due::pin_out
+                0x00000918        0xc spiBus.o
+                0x00000918                vtable for due::pin_out
  .rodata.str1.1
-                0x00000634       0x17 spiBus.o
+                0x00000924       0x17 spiBus.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000064b       0xa4 spiBus.o
- *fill*         0x000006ef        0x1 
+                0x0000093b       0xa4 spiBus.o
+ *fill*         0x000009df        0x1 
  .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
-                0x000006f0        0xc main.o
-                0x000006f0                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
+                0x000009e0        0xc main.o
+                0x000009e0                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
  .rodata._ZTVN3due6pin_inE
-                0x000006fc        0xc main.o
-                0x000006fc                vtable for due::pin_in
+                0x000009ec        0xc main.o
+                0x000009ec                vtable for due::pin_in
  .rodata.str1.1
-                0x00000708        0x7 main.o
-                                 0x1e (size before relaxing)
-                0x00000710                . = ALIGN (0x4)
- *fill*         0x0000070f        0x1 
+                0x000009f8        0xf main.o
+                                 0x26 (size before relaxing)
+                0x00000a08                . = ALIGN (0x4)
+ *fill*         0x00000a07        0x1 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000710                . = ALIGN (0x4)
+                0x00000a08                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000710                . = ALIGN (0x4)
+                0x00000a08                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000710                . = ALIGN (0x4)
+                0x00000a08                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000710                . = ALIGN (0x4)
-                0x00000710                __text_end = .
+                0x00000a08                . = ALIGN (0x4)
+                0x00000a08                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000710        0x0
- .vfp11_veneer  0x00000710        0x0 linker stubs
+.vfp11_veneer   0x00000a08        0x0
+ .vfp11_veneer  0x00000a08        0x0 linker stubs
 
-.v4_bx          0x00000710        0x0
- .v4_bx         0x00000710        0x0 linker stubs
+.v4_bx          0x00000a08        0x0
+ .v4_bx         0x00000a08        0x0 linker stubs
 
-.iplt           0x00000710        0x0
- .iplt          0x00000710        0x0 spiBus.o
+.iplt           0x00000a08        0x0
+ .iplt          0x00000a08        0x0 spiBus.o
 
-.rel.dyn        0x00000710        0x0
- .rel.iplt      0x00000710        0x0 spiBus.o
+.rel.dyn        0x00000a08        0x0
+ .rel.iplt      0x00000a08        0x0 spiBus.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000710                . = ALIGN (0x4)
-                0x00000710                __exidx_start = .
+                0x00000a08                . = ALIGN (0x4)
+                0x00000a08                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000710                . = ALIGN (0x4)
-                0x00000710                __exidx_end = .
+                0x00000a08                . = ALIGN (0x4)
+                0x00000a08                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -570,9 +593,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x00000710
+.data           0x20012010       0x14 load address 0x00000a08
                 0x20012010                . = ALIGN (0x4)
-                0x00000710                __data_init_start = LOADADDR (.data)
+                0x00000a08                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -584,13 +607,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000710                __data_init_end = LOADADDR (.data)
+                0x00000a08                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x00000724
+.igot.plt       0x20012024        0x0 load address 0x00000a1c
  .igot.plt      0x20012024        0x0 spiBus.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .
@@ -632,18 +655,8 @@ END GROUP
 .debug_line
  *(.debug_line)
 
-.debug_frame    0x00000000       0x34
+.debug_frame
  *(.debug_frame)
- .debug_frame   0x00000000       0x34 c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
-
-.comment        0x00000000       0x6e
- .comment       0x00000000       0x6e spiBus.o
-                                 0x6f (size before relaxing)
- .comment       0x0000006e       0x6f mfrc522.o
- .comment       0x0000006e       0x6f main.o
- .comment       0x0000006e       0x6f bmptk_cortex.o
- .comment       0x0000006e       0x6f bmptk_heap_none.o
- .comment       0x0000006e       0x6f bmptk_fixed_size_stack.o
 
 .debug_str
  *(.debug_str)
@@ -675,7 +688,7 @@ END GROUP
  .ARM.attributes
                 0x00000000       0x33 spiBus.o
  .ARM.attributes
-                0x00000033       0x33 mfrc522.o
+                0x00000033       0x33 mfrc522v2.o
  .ARM.attributes
                 0x00000066       0x33 main.o
  .ARM.attributes
@@ -684,8 +697,6 @@ END GROUP
                 0x000000cc       0x33 bmptk_heap_none.o
  .ARM.attributes
                 0x000000ff       0x33 bmptk_fixed_size_stack.o
- .ARM.attributes
-                0x00000132       0x2d c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
 
 /DISCARD/
  *(.note.GNU-stack)
@@ -695,3 +706,12 @@ END GROUP
                 [!provide]                PROVIDE (__stack_size, (__stack_end - __stack_start))
                 [!provide]                PROVIDE (__heap_size, (__heap_end - __heap_start))
 OUTPUT(main.elf elf32-littlearm)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e spiBus.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f mfrc522v2.o
+ .comment       0x0000006e       0x6f main.o
+ .comment       0x0000006e       0x6f bmptk_cortex.o
+ .comment       0x0000006e       0x6f bmptk_heap_none.o
+ .comment       0x0000006e       0x6f bmptk_fixed_size_stack.o

@@ -1,6 +1,6 @@
 #include "hwlib.hpp"
 #include "spiBus.hpp"
-#include "mfrc522.hpp"
+#include "mfrc522v2.hpp"
 
 /*
  * Information on the rfid reader
@@ -16,37 +16,61 @@ int main()
 {
 	WDT->WDT_MR = WDT_MR_WDDIS;
 	
-	//registers
-	//byte FIFODataReg = (0x09 << 1);
-	byte TModeReg = (0x2A << 1);
-	byte TPrescalerReg = (0x2B << 1);
-	byte TReloadRegH = (0x2C << 1);
-	byte TReloadRegL = (0x2D << 1);
-	byte TxASKReg = (0x15 << 1);
-	byte ModeReg = (0x11 << 1);
-	byte TxControlReg = (0x14 << 1);
-	
+	/*registers
+	byte CommandReg = ((0x01 << 1) & 0x7E);
+	byte FIFODataRegRead = (0x80 | ((0x09 << 1) & 0x7E));
+	byte TModeReg = ((0x2A << 1) & 0x7E);
+	byte TPrescalerReg = ((0x2B << 1) & 0x7E);
+	byte TReloadRegH = ((0x2C << 1) & 0x7E);
+	byte TReloadRegL = ((0x2D << 1) & 0x7E);
+	byte TxASKReg = ((0x15 << 1) & 0x7E);
+	byte ModeReg = ((0x11 << 1) & 0x7E);
+	byte TxControlReg = ((0x14 << 1) & 0x7E);
+	*/
 	
 	
 	auto SDA = hwlib::target::pin_out(hwlib::target::pins::d10);
 	auto CLK = hwlib::target::pin_out(hwlib::target::pins::d9);
 	auto MOSI = hwlib::target::pin_out(hwlib::target::pins::d8);
 	auto MISO = hwlib::target::pin_in(hwlib::target::pins::d7);
-	//auto RESET = hwlib::target::pin_out(hwlib::target::pins::d6);
+	auto RESET = hwlib::target::pin_out(hwlib::target::pins::d6);
 	
-	auto RFID = hwlib::spi_bus_bit_banged_sclk_mosi_miso(CLK, MOSI, MISO);
+	auto spiBusSetup = hwlib::spi_bus_bit_banged_sclk_mosi_miso(CLK, MOSI, MISO);
+	mfrc522v2 RFID(spiBusSetup, SDA, RESET);
 	
-	/*
+	byte backData[RFID.MAX_LEN];
+	byte status;
+	
+	//RFID.reset();
+	
+	 while(1){
+		//hwlib::cout << (int)(RFID.spiRead(RFID.CommandReg) & (1<<4)) << '\n';
+		//hwlib::wait_ms(300);
+		status = RFID.request(RFID.REQIDL, backData);
+		//hwlib::cout << (int)status << '\n';
+		status = RFID.anticoll(backData);
+		//hwlib::cout << "start\n";
+		//for(byte & a: backData){
+		//	hwlib::cout << (int)a << '\n';
+		//}
+		//hwlib::cout << "end\n\n";
+		//hwlib::cout << (int)status << '\n';
+		if(status == RFID.MI_OK){
+			hwlib::cout << "Card detected\n";
+			hwlib::wait_ms(1000);
+		}
+		hwlib::wait_ms(2000);
+	}
+	/* 
+	 byte settingRegister[] = {TModeReg, 0x80, TPrescalerReg, 0xA9, TReloadRegH, 0x03, TReloadRegL, 0xE8, TxASKReg, 0x40, ModeReg, 0x3D, 0x00};
+	 
+	RFID.write_and_read(SDA, 6, settingRegister, nullptr);
+	
 	 * Antenna
-	 */
+	 
 	
 	byte data_out_settings[] = {TxControlReg, 0x00};
 	byte data_in_settings[2];
-	
-	for(int i = 0; i < 1; i++){
-		data_out_settings[i] = ((data_in_settings[i] << 1) & 0x7E);
-	}
-	
 	byte send_back[] = {TxControlReg, 0x00, 0x00};
 	
 	RFID.write_and_read(SDA, 2, data_out_settings, data_in_settings);
@@ -54,52 +78,35 @@ int main()
 	if ((data_in_settings[1] & 0x03) != 0x03){
 		
 		send_back[1] = (data_in_settings[1] | 0x03);
-		for(int i = 0; i < 2; i++){
-			send_back[i] = ((send_back[i] << 1) & 0x7E);
-		}
-		
+		hwlib::cout << "txcontrolreg not set\n";
 		RFID.write_and_read(SDA, 3, send_back, nullptr);
 		
 	}
 	
-	/*
+	
 	 * Antenna end
-	 */
 	 
-	 
-	 byte settingRegister[] = {TModeReg, 0x80, TPrescalerReg, 0xA9, TReloadRegH, 0x03, TReloadRegL, 0xE8, TxASKReg, 0x40, ModeReg, 0x3D, 0x00};
-	 for(int i = 0; i < 12; i++){
-		settingRegister[i] = ((0x09 << 1) & 0x7E);
-	}
-	 
-	RFID.write_and_read(SDA, 6, settingRegister, nullptr);
 	
-	/*
+	
 	 * Fifo register byte setup
-	 */
-	byte data_in[6];
-	byte data_out[6];
+	 
+	byte data_in[8];
+	byte data_out[8] = {0b00001100, CommandReg, FIFODataRegRead, FIFODataRegRead, FIFODataRegRead, FIFODataRegRead, FIFODataRegRead, 0X00};
 	
-	for(int i = 0; i < 5; i++){
-		data_out[i] = ( 0x80 | ((0x09 << 1) & 0x7E));
-	}
-	data_out[5] = 0x00;
 	
-	/*
 	 * end fifo register setup
-	 */
-	
+	 
 	while(1){
 		hwlib::wait_ms(100);
-		RFID.write_and_read(SDA, 6, data_out, data_in);
+		RFID.write_and_read(SDA, 8, data_out, data_in);
 		hwlib::wait_ms(1000);
-		for(int i = 0; i < 6; i++){
+		for(int i = 0; i < 8; i++){
 			hwlib::cout << (int)data_in[i] << '\n';
 		}
 		hwlib::cout << "done\n\n";
 		
 	}
-	
+	*/
 	/*spiBus spi(MOSI, MISO, CLK);
 	mfrc522 RFID1(spi, SDA, RESET);
 	//RFID.Init();

@@ -35,6 +35,38 @@
     <File Name="spiBus.cpp"/>
     <File Name="mfrc522.hpp"/>
     <File Name="mfrc522.cpp"/>
+    <File Name="mfrc522v2.hpp"/>
+    <File Name="mfrc522v2.cpp"/>
+    <VirtualDirectory Name="hwlib">
+      <File Name="../hwlib/hwlib.hpp"/>
+      <File Name="../hwlib/hwlib-adc.hpp"/>
+      <File Name="../hwlib/hwlib-all.hpp"/>
+      <File Name="../hwlib/hwlib-console.hpp"/>
+      <File Name="../hwlib/hwlib-dac.hpp"/>
+      <File Name="../hwlib/hwlib-db103.hpp"/>
+      <File Name="../hwlib/hwlib-defines.hpp"/>
+      <File Name="../hwlib/hwlib-demo.hpp"/>
+      <File Name="../hwlib/hwlib-doxygen.hpp"/>
+      <File Name="../hwlib/hwlib-due.hpp"/>
+      <File Name="../hwlib/hwlib-glcd-5510.hpp"/>
+      <File Name="../hwlib/hwlib-glcd-oled.hpp"/>
+      <File Name="../hwlib/hwlib-graphics.hpp"/>
+      <File Name="../hwlib/hwlib-hc595.hpp"/>
+      <File Name="../hwlib/hwlib-hd44780.hpp"/>
+      <File Name="../hwlib/hwlib-i2c.hpp"/>
+      <File Name="../hwlib/hwlib-ostream.hpp"/>
+      <File Name="../hwlib/hwlib-panic.cpp"/>
+      <File Name="../hwlib/hwlib-panic.hpp"/>
+      <File Name="../hwlib/hwlib-pcf8574a.hpp"/>
+      <File Name="../hwlib/hwlib-pcf8591.hpp"/>
+      <File Name="../hwlib/hwlib-pi.hpp"/>
+      <File Name="../hwlib/hwlib-pin.hpp"/>
+      <File Name="../hwlib/hwlib-pin-dummies.hpp"/>
+      <File Name="../hwlib/hwlib-port.hpp"/>
+      <File Name="../hwlib/hwlib-spi.hpp"/>
+      <File Name="../hwlib/hwlib-uno.hpp"/>
+      <File Name="../hwlib/hwlib-wait.hpp"/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">
     <GlobalSettings>

@@ -11,6 +11,7 @@ private:
 	hwlib::target::pin_out & RESET;
 public:
 	//registers
+	byte CommandReg = ((0x01 << 1) & 0x7E);
 	byte FIFODataReg = (0x09 << 1);
 	byte TModeReg = (0x2A << 1);
 	byte TPrescalerReg = (0x2B << 1);

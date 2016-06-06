@@ -9,10 +9,10 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := spiBus.cpp mfrc522.cpp
+SOURCES := spiBus.cpp mfrc522v2.cpp
 
 # header files in this project
-HEADERS := spiBus.hpp mfrc522.hpp
+HEADERS := spiBus.hpp mfrc522v2.hpp
 
 # other places to look for files for this project
 SEARCH  := 
