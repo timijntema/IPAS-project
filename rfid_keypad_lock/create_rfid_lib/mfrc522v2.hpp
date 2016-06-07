@@ -1,3 +1,10 @@
+/*
+* File:   mfrc522v2.hpp
+* Author: Tim IJntema
+*
+* Created on 5 Juni 2016, 15:09
+*/
+
 #ifndef MFRC522V2_HPP
 #define MFRC522V2_HPP
 
@@ -27,11 +34,12 @@ public:
 	byte REQIDL = 0x26;
 	
 	//request checks
-	byte MI_OK = 0x00;
+	byte MI_OK = 0;//0x00
 	byte MI_NOTAGERR = 1;
 	byte MI_ERR = 2;
 	
-	//Setup all registers
+	//Setup all registers (for spi on the mfrc522 the LSB is not used so the adresses have to be shifted to the left 1 spot.
+	//						The MSB of the adress is used for indicating if you are trying to read or write, so thats why &0x7E is used)
 	byte CommandReg = ((0x01 << 1) & 0x7E);
 	byte FIFODataReg = ((0x09 << 1) & 0X7E);
 	byte TModeReg = ((0x2A << 1) & 0X7E);

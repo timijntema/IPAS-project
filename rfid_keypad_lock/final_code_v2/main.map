@@ -353,6 +353,7 @@ Discarded input sections
  .group         0x00000000        0x8 servo.o
  .group         0x00000000        0x8 servo.o
  .group         0x00000000        0x8 servo.o
+ .group         0x00000000        0x8 servo.o
  .text          0x00000000        0x0 servo.o
  .data          0x00000000        0x0 servo.o
  .bss           0x00000000        0x0 servo.o
@@ -450,6 +451,8 @@ Discarded input sections
                 0x00000000       0xa4 servo.o
  .data._ZN5hwlib12pin_oc_dummyE
                 0x00000000        0x4 servo.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
@@ -635,7 +638,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0x988
+.text           0x00000000      0xa88
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -680,136 +683,143 @@ END GROUP
                 0x00000184                matrixKeypad::matrixKeypad(hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_out&, int, int)
                 0x00000184                matrixKeypad::matrixKeypad(hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_out&, int, int)
  .text._ZN12matrixKeypad6getKeyEv
-                0x000001d8      0x104 matrixKeypad.o
+                0x000001d8       0xfa matrixKeypad.o
                 0x000001d8                matrixKeypad::getKey()
  .text._ZN12matrixKeypad9getStringEPci
-                0x000002dc       0x36 matrixKeypad.o
-                0x000002dc                matrixKeypad::getString(char*, int)
+                0x000002d2       0x36 matrixKeypad.o
+                0x000002d2                matrixKeypad::getString(char*, int)
  .text._ZN5hwlib7ostream6fillerEi
-                0x00000312       0x1a passwordOperations.o
-                0x00000312                hwlib::ostream::filler(int)
+                0x00000308       0x1a passwordOperations.o
+                0x00000308                hwlib::ostream::filler(int)
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x0000032c       0x54 passwordOperations.o
-                0x0000032c                hwlib::operator<<(hwlib::ostream&, char const*)
- .text._ZN18passwordOperationsC2ER12matrixKeypadPci
-                0x00000380        0xa passwordOperations.o
-                0x00000380                passwordOperations::passwordOperations(matrixKeypad&, char*, int)
-                0x00000380                passwordOperations::passwordOperations(matrixKeypad&, char*, int)
- *fill*         0x0000038a        0x2 
+                0x00000322       0x54 passwordOperations.o
+                0x00000322                hwlib::operator<<(hwlib::ostream&, char const*)
+ .text._ZN18passwordOperationsC2ER12matrixKeypadPciRN3due7pin_outES5_
+                0x00000376       0x12 passwordOperations.o
+                0x00000376                passwordOperations::passwordOperations(matrixKeypad&, char*, int, due::pin_out&, due::pin_out&)
+                0x00000376                passwordOperations::passwordOperations(matrixKeypad&, char*, int, due::pin_out&, due::pin_out&)
  .text._ZN18passwordOperations11getPasswordEPci
-                0x0000038c       0x7c passwordOperations.o
-                0x0000038c                passwordOperations::getPassword(char*, int)
+                0x00000388       0xc8 passwordOperations.o
+                0x00000388                passwordOperations::getPassword(char*, int)
  .text._ZN18passwordOperations11setPasswordEPci
-                0x00000408       0x3c passwordOperations.o
-                0x00000408                passwordOperations::setPassword(char*, int)
+                0x00000450       0x70 passwordOperations.o
+                0x00000450                passwordOperations::setPassword(char*, int)
  .text._ZN10PWM_signal9PWM_pulseEi
-                0x00000444       0x28 PWM_signal.o
-                0x00000444                PWM_signal::PWM_pulse(int)
+                0x000004c0       0x28 PWM_signal.o
+                0x000004c0                PWM_signal::PWM_pulse(int)
  .text._ZN10PWM_signalC2ERN3due7pin_outE
-                0x0000046c        0xc PWM_signal.o
-                0x0000046c                PWM_signal::PWM_signal(due::pin_out&)
-                0x0000046c                PWM_signal::PWM_signal(due::pin_out&)
- .text._ZN5servoC2ER10PWM_signal
-                0x00000478        0x4 servo.o
-                0x00000478                servo::servo(PWM_signal&)
-                0x00000478                servo::servo(PWM_signal&)
+                0x000004e8        0xc PWM_signal.o
+                0x000004e8                PWM_signal::PWM_signal(due::pin_out&)
+                0x000004e8                PWM_signal::PWM_signal(due::pin_out&)
+ .text._ZN5servoC2ERN3due7pin_outE
+                0x000004f4       0x14 servo.o
+                0x000004f4                servo::servo(due::pin_out&)
+                0x000004f4                servo::servo(due::pin_out&)
  .text._ZN5servo11turnDegreesEi
-                0x0000047c       0x26 servo.o
-                0x0000047c                servo::turnDegrees(int)
+                0x00000508       0x26 servo.o
+                0x00000508                servo::turnDegrees(int)
+ .text._ZN3due6pin_in3getEv
+                0x0000052e       0x10 main.o
+                0x0000052e                due::pin_in::get()
  .text._ZN3due10pin_in_out19direction_set_inputEv
-                0x000004a2        0x8 main.o
-                0x000004a2                due::pin_in_out::direction_set_input()
+                0x0000053e        0x8 main.o
+                0x0000053e                due::pin_in_out::direction_set_input()
  .text._ZN3due10pin_in_out3getEv
-                0x000004aa       0x10 main.o
-                0x000004aa                due::pin_in_out::get()
+                0x00000546       0x10 main.o
+                0x00000546                due::pin_in_out::get()
  .text._ZN3due10pin_in_out20direction_set_outputEv
-                0x000004ba        0x8 main.o
-                0x000004ba                due::pin_in_out::direction_set_output()
+                0x00000556        0x8 main.o
+                0x00000556                due::pin_in_out::direction_set_output()
  .text._ZN3due10pin_in_out3setEb
-                0x000004c2        0xe main.o
-                0x000004c2                due::pin_in_out::set(bool)
+                0x0000055e        0xe main.o
+                0x0000055e                due::pin_in_out::set(bool)
  .text._ZN3due7pin_outC2ENS_4pinsE
-                0x000004d0       0x34 main.o
-                0x000004d0                due::pin_out::pin_out(due::pins)
-                0x000004d0                due::pin_out::pin_out(due::pins)
+                0x0000056c       0x34 main.o
+                0x0000056c                due::pin_out::pin_out(due::pins)
+                0x0000056c                due::pin_out::pin_out(due::pins)
  .text._ZN3due10pin_in_outC2ENS_4pinsE
-                0x00000504       0x30 main.o
-                0x00000504                due::pin_in_out::pin_in_out(due::pins)
-                0x00000504                due::pin_in_out::pin_in_out(due::pins)
+                0x000005a0       0x30 main.o
+                0x000005a0                due::pin_in_out::pin_in_out(due::pins)
+                0x000005a0                due::pin_in_out::pin_in_out(due::pins)
  .text.startup.main
-                0x00000534      0x228 main.o
-                0x00000534                main
+                0x000005d0      0x298 main.o
+                0x000005d0                main
  .text.__startup
-                0x0000075c       0x48 bmptk_cortex.o
-                0x0000075c                __startup
-                0x000007a4                . = ALIGN (0x4)
+                0x00000868       0x48 bmptk_cortex.o
+                0x00000868                __startup
+                0x000008b0                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x000007a4        0x0 linker stubs
- .glue_7t       0x000007a4        0x0 linker stubs
-                0x000007a4                . = ALIGN (0x4)
+ .glue_7        0x000008b0        0x0 linker stubs
+ .glue_7t       0x000008b0        0x0 linker stubs
+                0x000008b0                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x000007a4       0x10 matrixKeypad.o
-                0x000007a4                vtable for hwlib::cout_using_uart_putc
+                0x000008b0       0x10 matrixKeypad.o
+                0x000008b0                vtable for hwlib::cout_using_uart_putc
  .rodata._ZTVN3due7pin_outE
-                0x000007b4        0xc matrixKeypad.o
-                0x000007b4                vtable for due::pin_out
- .rodata        0x000007c0       0x10 matrixKeypad.o
+                0x000008c0        0xc matrixKeypad.o
+                0x000008c0                vtable for due::pin_out
+ .rodata        0x000008cc       0x10 matrixKeypad.o
  .rodata.str1.1
-                0x000007d0       0x17 matrixKeypad.o
+                0x000008dc       0x17 matrixKeypad.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x000007e7       0xa4 matrixKeypad.o
+                0x000008f3       0xa4 matrixKeypad.o
  .rodata.str1.1
-                0x0000088b       0x32 passwordOperations.o
-                                 0x49 (size before relaxing)
- *fill*         0x000008bd        0x3 
+                0x00000997       0x25 passwordOperations.o
+                                 0x3c (size before relaxing)
  .rodata._ZTV10PWM_signal
-                0x000008c0        0xc PWM_signal.o
-                0x000008c0                vtable for PWM_signal
+                0x000009bc        0xc PWM_signal.o
+                0x000009bc                vtable for PWM_signal
+ .rodata._ZTV5servo
+                0x000009c8        0xc servo.o
+                0x000009c8                vtable for servo
+ .rodata._ZTVN3due6pin_inE
+                0x000009d4        0xc main.o
+                0x000009d4                vtable for due::pin_in
  .rodata._ZTVN3due10pin_in_outE
-                0x000008cc       0x18 main.o
-                0x000008cc                vtable for due::pin_in_out
+                0x000009e0       0x18 main.o
+                0x000009e0                vtable for due::pin_in_out
  .rodata.str1.1
-                0x000008e4       0xa3 main.o
-                                 0xba (size before relaxing)
-                0x00000988                . = ALIGN (0x4)
- *fill*         0x00000987        0x1 
+                0x000009f8       0x8d main.o
+                                 0xa4 (size before relaxing)
+                0x00000a88                . = ALIGN (0x4)
+ *fill*         0x00000a85        0x3 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000988                . = ALIGN (0x4)
+                0x00000a88                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000988                . = ALIGN (0x4)
+                0x00000a88                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000988                . = ALIGN (0x4)
+                0x00000a88                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000988                . = ALIGN (0x4)
-                0x00000988                __text_end = .
+                0x00000a88                . = ALIGN (0x4)
+                0x00000a88                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000988        0x0
- .vfp11_veneer  0x00000988        0x0 linker stubs
+.vfp11_veneer   0x00000a88        0x0
+ .vfp11_veneer  0x00000a88        0x0 linker stubs
 
-.v4_bx          0x00000988        0x0
- .v4_bx         0x00000988        0x0 linker stubs
+.v4_bx          0x00000a88        0x0
+ .v4_bx         0x00000a88        0x0 linker stubs
 
-.iplt           0x00000988        0x0
- .iplt          0x00000988        0x0 matrixKeypad.o
+.iplt           0x00000a88        0x0
+ .iplt          0x00000a88        0x0 matrixKeypad.o
 
-.rel.dyn        0x00000988        0x0
- .rel.iplt      0x00000988        0x0 matrixKeypad.o
+.rel.dyn        0x00000a88        0x0
+ .rel.iplt      0x00000a88        0x0 matrixKeypad.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000988                . = ALIGN (0x4)
-                0x00000988                __exidx_start = .
+                0x00000a88                . = ALIGN (0x4)
+                0x00000a88                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000988                . = ALIGN (0x4)
-                0x00000988                __exidx_end = .
+                0x00000a88                . = ALIGN (0x4)
+                0x00000a88                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -841,9 +851,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x00000988
+.data           0x20012010       0x14 load address 0x00000a88
                 0x20012010                . = ALIGN (0x4)
-                0x00000988                __data_init_start = LOADADDR (.data)
+                0x00000a88                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -855,13 +865,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000988                __data_init_end = LOADADDR (.data)
+                0x00000a88                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x0000099c
+.igot.plt       0x20012024        0x0 load address 0x00000a9c
  .igot.plt      0x20012024        0x0 matrixKeypad.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .

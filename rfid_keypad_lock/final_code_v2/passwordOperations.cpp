@@ -7,10 +7,12 @@
 
 #include "passwordOperations.hpp"
 
-passwordOperations::passwordOperations(matrixKeypad & keypad, char * rootPWDf, int lenRootPWD):
+passwordOperations::passwordOperations(matrixKeypad & keypad, char * rootPWDf, int lenRootPWD, hwlib::target::pin_out & ledGreen, hwlib::target::pin_out & ledRed):
 		keypad(keypad),
 		lenRootPWD(lenRootPWD),
-		rootPWD(rootPWDf)
+		rootPWD(rootPWDf),
+		ledGreen(ledGreen),
+		ledRed(ledRed)
 {}
 
 bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
@@ -24,7 +26,12 @@ bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 		//check if the returned length is correct
 		if (lenAfter != lenCharArrayClient){
 			hwlib::cout  << "Try again\n";
-			hwlib::wait_ms(300);
+			for(int i = 0; i < 3; i++){
+				ledRed.set(0);
+				hwlib::wait_ms(50);
+				ledRed.set(1);
+				hwlib::wait_ms(50);
+			}
 			continue;
 		}
 		
@@ -32,7 +39,12 @@ bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 		for(int i = 0; i < lenAfter; i++) {
 			if (tempArray[i] != clientPWD[i]){
 				hwlib::cout << "Try again\n";
-				hwlib::wait_ms(300);
+				for(int i = 0; i < 3; i++){
+					ledRed.set(0);
+					hwlib::wait_ms(50);
+					ledRed.set(1);
+					hwlib::wait_ms(50);
+				}
 				break;
 			}
 			//if the last character is also correct return true
@@ -47,7 +59,14 @@ bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 bool passwordOperations::setPassword(char * clientPWD, int lenCharArray){
 	if (getPassword(rootPWD, lenRootPWD)){//check for root access
 		hwlib::cout << "type the client PASSWORD\n";
-		hwlib::wait_ms(1000);
+		ledRed.set(0);
+		for(int i = 0; i<10; i++){
+			ledGreen.set(1);
+			hwlib::wait_ms(50);
+			ledGreen.set(0);
+			hwlib::wait_ms(50);
+		}
+		ledRed.set(1);
 		keypad.getString(clientPWD, lenCharArray);
 		return true;
 	}

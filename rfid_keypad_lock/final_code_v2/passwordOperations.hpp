@@ -20,13 +20,15 @@ private:
 	matrixKeypad & keypad;
 	int lenRootPWD;
 	char * rootPWD;
+	hwlib::target::pin_out & ledGreen;
+	hwlib::target::pin_out & ledRed;
 public:
 	///Default constructor
 	//
 	///The constructor of this class takes a reference to the matrix keypad to
 	/// make sure we can use all the functions of the keypad. It also takes a
 	/// root password meant for changing the user password(s)
-	passwordOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD);
+	passwordOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD, hwlib::target::pin_out & ledGreen, hwlib::target::pin_out & ledRed);
 	
 	///Get and check passwords
 	//

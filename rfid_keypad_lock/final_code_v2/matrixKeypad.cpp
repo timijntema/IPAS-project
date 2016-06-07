@@ -18,8 +18,8 @@ matrixKeypad::matrixKeypad( hwlib::pin_in_out & p0,
 							hwlib::pin_out & buzzerPin,
 							int rowsize,
 							int columnsize):
-pinColumn{&p3, &p2, &p1, &p0},
-pinRow{&p7, &p6, &p5, &p4},
+pinColumn{&p4, &p5, &p6, &p7},
+pinRow{&p0, &p1, &p2, &p3},
 buzzerPin(buzzerPin),
 rowsize(rowsize),
 columnsize(columnsize)
@@ -49,7 +49,6 @@ char matrixKeypad::getKey(){
 		
 		//Check if anything is pressed. if not just continue and skip the rest of the code.
 		if (keypadRow < 0 || keypadRow > 3){
-			hwlib::wait_ms(500);
 			continue;
 		}
 		

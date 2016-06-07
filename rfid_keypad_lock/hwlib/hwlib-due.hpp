@@ -100,7 +100,7 @@ static const pin_info_type pin_info_array[ (int) pins::SIZE_THIS_IS_NOT_A_PIN ] 
    
    { 3,  7 },  // d11
    { 3,  8 },  // d12
-   { 1, 17 },  // d13
+   { 1, 27 },  // d13
    { 3,  4 },  // d14
    { 3,  5 },  // d15
    { 0, 13 },  // d16
