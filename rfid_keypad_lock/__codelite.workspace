@@ -3,37 +3,31 @@
   <Project Name="change_keypad_lib" Path="change_keypad_lib/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
-      <Project Name="Checkout_pwm" ConfigName="Release"/>
+      <Project Name="change_keypad_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
+  </BuildMatrix> 
   <Project Name="create_PWM_lib" Path="create_PWM_lib/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="create_PWM_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
+  </BuildMatrix> 
   <Project Name="create_rfid_lib" Path="create_rfid_lib/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="create_rfid_lib" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
+  </BuildMatrix> 
   <Project Name="final_code_v1" Path="final_code_v1/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="final_code_v1" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
-  <Project Name="final_code_v2" Path="final_code_v2/_codelite.project" Active="Yes"/>
+  </BuildMatrix> 
+  <Project Name="final_code_v2" Path="final_code_v2/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="final_code_v2" ConfigName="Release"/>
     </WorkspaceConfiguration>
-  </BuildMatrix>
-  <BuildMatrix>
-    <WorkspaceConfiguration Name="Release" Selected="yes">
-      <Environment/>
-      <Project Name="change_keypad_lib" ConfigName="Release"/>
-    </WorkspaceConfiguration>
-  </BuildMatrix>
+  </BuildMatrix> 
 </CodeLite_Workspace>
