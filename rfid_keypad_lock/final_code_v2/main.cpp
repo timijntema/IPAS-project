@@ -89,7 +89,7 @@ int main(){
 			while(userPWD[i] != '\0'){
 				i++;
 			}
-			lenUserPWD = i+1;;
+			lenUserPWD = i+1;
 			hwlib::wait_ms(100);
 		}
 		

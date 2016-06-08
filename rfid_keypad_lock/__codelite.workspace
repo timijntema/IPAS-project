@@ -24,13 +24,13 @@
       <Project Name="final_code_v1" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="final_code_v2" Path="final_code_v2/_codelite.project" Active="Yes"/>
+  <Project Name="final_code_v2" Path="final_code_v2/_codelite.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="final_code_v2" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
-  <Project Name="final_code_v3" Path="final_code_v3/_codelite.project" Active="No"/>
+  <Project Name="final_code_v3" Path="final_code_v3/_codelite.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="final_code_v3" ConfigName="Release"/>

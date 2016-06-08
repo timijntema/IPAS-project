@@ -75,7 +75,7 @@ char matrixKeypad::getKey(){
 		if ((keypadRow != -1) && (keypadColumn != -1)){
 			//sound the buzzer if attached to anounche the pressed key has been pressed
 			buzzerPin.set(1);
-			hwlib::wait_ms(400);
+			hwlib::wait_ms(200);
 			buzzerPin.set(0);
 			//Return the pressed keypad character from the multidimensional array.
 			return keypad[keypadRow][keypadColumn];

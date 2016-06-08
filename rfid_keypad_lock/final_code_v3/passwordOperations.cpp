@@ -56,9 +56,9 @@ bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 	return false;
 }
 
-bool passwordOperations::setPassword(char * clientPWD, int lenCharArray){
+bool passwordOperations::setPassword(char * clientPWD, const int & lenCharArray, int *currentArrayLocation){//if it dusnt work do the currentlocation++ in main and if fail do --
 	if (getPassword(rootPWD, lenRootPWD)){//check for root access
-		hwlib::cout << "type the client PASSWORD\n";
+		hwlib::cout << "\ntype the client PASSWORD\n";
 		ledRed.set(0);
 		for(int i = 0; i<10; i++){
 			ledGreen.set(1);
@@ -67,8 +67,11 @@ bool passwordOperations::setPassword(char * clientPWD, int lenCharArray){
 			hwlib::wait_ms(50);
 		}
 		ledRed.set(1);
-		keypad.getString(clientPWD, lenCharArray);
-		return true;
+		hwlib::cout << *currentArrayLocation << '\n';
+		if(*currentArrayLocation < 10){
+			keypad.getString(clientPWD, lenCharArray);
+			return true;
+		}
 	}
 	return false;
 }

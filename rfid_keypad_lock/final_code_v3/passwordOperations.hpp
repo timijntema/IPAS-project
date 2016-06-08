@@ -46,7 +46,7 @@ public:
 	/// for the new client password. For that is uses the matrix keypad library. If the
 	/// root password was not filled in correctly the function will return false. If
 	/// everything word out correctly the function returns true.
-	bool setPassword(char * clientPWD, int lenCharArray);
+	bool setPassword(char * clientPWD, const int & lenCharArray, int *currentArrayLocation);
 };
 
 #endif // PASSWORDOPERATIONS_HPP
