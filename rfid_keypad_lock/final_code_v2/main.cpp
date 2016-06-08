@@ -47,7 +47,8 @@ int main(){
 	
 	//servo object
 	servo servo1(servoPin);
-	hwlib::wait_ms(1000);
+	while(closePin.get() != 0){}
+	hwlib::wait_ms(500);
 	servo1.turnDegrees(145);
 	
 	while(1){
@@ -96,7 +97,13 @@ int main(){
 		else if (tempChar == '*'){
 			hwlib::cout << "caught *\n";
 			ledRed.set(0);
-			ledGreen.set(1);
+			for(int i = 0; i<5; i++){
+				ledGreen.set(1);
+				hwlib::wait_ms(100);
+				ledGreen.set(0);
+				hwlib::wait_ms(100);
+			}
+			ledRed.set(1);
 			hwlib::wait_ms(500);
 			hwlib::cout << "type user pwd\n";
 			
@@ -117,6 +124,7 @@ int main(){
 				//close sequence
 				while(closePin.get() != 0){}
 				hwlib::cout << "closing box\n";
+				hwlib::wait_ms(500);
 				servo1.turnDegrees(145);
 			}
 			else{
