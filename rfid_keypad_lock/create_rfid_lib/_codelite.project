@@ -31,8 +31,8 @@
   <VirtualDirectory Name="source">
     <File Name="main.cpp"/>
     <File Name="Makefile"/>
-    <File Name="mfrc522v2.cpp"/>
-    <File Name="mfrc522v2.hpp"/>
+    <File Name="../Finished_librarys/mfrc522v2.cpp"/>
+    <File Name="../Finished_librarys/mfrc522v2.hpp"/>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">
     <GlobalSettings>

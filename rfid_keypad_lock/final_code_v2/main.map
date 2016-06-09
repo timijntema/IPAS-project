@@ -117,6 +117,7 @@ Discarded input sections
  .group         0x00000000        0x8 passwordOperations.o
  .group         0x00000000        0x8 passwordOperations.o
  .group         0x00000000        0x8 passwordOperations.o
+ .group         0x00000000        0x8 passwordOperations.o
  .text          0x00000000        0x0 passwordOperations.o
  .data          0x00000000        0x0 passwordOperations.o
  .bss           0x00000000        0x0 passwordOperations.o
@@ -353,7 +354,6 @@ Discarded input sections
  .group         0x00000000        0x8 servo.o
  .group         0x00000000        0x8 servo.o
  .group         0x00000000        0x8 servo.o
- .group         0x00000000        0x8 servo.o
  .text          0x00000000        0x0 servo.o
  .data          0x00000000        0x0 servo.o
  .bss           0x00000000        0x0 servo.o
@@ -451,6 +451,158 @@ Discarded input sections
                 0x00000000       0xa4 servo.o
  .data._ZN5hwlib12pin_oc_dummyE
                 0x00000000        0x4 servo.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .group         0x00000000        0x8 mfrc522v2.o
+ .text          0x00000000        0x0 mfrc522v2.o
+ .data          0x00000000        0x0 mfrc522v2.o
+ .bss           0x00000000        0x0 mfrc522v2.o
+ .text._ZN5hwlib19_pin_in_dummy_class3getEv
+                0x00000000        0x4 mfrc522v2.o
+ .text._ZN5hwlib20_pin_out_dummy_class3setEb
+                0x00000000        0x2 mfrc522v2.o
+ .text._ZN5hwlib23_pin_in_out_dummy_class3setEb
+                0x00000000        0x2 mfrc522v2.o
+ .text._ZN5hwlib23_pin_in_out_dummy_class3getEv
+                0x00000000        0x4 mfrc522v2.o
+ .text._ZN5hwlib23_pin_in_out_dummy_class19direction_set_inputEv
+                0x00000000        0x2 mfrc522v2.o
+ .text._ZN5hwlib23_pin_in_out_dummy_class20direction_set_outputEv
+                0x00000000        0x2 mfrc522v2.o
+ .text._ZN5hwlib19_pin_oc_dummy_class3setEb
+                0x00000000        0x2 mfrc522v2.o
+ .text._ZN5hwlib19_pin_oc_dummy_class3getEv
+                0x00000000        0x4 mfrc522v2.o
+ .text._ZN5hwlib7ostream5flushEv
+                0x00000000        0x2 mfrc522v2.o
+ .text._ZN3due7pin_out3setEb
+                0x00000000        0xe mfrc522v2.o
+ .text._ZN5hwlib7ostreamlsEc
+                0x00000000        0xe mfrc522v2.o
+ .text._ZN5hwliblsERNS_7ostreamEPKc
+                0x00000000       0x68 mfrc522v2.o
+ .text._ZN5hwliblsERNS_7ostreamEi
+                0x00000000       0xd4 mfrc522v2.o
+ .text._ZN5hwlib6window5writeENS_8locationENS_5colorE
+                0x00000000       0x3e mfrc522v2.o
+ .text._ZN5hwlib4line4drawERNS_6windowE
+                0x00000000       0xa4 mfrc522v2.o
+ .text._ZN5hwlib6circle4drawERNS_6windowE
+                0x00000000      0x2ec mfrc522v2.o
+ .text._ZN5hwlib4randEv
+                0x00000000       0x20 mfrc522v2.o
+ .text._ZN5hwlib15random_in_rangeEjj
+                0x00000000       0x1a mfrc522v2.o
+ .text._ZN3due8pin_infoENS_4pinsE
+                0x00000000       0x20 mfrc522v2.o
+ .text._ZN3due14port_registersEi
+                0x00000000       0x48 mfrc522v2.o
+ .text._ZN5hwlib7wait_usEi
+                0x00000000       0x28 mfrc522v2.o
+ .text._ZN5hwlib24uart_putc_bit_banged_pinEcRNS_7pin_outE
+                0x00000000       0x5c mfrc522v2.o
+ .text._ZN5hwlib7wait_nsEi
+                0x00000000       0x10 mfrc522v2.o
+ .text._ZN5hwlib7wait_msEi
+                0x00000000       0x16 mfrc522v2.o
+ .text._ZN5hwlib5blinkERNS_7pin_outEi
+                0x00000000       0x28 mfrc522v2.o
+ .text._ZN5hwlib4kittERNS_11port_in_outEi
+                0x00000000       0x54 mfrc522v2.o
+ .text._ZN5hwlib4kittERNS_8port_outEi
+                0x00000000       0x4e mfrc522v2.o
+ .text._ZN5hwlib4kittERNS_7port_ocEi
+                0x00000000       0x4e mfrc522v2.o
+ .text._ZN5hwlib21graphics_random_linesERNS_6windowE
+                0x00000000       0xe8 mfrc522v2.o
+ .text._ZN5hwlib23graphics_random_circlesERNS_6windowE
+                0x00000000       0x8c mfrc522v2.o
+ .text._ZN5hwlib9uart_putcEc
+                0x00000000       0x3c mfrc522v2.o
+ .text._ZN5hwlib20cout_using_uart_putc4putcEc
+                0x00000000        0xa mfrc522v2.o
+ .text._ZN9mfrc522v28spiWriteEhh
+                0x00000000       0x24 mfrc522v2.o
+ .text._ZN9mfrc522v25resetEv
+                0x00000000        0x8 mfrc522v2.o
+ .text._ZN9mfrc522v27spiReadEh
+                0x00000000       0x2e mfrc522v2.o
+ .text._ZN9mfrc522v210setBitMaskEhh
+                0x00000000       0x1e mfrc522v2.o
+ .text._ZN9mfrc522v29antennaOnEv
+                0x00000000       0x1c mfrc522v2.o
+ .text._ZN9mfrc522v24initEv
+                0x00000000       0x66 mfrc522v2.o
+ .text._ZN9mfrc522v2C2ERN5hwlib33spi_bus_bit_banged_sclk_mosi_misoERN3due7pin_outES5_
+                0x00000000       0x7e mfrc522v2.o
+ .text._ZN9mfrc522v212clearBitMaskEhh
+                0x00000000       0x1e mfrc522v2.o
+ .text._ZN9mfrc522v26toCardEhPhiS0_S0_
+                0x00000000       0xec mfrc522v2.o
+ .text._ZN9mfrc522v27requestEhPh
+                0x00000000       0x4a mfrc522v2.o
+ .text._ZN9mfrc522v28anticollEPh
+                0x00000000       0x6e mfrc522v2.o
+ .text._ZN9mfrc522v213waitForCardIDEPhi
+                0x00000000       0x84 mfrc522v2.o
+ .rodata._ZTVN5hwlib19_pin_in_dummy_classE
+                0x00000000        0xc mfrc522v2.o
+ .rodata._ZTVN5hwlib20_pin_out_dummy_classE
+                0x00000000        0xc mfrc522v2.o
+ .rodata._ZTVN5hwlib23_pin_in_out_dummy_classE
+                0x00000000       0x18 mfrc522v2.o
+ .rodata._ZTVN5hwlib19_pin_oc_dummy_classE
+                0x00000000       0x10 mfrc522v2.o
+ .rodata._ZTVN5hwlib20cout_using_uart_putcE
+                0x00000000       0x10 mfrc522v2.o
+ .rodata._ZTVN5hwlib4lineE
+                0x00000000        0xc mfrc522v2.o
+ .rodata._ZTVN5hwlib6circleE
+                0x00000000        0xc mfrc522v2.o
+ .rodata._ZTVN3due7pin_outE
+                0x00000000        0xc mfrc522v2.o
+ .bss._ZGVZN5hwlib9uart_putcEcE3pin
+                0x00000000        0x4 mfrc522v2.o
+ .data._ZN5hwlib12pin_in_dummyE
+                0x00000000        0x4 mfrc522v2.o
+ .data._ZN5hwlib16pin_in_out_dummyE
+                0x00000000        0x4 mfrc522v2.o
+ .bss._ZZN5hwlib9uart_putcEcE3pin
+                0x00000000        0xc mfrc522v2.o
+ .bss._ZZN5hwlib4randEvE1n
+                0x00000000        0x4 mfrc522v2.o
+ .data._ZN5hwlib13pin_out_dummyE
+                0x00000000        0x4 mfrc522v2.o
+ .rodata.str1.1
+                0x00000000       0x2f mfrc522v2.o
+ .data._ZN5hwlib4coutE
+                0x00000000       0x14 mfrc522v2.o
+ .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
+                0x00000000       0xa4 mfrc522v2.o
+ .data._ZN5hwlib12pin_oc_dummyE
+                0x00000000        0x4 mfrc522v2.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
@@ -615,6 +767,7 @@ LOAD matrixKeypad.o
 LOAD passwordOperations.o
 LOAD PWM_signal.o
 LOAD servo.o
+LOAD mfrc522v2.o
 LOAD main.o
 LOAD bmptk_cortex.o
 LOAD bmptk_heap_none.o
@@ -638,7 +791,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0xab8
+.text           0x00000000      0xb8c
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -678,148 +831,148 @@ END GROUP
                 0x00000178        0xa matrixKeypad.o
                 0x00000178                hwlib::cout_using_uart_putc::putc(char)
  *fill*         0x00000182        0x2 
- .text._ZN12matrixKeypadC2ERN5hwlib10pin_in_outES2_S2_S2_S2_S2_S2_S2_RNS0_7pin_outEii
-                0x00000184       0x54 matrixKeypad.o
-                0x00000184                matrixKeypad::matrixKeypad(hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_out&, int, int)
-                0x00000184                matrixKeypad::matrixKeypad(hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_out&, int, int)
+ .text._ZN12matrixKeypadC2ERN5hwlib10pin_in_outES2_S2_S2_S2_S2_S2_S2_RNS0_7pin_outE
+                0x00000184       0x50 matrixKeypad.o
+                0x00000184                matrixKeypad::matrixKeypad(hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_out&)
+                0x00000184                matrixKeypad::matrixKeypad(hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_in_out&, hwlib::pin_out&)
  .text._ZN12matrixKeypad6getKeyEv
-                0x000001d8       0xfa matrixKeypad.o
-                0x000001d8                matrixKeypad::getKey()
+                0x000001d4       0xf4 matrixKeypad.o
+                0x000001d4                matrixKeypad::getKey()
  .text._ZN12matrixKeypad9getStringEPci
-                0x000002d2       0x36 matrixKeypad.o
-                0x000002d2                matrixKeypad::getString(char*, int)
- .text._ZN5hwlib7ostream6fillerEi
-                0x00000308       0x1a passwordOperations.o
-                0x00000308                hwlib::ostream::filler(int)
+                0x000002c8       0x36 matrixKeypad.o
+                0x000002c8                matrixKeypad::getString(char*, int)
+ .text._ZN5hwlib7ostreamlsEc
+                0x000002fe        0xe passwordOperations.o
+                0x000002fe                hwlib::ostream::operator<<(char)
  .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x00000322       0x54 passwordOperations.o
-                0x00000322                hwlib::operator<<(hwlib::ostream&, char const*)
- .text._ZN18passwordOperationsC2ER12matrixKeypadPciRN3due7pin_outES5_
-                0x00000376       0x12 passwordOperations.o
-                0x00000376                passwordOperations::passwordOperations(matrixKeypad&, char*, int, due::pin_out&, due::pin_out&)
-                0x00000376                passwordOperations::passwordOperations(matrixKeypad&, char*, int, due::pin_out&, due::pin_out&)
+                0x0000030c       0x68 passwordOperations.o
+                0x0000030c                hwlib::operator<<(hwlib::ostream&, char const*)
+ .text._ZN5hwliblsERNS_7ostreamEi
+                0x00000374       0xd4 passwordOperations.o
+                0x00000374                hwlib::operator<<(hwlib::ostream&, int)
+ .text._ZN18passwordOperationsC2ER12matrixKeypadPciRN5hwlib7pin_outES5_
+                0x00000448       0x12 passwordOperations.o
+                0x00000448                passwordOperations::passwordOperations(matrixKeypad&, char*, int, hwlib::pin_out&, hwlib::pin_out&)
+                0x00000448                passwordOperations::passwordOperations(matrixKeypad&, char*, int, hwlib::pin_out&, hwlib::pin_out&)
+ *fill*         0x0000045a        0x2 
  .text._ZN18passwordOperations11getPasswordEPci
-                0x00000388       0xc8 passwordOperations.o
-                0x00000388                passwordOperations::getPassword(char*, int)
- .text._ZN18passwordOperations11setPasswordEPci
-                0x00000450       0x70 passwordOperations.o
-                0x00000450                passwordOperations::setPassword(char*, int)
- .text._ZN10PWM_signal9PWM_pulseEi
-                0x000004c0       0x28 PWM_signal.o
-                0x000004c0                PWM_signal::PWM_pulse(int)
+                0x0000045c       0xc8 passwordOperations.o
+                0x0000045c                passwordOperations::getPassword(char*, int)
+ .text._ZN18passwordOperations11setPasswordEPcRKiPi
+                0x00000524       0x8c passwordOperations.o
+                0x00000524                passwordOperations::setPassword(char*, int const&, int*)
  .text._ZN10PWM_signalC2ERN3due7pin_outE
-                0x000004e8        0xc PWM_signal.o
-                0x000004e8                PWM_signal::PWM_signal(due::pin_out&)
-                0x000004e8                PWM_signal::PWM_signal(due::pin_out&)
+                0x000005b0        0x4 PWM_signal.o
+                0x000005b0                PWM_signal::PWM_signal(due::pin_out&)
+                0x000005b0                PWM_signal::PWM_signal(due::pin_out&)
+ .text._ZN10PWM_signal9PWM_pulseEi
+                0x000005b4       0x28 PWM_signal.o
+                0x000005b4                PWM_signal::PWM_pulse(int)
  .text._ZN5servoC2ERN3due7pin_outE
-                0x000004f4       0x14 servo.o
-                0x000004f4                servo::servo(due::pin_out&)
-                0x000004f4                servo::servo(due::pin_out&)
+                0x000005dc        0xc servo.o
+                0x000005dc                servo::servo(due::pin_out&)
+                0x000005dc                servo::servo(due::pin_out&)
  .text._ZN5servo11turnDegreesEi
-                0x00000508       0x26 servo.o
-                0x00000508                servo::turnDegrees(int)
+                0x000005e8       0x24 servo.o
+                0x000005e8                servo::turnDegrees(int)
  .text._ZN3due6pin_in3getEv
-                0x0000052e       0x10 main.o
-                0x0000052e                due::pin_in::get()
+                0x0000060c       0x10 main.o
+                0x0000060c                due::pin_in::get()
  .text._ZN3due10pin_in_out19direction_set_inputEv
-                0x0000053e        0x8 main.o
-                0x0000053e                due::pin_in_out::direction_set_input()
+                0x0000061c        0x8 main.o
+                0x0000061c                due::pin_in_out::direction_set_input()
  .text._ZN3due10pin_in_out3getEv
-                0x00000546       0x10 main.o
-                0x00000546                due::pin_in_out::get()
+                0x00000624       0x10 main.o
+                0x00000624                due::pin_in_out::get()
  .text._ZN3due10pin_in_out20direction_set_outputEv
-                0x00000556        0x8 main.o
-                0x00000556                due::pin_in_out::direction_set_output()
+                0x00000634        0x8 main.o
+                0x00000634                due::pin_in_out::direction_set_output()
  .text._ZN3due10pin_in_out3setEb
-                0x0000055e        0xe main.o
-                0x0000055e                due::pin_in_out::set(bool)
+                0x0000063c        0xe main.o
+                0x0000063c                due::pin_in_out::set(bool)
+ *fill*         0x0000064a        0x2 
  .text._ZN3due7pin_outC2ENS_4pinsE
-                0x0000056c       0x34 main.o
-                0x0000056c                due::pin_out::pin_out(due::pins)
-                0x0000056c                due::pin_out::pin_out(due::pins)
+                0x0000064c       0x34 main.o
+                0x0000064c                due::pin_out::pin_out(due::pins)
+                0x0000064c                due::pin_out::pin_out(due::pins)
  .text._ZN3due10pin_in_outC2ENS_4pinsE
-                0x000005a0       0x30 main.o
-                0x000005a0                due::pin_in_out::pin_in_out(due::pins)
-                0x000005a0                due::pin_in_out::pin_in_out(due::pins)
+                0x00000680       0x30 main.o
+                0x00000680                due::pin_in_out::pin_in_out(due::pins)
+                0x00000680                due::pin_in_out::pin_in_out(due::pins)
  .text.startup.main
-                0x000005d0      0x2c8 main.o
-                0x000005d0                main
+                0x000006b0      0x2d0 main.o
+                0x000006b0                main
  .text.__startup
-                0x00000898       0x48 bmptk_cortex.o
-                0x00000898                __startup
-                0x000008e0                . = ALIGN (0x4)
+                0x00000980       0x48 bmptk_cortex.o
+                0x00000980                __startup
+                0x000009c8                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x000008e0        0x0 linker stubs
- .glue_7t       0x000008e0        0x0 linker stubs
-                0x000008e0                . = ALIGN (0x4)
+ .glue_7        0x000009c8        0x0 linker stubs
+ .glue_7t       0x000009c8        0x0 linker stubs
+                0x000009c8                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x000008e0       0x10 matrixKeypad.o
-                0x000008e0                vtable for hwlib::cout_using_uart_putc
+                0x000009c8       0x10 matrixKeypad.o
+                0x000009c8                vtable for hwlib::cout_using_uart_putc
  .rodata._ZTVN3due7pin_outE
-                0x000008f0        0xc matrixKeypad.o
-                0x000008f0                vtable for due::pin_out
- .rodata        0x000008fc       0x10 matrixKeypad.o
+                0x000009d8        0xc matrixKeypad.o
+                0x000009d8                vtable for due::pin_out
+ .rodata        0x000009e4       0x10 matrixKeypad.o
  .rodata.str1.1
-                0x0000090c       0x17 matrixKeypad.o
+                0x000009f4       0x17 matrixKeypad.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x00000923       0xa4 matrixKeypad.o
+                0x00000a0b       0xa4 matrixKeypad.o
  .rodata.str1.1
-                0x000009c7       0x25 passwordOperations.o
-                                 0x3c (size before relaxing)
- .rodata._ZTV10PWM_signal
-                0x000009ec        0xc PWM_signal.o
-                0x000009ec                vtable for PWM_signal
- .rodata._ZTV5servo
-                0x000009f8        0xc servo.o
-                0x000009f8                vtable for servo
+                0x00000aaf       0x26 passwordOperations.o
+                                 0x3d (size before relaxing)
+ *fill*         0x00000ad5        0x3 
  .rodata._ZTVN3due6pin_inE
-                0x00000a04        0xc main.o
-                0x00000a04                vtable for due::pin_in
+                0x00000ad8        0xc main.o
+                0x00000ad8                vtable for due::pin_in
  .rodata._ZTVN3due10pin_in_outE
-                0x00000a10       0x18 main.o
-                0x00000a10                vtable for due::pin_in_out
+                0x00000ae4       0x18 main.o
+                0x00000ae4                vtable for due::pin_in_out
  .rodata.str1.1
-                0x00000a28       0x8d main.o
+                0x00000afc       0x8d main.o
                                  0xa4 (size before relaxing)
-                0x00000ab8                . = ALIGN (0x4)
- *fill*         0x00000ab5        0x3 
+                0x00000b8c                . = ALIGN (0x4)
+ *fill*         0x00000b89        0x3 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000b8c                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000b8c                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000ab8                . = ALIGN (0x4)
+                0x00000b8c                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000ab8                . = ALIGN (0x4)
-                0x00000ab8                __text_end = .
+                0x00000b8c                . = ALIGN (0x4)
+                0x00000b8c                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000ab8        0x0
- .vfp11_veneer  0x00000ab8        0x0 linker stubs
+.vfp11_veneer   0x00000b8c        0x0
+ .vfp11_veneer  0x00000b8c        0x0 linker stubs
 
-.v4_bx          0x00000ab8        0x0
- .v4_bx         0x00000ab8        0x0 linker stubs
+.v4_bx          0x00000b8c        0x0
+ .v4_bx         0x00000b8c        0x0 linker stubs
 
-.iplt           0x00000ab8        0x0
- .iplt          0x00000ab8        0x0 matrixKeypad.o
+.iplt           0x00000b8c        0x0
+ .iplt          0x00000b8c        0x0 matrixKeypad.o
 
-.rel.dyn        0x00000ab8        0x0
- .rel.iplt      0x00000ab8        0x0 matrixKeypad.o
+.rel.dyn        0x00000b8c        0x0
+ .rel.iplt      0x00000b8c        0x0 matrixKeypad.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000ab8                . = ALIGN (0x4)
-                0x00000ab8                __exidx_start = .
+                0x00000b8c                . = ALIGN (0x4)
+                0x00000b8c                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000ab8                . = ALIGN (0x4)
-                0x00000ab8                __exidx_end = .
+                0x00000b8c                . = ALIGN (0x4)
+                0x00000b8c                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -851,9 +1004,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x00000ab8
+.data           0x20012010       0x14 load address 0x00000b8c
                 0x20012010                . = ALIGN (0x4)
-                0x00000ab8                __data_init_start = LOADADDR (.data)
+                0x00000b8c                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -865,13 +1018,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000ab8                __data_init_end = LOADADDR (.data)
+                0x00000b8c                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x00000acc
+.igot.plt       0x20012024        0x0 load address 0x00000ba0
  .igot.plt      0x20012024        0x0 matrixKeypad.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .
@@ -952,13 +1105,15 @@ END GROUP
  .ARM.attributes
                 0x00000099       0x33 servo.o
  .ARM.attributes
-                0x000000cc       0x33 main.o
+                0x000000cc       0x33 mfrc522v2.o
  .ARM.attributes
-                0x000000ff       0x33 bmptk_cortex.o
+                0x000000ff       0x33 main.o
  .ARM.attributes
-                0x00000132       0x33 bmptk_heap_none.o
+                0x00000132       0x33 bmptk_cortex.o
  .ARM.attributes
-                0x00000165       0x33 bmptk_fixed_size_stack.o
+                0x00000165       0x33 bmptk_heap_none.o
+ .ARM.attributes
+                0x00000198       0x33 bmptk_fixed_size_stack.o
 
 /DISCARD/
  *(.note.GNU-stack)
@@ -975,6 +1130,7 @@ OUTPUT(main.elf elf32-littlearm)
  .comment       0x0000006e       0x6f passwordOperations.o
  .comment       0x0000006e       0x6f PWM_signal.o
  .comment       0x0000006e       0x6f servo.o
+ .comment       0x0000006e       0x6f mfrc522v2.o
  .comment       0x0000006e       0x6f main.o
  .comment       0x0000006e       0x6f bmptk_cortex.o
  .comment       0x0000006e       0x6f bmptk_heap_none.o

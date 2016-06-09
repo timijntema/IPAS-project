@@ -23,16 +23,16 @@ int main(){
 	char tempChar;
 	
 	//rows
-	auto keypad0 = hwlib::target::pin_in_out(hwlib::target::pins::d32);//34
-	auto keypad1 = hwlib::target::pin_in_out(hwlib::target::pins::d22);//32
-	auto keypad2 = hwlib::target::pin_in_out(hwlib::target::pins::d24);//30
-	auto keypad3 = hwlib::target::pin_in_out(hwlib::target::pins::d28);//28
+	auto keypad0 = hwlib::target::pin_in_out(hwlib::target::pins::d32);
+	auto keypad1 = hwlib::target::pin_in_out(hwlib::target::pins::d22);
+	auto keypad2 = hwlib::target::pin_in_out(hwlib::target::pins::d24);
+	auto keypad3 = hwlib::target::pin_in_out(hwlib::target::pins::d28);
 	
 	//columns
-	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d30);//26
-	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d34);//24
-	auto keypad6 = hwlib::target::pin_in_out(hwlib::target::pins::d26);//22
-	auto keypad7 = hwlib::target::pin_in_out(hwlib::target::pins::d31);//created fake pin because pin dummy ir creatint a wrong column problem
+	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d30);
+	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d34);
+	auto keypad6 = hwlib::target::pin_in_out(hwlib::target::pins::d26);
+	auto keypad7 = hwlib::target::pin_in_out(hwlib::target::pins::d31);//created fake pin because pin dummy is creating a wrong column problem
 	
 	//remaining pins
 	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d52);
@@ -67,8 +67,8 @@ int main(){
 			}
 			ledRed.set(1);
 			hwlib::cout << "type root pwd\n";
-			
-			if(!(pswd.setPassword(userPWD, lenUserPWD))){
+			int zero = 0;
+			if(!(pswd.setPassword(userPWD, lenUserPWD, &zero))){
 				hwlib::cout << "You need the root password to set a user password\n";
 				for(int i = 0; i < 10; i++){
 					ledRed.set(0);
@@ -107,13 +107,10 @@ int main(){
 			hwlib::wait_ms(500);
 			hwlib::cout << "type user pwd\n";
 			
-			//in v2 code first check rfid and then set a bool value true or false and make sure you know what the user id is
-			//then check password (see below) && previously set bool value. The password check needs to get the user of the pass.
-			//if user not in the "database" flash red.
-			
 			if(pswd.getPassword(userPWD, lenUserPWD)){
 				hwlib::cout << "opening box\n";
 				servo1.turnDegrees(165);
+				ledRed.set(0);
 				for(int i = 0; i<15; i++){
 					ledGreen.set(0);
 					hwlib::wait_ms(100);

@@ -16,6 +16,7 @@ int main()
 {
 	WDT->WDT_MR = WDT_MR_WDDIS;
 	
+	//spi pins
 	auto SDA = hwlib::target::pin_out(hwlib::target::pins::d8);
 	auto CLK = hwlib::target::pin_out(hwlib::target::pins::d9);
 	auto MOSI = hwlib::target::pin_out(hwlib::target::pins::d10);
@@ -29,7 +30,6 @@ int main()
 	
 	 while(1){
 		RFID.waitForCardID(ID, 5);
-		//hwlib::wait_ms(200);
 	}
 	return 0;
 }

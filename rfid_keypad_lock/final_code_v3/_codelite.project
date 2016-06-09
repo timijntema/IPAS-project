@@ -31,16 +31,6 @@
   <VirtualDirectory Name="source">
     <File Name="main.cpp"/>
     <File Name="Makefile"/>
-    <File Name="matrixKeypad.cpp"/>
-    <File Name="matrixKeypad.hpp"/>
-    <File Name="mfrc522v2.cpp"/>
-    <File Name="mfrc522v2.hpp"/>
-    <File Name="passwordOperations.cpp"/>
-    <File Name="passwordOperations.hpp"/>
-    <File Name="PWM_signal.cpp"/>
-    <File Name="PWM_signal.hpp"/>
-    <File Name="servo.cpp"/>
-    <File Name="servo.hpp"/>
     <VirtualDirectory Name="hwlib">
       <File Name="../hwlib/hwlib.hpp"/>
       <File Name="../hwlib/hwlib-adc.hpp"/>
@@ -71,6 +61,16 @@
       <File Name="../hwlib/hwlib-uno.hpp"/>
       <File Name="../hwlib/hwlib-wait.hpp"/>
     </VirtualDirectory>
+    <File Name="../Finished_librarys/matrixKeypad.cpp"/>
+    <File Name="../Finished_librarys/matrixKeypad.hpp"/>
+    <File Name="../Finished_librarys/mfrc522v2.cpp"/>
+    <File Name="../Finished_librarys/mfrc522v2.hpp"/>
+    <File Name="../Finished_librarys/passwordOperations.cpp"/>
+    <File Name="../Finished_librarys/passwordOperations.hpp"/>
+    <File Name="../Finished_librarys/PWM_signal.cpp"/>
+    <File Name="../Finished_librarys/PWM_signal.hpp"/>
+    <File Name="../Finished_librarys/servo.cpp"/>
+    <File Name="../Finished_librarys/servo.hpp"/>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">
     <GlobalSettings>

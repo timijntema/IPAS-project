@@ -15,37 +15,36 @@
 int main(){
 	WDT->WDT_MR = WDT_MR_WDDIS;
 	
-	char rootPWD[] = "D97A3";
+	char rootPWD[] = "9735";
 	char userPWD[10];
 	int lenUserPWD = sizeof(userPWD)/sizeof(userPWD[0]);
 	int lenRootPWD = sizeof(rootPWD)/sizeof(rootPWD[0]);
 	
 	char tempChar;
 	
-	//columns
-	auto keypad0 = hwlib::target::pin_in_out(hwlib::target::pins::d23);
-	auto keypad1 = hwlib::target::pin_in_out(hwlib::target::pins::d25);
-	auto keypad2 = hwlib::target::pin_in_out(hwlib::target::pins::d27);
-	auto keypad3 = hwlib::target::pin_in_out(hwlib::target::pins::d29);
-	
 	//rows
-	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d22);
-	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d24);
+	auto keypad0 = hwlib::target::pin_in_out(hwlib::target::pins::d32);
+	auto keypad1 = hwlib::target::pin_in_out(hwlib::target::pins::d22);
+	auto keypad2 = hwlib::target::pin_in_out(hwlib::target::pins::d24);
+	auto keypad3 = hwlib::target::pin_in_out(hwlib::target::pins::d28);
+	
+	//columns
+	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d30);
+	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d34);
 	auto keypad6 = hwlib::target::pin_in_out(hwlib::target::pins::d26);
-	auto keypad7 = hwlib::target::pin_in_out(hwlib::target::pins::d28);
+	auto keypad7 = hwlib::target::pin_in_out(hwlib::target::pins::d31);//created fake pin because pin dummy ir creatint a wrong column problem
 	
 	//remaining pins
-	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d2);
+	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d52);
 	auto ledGreen = hwlib::target::pin_out(hwlib::target::pins::d3);
 	auto ledRed = hwlib::target::pin_out(hwlib::target::pins::d4);
 	
 	//keypad objects
-	matrixKeypad keypad(keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, 4, 4);
+	matrixKeypad keypad(keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7);//buzzer support came later
 	passwordOperations pswd(keypad, rootPWD, lenRootPWD);
 	
 	//servo objects
-	PWM_signal signal1(servoPin);
-	servo servo1(signal1);
+	servo servo1(servoPin);
 	
 	while(1){
 		tempChar = 'k';//make sure tempChar is not something we are using in the program
@@ -92,10 +91,6 @@ int main(){
 			hwlib::wait_ms(500);
 			hwlib::cout << "type user pwd\n";
 			
-			//in v2 code first check rfid and then set a bool value true or false and make sure you know what the user id is
-			//then check password (see below) && previously set bool value. The password check needs to get the user of the pass.
-			//if user not in the "database" flash red.
-			
 			if(pswd.getPassword(userPWD, lenUserPWD)){
 				//flash green and then check rfid (v2 of the code)
 				//turn on green and turn off red
@@ -103,10 +98,10 @@ int main(){
 				ledGreen.set(1);
 				
 				hwlib::cout << "opening box\n";
-				servo1.turnDegrees(50);
+				servo1.turnDegrees(155);
 				tempChar = keypad.getKey();
 				hwlib::cout << "closing box\n";
-				servo1.turnDegrees(160);
+				servo1.turnDegrees(165);
 			}
 			else{
 				for(int i = 0; i < 4; i++){
