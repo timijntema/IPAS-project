@@ -49,7 +49,7 @@ int main(){
 	byte ID[maxIDLen];
 	byte ID2[maxIDLen];
 	byte accessIDs[maxLen][maxIDLen] = {{52,188,189,222,235}};
-	//int arrayLocation;
+	int arrayLocation;
 	int currentArrayLocation = 0;
 	
 	//rows
@@ -96,7 +96,6 @@ int main(){
 		ledRed.set(1);
 		RFID.waitForCardID(ID, maxIDLen);
 		
-		/*
 		if(checkMultipleID(ID, maxIDLen, maxLen, accessIDs, &arrayLocation)){
 			hwlib::cout << "Its in the id list\n";
 			ledRed.set(0);
@@ -136,10 +135,9 @@ int main(){
 			ledGreen.set(0);
 			hwlib::wait_ms(100);
 		}
-		*/
 		
 		
-		if(1){//normally else{}
+		else{
 			hwlib::cout << "Its not in the id list\n";
 			for(int i = 0; i < 5; i++){
 				ledRed.set(0);

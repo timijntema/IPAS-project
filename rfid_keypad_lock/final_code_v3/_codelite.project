@@ -61,11 +61,11 @@
       <File Name="../hwlib/hwlib-uno.hpp"/>
       <File Name="../hwlib/hwlib-wait.hpp"/>
     </VirtualDirectory>
+    <File Name="../Finished_librarys/passwordOperations.cpp"/>
     <File Name="../Finished_librarys/matrixKeypad.cpp"/>
     <File Name="../Finished_librarys/matrixKeypad.hpp"/>
     <File Name="../Finished_librarys/mfrc522v2.cpp"/>
     <File Name="../Finished_librarys/mfrc522v2.hpp"/>
-    <File Name="../Finished_librarys/passwordOperations.cpp"/>
     <File Name="../Finished_librarys/passwordOperations.hpp"/>
     <File Name="../Finished_librarys/PWM_signal.cpp"/>
     <File Name="../Finished_librarys/PWM_signal.hpp"/>
