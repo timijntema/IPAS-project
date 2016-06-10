@@ -24,7 +24,7 @@ bool checkSingleID(byte * ID, int lenID, byte * checkID){
 	return false;
 }
 
-bool checkMultipleID(byte * ID, int lenID, int lenAccesIDs, byte ** accessIDs, int * arrayLocation){
+bool checkMultipleID(byte * ID, int lenID, int lenAccesIDs, byte (*accessIDs)[5], int * arrayLocation){
 	for(int j = 0; j < lenAccesIDs; j++){
 		if(checkSingleID(ID, lenID, accessIDs[j])){
 			*arrayLocation = j;
@@ -97,7 +97,7 @@ int main(){
 		RFID.waitForCardID(ID, maxIDLen);
 		
 		if(checkMultipleID(ID, maxIDLen, maxLen, accessIDs, &arrayLocation)){
-			hwlib::cout << "Its in the id list\n";
+			hwlib::cout << (int)arrayLocation << " Its in the id list\n";
 			ledRed.set(0);
 			for(int i = 0; i < 5; i++){
 				ledGreen.set(0);
@@ -107,9 +107,9 @@ int main(){
 			}
 			
 			hwlib::cout << "Type user password";
-			if(pswd.getPassword(PWD[ (arrayLocation) ], maxLen)){
+			if(pswd.getPassword(PWD[ (arrayLocation) ], PWDLen[ (arrayLocation) ])){
 				hwlib::cout << "Opening box\n";
-				servo1.turnDegrees(165);
+				servo1.turnDegrees(168);
 				for(int i = 0; i<15; i++){
 					ledGreen.set(0);
 					hwlib::wait_ms(100);
