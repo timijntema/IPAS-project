@@ -14,8 +14,8 @@ SOURCES := matrixKeypad.cpp accessOperations.cpp PWM_signal.cpp servo.cpp mfrc52
 # header files in this project
 HEADERS := matrixKeypad.hpp accessOperations.hpp PWM_signal.hpp servo.hpp mfrc522.hpp RFID.hpp
 
-# other places to look for files for this project   D:/programmeren/Projecten/IPAS-project/rfid_keypad_lock/Finished_librarys
-SEARCH  :=  C:\Users\Tim\Documents\GitHub\IPAS-project\rfid_keypad_lock\Finished_librarys
+# other places to look for files for this project   D:/programmeren/Projecten/IPAS-project/rfid_keypad_lock/Finished_librarys    C:\Users\Tim\Documents\GitHub\IPAS-project\rfid_keypad_lock\Finished_librarys
+SEARCH  :=  D:/programmeren/Projecten/IPAS-project/rfid_keypad_lock/Finished_librarys
 
 # set BMPTK to the next higher directory and defer to the Makefile.due
 BMPTK := $(BMPTK)../

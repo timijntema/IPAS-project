@@ -12,6 +12,7 @@ pwmPin(pwmPin)
 {}
 
 void PWM_signal::PWM_pulse(int pulseWidth){
+	//One single pulse
 	pwmPin.set(1);
 	hwlib::wait_us(pulseWidth);
 	pwmPin.set(0);

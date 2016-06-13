@@ -14,8 +14,8 @@
 
 ///Reading RFID tags with mfrc522
 //
-///This class can be used to read the UID of an RFID tag. It uses another class created by
-/// Wouter van Ooijen. The other class is used for reading from and writing values to the
+///This class can be used to read the UID of an RFID tag. It uses another set of classes created by
+/// Wouter van Ooijen. The other classes are used for reading from and writing values to the
 /// GPIO pins on the Arduino Due. This library is a recreation from a python original that
 /// can be found on this link: https://github.com/mxgxw/MFRC522-python.
 class mfrc522 : public RFID{
@@ -72,48 +72,12 @@ public:
 	///Comments have been added to every line that send something to the mfrc522.
 	void init() override;
 	
-	///Reset the mfrc522
-	//
-	///This function executes a soft reset on the mfrc522 using the previously created SOFTRESET byte.
-	///It sends this command to the command register using the spiWrite function.
-	void reset() override;
-	
-	///Write values to the mfrc522
-	//
-	///This function writes values to the mfrc522 using the bit banged spi bus from the hwlib namespace.
-	///It takes a register to write the value to and the value itself. It puts these bytes in a byte array.
-	///The byte array gets send to the spi but from the hwlib namespace as 2 bytes of information that have
-	/// to be send.
-	//void spiWrite(byte reg, byte value);
-	
-	///Read values from the mfrc522
-	//
-	///This function reads values from a register that has been specified when the function is beeing called.
-	///Because the adresses from the spi interface need a 1 on the MSB spot to identify that information is
-	/// beeing read, the address is beeing changed using a or operator (addr | 0x80). After this two byte arrays
-	/// are created. One for the outgoing adresses and the other one for the received information. The function
-	/// returns the received value as one byte.
-	//byte spiRead(byte addr);
-	
 	///Turn the antenna on
 	//
 	///After a softreset the antenna for reading the RFID tags is turned off. To turn it on we have the antennaOn
 	/// function. It reads the TxControlRegister and checks the returned value to see if the antenna is still on.
 	/// If it is not on the setBitMask function turns it on.
 	void antennaOn();
-	
-	///Set a bitmask
-	//
-	///This function reads the given address and then turns the mask bits in the return value on. After doing this
-	/// it sends back the new data to the same adress.
-	//void setBitMask(byte addr, byte mask);
-	
-	///Clear a bitmask
-	//
-	///This function turns certain bits of in the specified address and keeps the rest the same. It dus this by reading
-	/// the specified register and then using a and operator on the returned value. The mask itself needs to be inverted
-	/// to be correct.
-	//void clearBitMask(byte addr, byte mask);
 	
 	///Send data request
 	//
@@ -131,7 +95,8 @@ public:
 	///Check for collision and return the UID
 	//
 	///This function checks for collision errors and returns the UID of a tag. The return value is a byte that shows the
-	/// status. If the return value == MI_ERR of MI_NOTAGERR then something went wrong. The data it returns is 5 bytes long.
+	/// status. If the return value is equal to MI_ERR or MI_NOTAGERR then something went wrong. The data it returns is
+	/// 5 bytes long.
 	byte anticoll(byte * backData);
 	
 	///Wait for a tag to be found and read it

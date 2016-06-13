@@ -14,13 +14,17 @@ spi(spi),
 SDA(SDA)
 {}
 
+void RFID::reset(byte addr, byte resetValue){
+	spiWrite(addr, resetValue);//Execute the softreset command
+}
+
 void RFID::spiWrite(byte reg, byte value){
 	byte temp[2] = {reg, value};
 	spi.write_and_read(SDA, 2, temp, nullptr);
 }
 
 byte RFID::spiRead(byte addr){
-	addr = (addr | 0x80); //The adresses need to have the 1st bit to 1 for reading
+	addr = (addr | 0x80); //The adresses need to have the 1st bit to 1 for reading (might be specific to the mfrc522)
 	byte addrTemp[2] = {addr, 0x00};
 	byte temp[2];//For the return values
 	spi.write_and_read(SDA, 2, addrTemp, temp);

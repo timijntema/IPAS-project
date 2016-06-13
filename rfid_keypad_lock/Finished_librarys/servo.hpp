@@ -13,6 +13,7 @@
 #include "PWM_signal.hpp"
 #include "hwlib.hpp"
 
+//values can be different for other servo's
 #define MAX_DEGREES 249
 #define MIN_DEGREES 0
 
@@ -26,8 +27,8 @@ public:
 	
 	///Default constructor
 	//
-	///This constructor gets a reference to the already existing PWM signal
-	/// taken from the PWM_signal class.
+	///This constructor gets a reference to pin on the Arduino Due. This
+	/// pin is used to set up the PWM signal.
 	servo(hwlib::target::pin_out & pwmPin);
 	
 	///Turn the servo to a amount of degrees

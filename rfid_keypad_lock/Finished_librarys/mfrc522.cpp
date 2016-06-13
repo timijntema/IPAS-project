@@ -19,7 +19,7 @@ void mfrc522::init(){
 	RESET.set(1);//Turn the hardware reset pin on
 	
 	//Reset the mfrc522 unit
-	reset();
+	reset(CommandReg, SOFTRESET);
 	
 	//Set necessary registers
 	spiWrite(TModeReg, 0x8D);//Define the settings for the internal timer and the higher bits of the timer frequency
@@ -32,41 +32,12 @@ void mfrc522::init(){
 	antennaOn();//After the reset the antenna is off
 }
 
-void mfrc522::reset(){
-	spiWrite(CommandReg, SOFTRESET);//Execute the softreset command
-}
-
-/*
-void mfrc522::spiWrite(byte reg, byte value){
-	byte temp[2] = {reg, value};
-	spi.write_and_read(SDA, 2, temp, nullptr);
-}
-
-byte mfrc522::spiRead(byte addr){
-	addr = (addr | 0x80); //The adresses need to have the 1st bit to 1 for reading
-	byte addrTemp[2] = {addr, 0x00};
-	byte temp[2];//For the return values
-	spi.write_and_read(SDA, 2, addrTemp, temp);
-	return temp[1];//Return the value gotten from the mfrc522. Only the 2nd item is a return value the first is random data
-}
-*/
-
 void mfrc522::antennaOn(){
 	byte temp = spiRead(TxControlReg);
 	if (~(temp & 0x03)){//Check if the antenna is on already
 		setBitMask(TxControlReg, 0x03);//Turn it on
 	}
 }
-
-/*
-void mfrc522::setBitMask(byte addr, byte mask){
-	spiWrite(addr, ((spiRead(addr)) | mask));//Turn the mask on
-}
-
-void mfrc522::clearBitMask(byte addr, byte mask){
-	spiWrite(addr, (spiRead(addr) & (~mask)));//Turn the mask off
-}
-*/
 
 byte mfrc522::request(byte mode, byte * backData){//BackData needs to be 2 bytes long
 	spiWrite(BitFramingReg, 0x07);//Define the amount of bits of the last byte that will be transmitted

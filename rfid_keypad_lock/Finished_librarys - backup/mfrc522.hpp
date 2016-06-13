@@ -10,6 +10,7 @@
 #define MFRC522_HPP
 
 #include "hwlib.hpp"
+#include "RFID.hpp"
 
 ///Reading RFID tags with mfrc522
 //
@@ -17,10 +18,8 @@
 /// Wouter van Ooijen. The other class is used for reading from and writing values to the
 /// GPIO pins on the Arduino Due. This library is a recreation from a python original that
 /// can be found on this link: https://github.com/mxgxw/MFRC522-python.
-class mfrc522 {
+class mfrc522 : public RFID{
 private:
-	hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi;
-	hwlib::target::pin_out & SDA;
 	hwlib::target::pin_out & RESET;
 public:
 	//maximum length
@@ -71,30 +70,7 @@ public:
 	/// correct information. It is beeing called by the constructor automatically when the constructor
 	/// is beeing called. For more information about the different settings, check the cpp file.
 	///Comments have been added to every line that send something to the mfrc522.
-	void init();
-	
-	///Reset the mfrc522
-	//
-	///This function executes a soft reset on the mfrc522 using the previously created SOFTRESET byte.
-	///It sends this command to the command register using the spiWrite function.
-	void reset();
-	
-	///Write values to the mfrc522
-	//
-	///This function writes values to the mfrc522 using the bit banged spi bus from the hwlib namespace.
-	///It takes a register to write the value to and the value itself. It puts these bytes in a byte array.
-	///The byte array gets send to the spi but from the hwlib namespace as 2 bytes of information that have
-	/// to be send.
-	void spiWrite(byte reg, byte value);
-	
-	///Read values from the mfrc522
-	//
-	///This function reads values from a register that has been specified when the function is beeing called.
-	///Because the adresses from the spi interface need a 1 on the MSB spot to identify that information is
-	/// beeing read, the address is beeing changed using a or operator (addr | 0x80). After this two byte arrays
-	/// are created. One for the outgoing adresses and the other one for the received information. The function
-	/// returns the received value as one byte.
-	byte spiRead(byte addr);
+	void init() override;
 	
 	///Turn the antenna on
 	//
@@ -102,19 +78,6 @@ public:
 	/// function. It reads the TxControlRegister and checks the returned value to see if the antenna is still on.
 	/// If it is not on the setBitMask function turns it on.
 	void antennaOn();
-	
-	///Set a bitmask
-	//
-	///This function reads the given address and then turns the mask bits in the return value on. After doing this
-	/// it sends back the new data to the same adress.
-	void setBitMask(byte addr, byte mask);
-	
-	///Clear a bitmask
-	//
-	///This function turns certain bits of in the specified address and keeps the rest the same. It dus this by reading
-	/// the specified register and then using a and operator on the returned value. The mask itself needs to be inverted
-	/// to be correct.
-	void clearBitMask(byte addr, byte mask);
 	
 	///Send data request
 	//
@@ -127,7 +90,7 @@ public:
 	///We send data to the RFID tag and get the return data back from the tag. The data that comes back is beeing returned
 	/// using the cardRetValue and backData parameters. backData contains the bytes of data returned by the tag.
 	///cardRetValue contains the status and the length of the returned data.
-	void toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData);
+	void toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData) override;
 	
 	///Check for collision and return the UID
 	//
@@ -141,7 +104,7 @@ public:
 	///The function returns the UID. using a ID parameter on the function call. This ID parameter is a byte array
 	/// that is 5 bytes long. Notice: the function dus not have an actual return value, it uses the ID parameter to
 	/// return the UID.
-	void waitForCardID(byte * ID, int lenID);
+	void waitForCardID(byte * ID, int lenID) override;
 };
 
-#endif // MFRC522V2_HPP
+#endif // MFRC522_HPP
