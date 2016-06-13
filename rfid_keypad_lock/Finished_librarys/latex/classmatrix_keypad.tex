@@ -1,0 +1,80 @@
+\hypertarget{classmatrix_keypad}{}\section{matrix\+Keypad Class Reference}
+\label{classmatrix_keypad}\index{matrix\+Keypad@{matrix\+Keypad}}
+
+
+Obtain pressed keys from a keypad.  
+
+
+
+
+{\ttfamily \#include $<$matrix\+Keypad.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatrix_keypad_a02a1615e9c24d0d2e1aa939420cf818f}{matrix\+Keypad} (hwlib\+::pin\+\_\+in\+\_\+out \&p0, hwlib\+::pin\+\_\+in\+\_\+out \&p1, hwlib\+::pin\+\_\+in\+\_\+out \&p2, hwlib\+::pin\+\_\+in\+\_\+out \&p3, hwlib\+::pin\+\_\+in\+\_\+out \&p4, hwlib\+::pin\+\_\+in\+\_\+out \&p5, hwlib\+::pin\+\_\+in\+\_\+out \&p6, hwlib\+::pin\+\_\+in\+\_\+out \&p7=hwlib\+::pin\+\_\+in\+\_\+out\+\_\+dummy, int col\+Size=3, hwlib\+::pin\+\_\+out \&buzzer\+Pin=hwlib\+::pin\+\_\+out\+\_\+dummy)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+char \hyperlink{classmatrix_keypad_adb0562ac12409dd390afe759297d7a95}{get\+Key} ()
+\begin{DoxyCompactList}\small\item\em Obtain seperate keys. \end{DoxyCompactList}\item 
+int \hyperlink{classmatrix_keypad_a85cb23086207b678f0a64f160d607c5d}{get\+String} (char $\ast$chararray, int len\+Char\+Array)
+\begin{DoxyCompactList}\small\item\em Obtain a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Obtain pressed keys from a keypad. 
+
+This class that can be used to obtain pressed keys from a keypad using an Arduino Due board. The seperate keypresses can be obtained or an array of characters can be filled with pressed characters. It uses another namespace containing classes that make it capable of using Arduino Due pins. This second namespace has been made by Wouter Ooijen and not by me. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{matrix\+Keypad@{matrix\+Keypad}!matrix\+Keypad@{matrix\+Keypad}}
+\index{matrix\+Keypad@{matrix\+Keypad}!matrix\+Keypad@{matrix\+Keypad}}
+\subsubsection[{\texorpdfstring{matrix\+Keypad(hwlib\+::pin\+\_\+in\+\_\+out \&p0, hwlib\+::pin\+\_\+in\+\_\+out \&p1, hwlib\+::pin\+\_\+in\+\_\+out \&p2, hwlib\+::pin\+\_\+in\+\_\+out \&p3, hwlib\+::pin\+\_\+in\+\_\+out \&p4, hwlib\+::pin\+\_\+in\+\_\+out \&p5, hwlib\+::pin\+\_\+in\+\_\+out \&p6, hwlib\+::pin\+\_\+in\+\_\+out \&p7=hwlib\+::pin\+\_\+in\+\_\+out\+\_\+dummy, int col\+Size=3, hwlib\+::pin\+\_\+out \&buzzer\+Pin=hwlib\+::pin\+\_\+out\+\_\+dummy)}{matrixKeypad(hwlib::pin_in_out &p0, hwlib::pin_in_out &p1, hwlib::pin_in_out &p2, hwlib::pin_in_out &p3, hwlib::pin_in_out &p4, hwlib::pin_in_out &p5, hwlib::pin_in_out &p6, hwlib::pin_in_out &p7=hwlib::pin_in_out_dummy, int colSize=3, hwlib::pin_out &buzzerPin=hwlib::pin_out_dummy)}}]{\setlength{\rightskip}{0pt plus 5cm}matrix\+Keypad\+::matrix\+Keypad (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p0, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p1, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p2, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p3, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p4, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p5, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p6, }
+\item[{hwlib\+::pin\+\_\+in\+\_\+out \&}]{p7 = {\ttfamily hwlib\+:\+:pin\+\_\+in\+\_\+out\+\_\+dummy}, }
+\item[{int}]{col\+Size = {\ttfamily 3}, }
+\item[{hwlib\+::pin\+\_\+out \&}]{buzzer\+Pin = {\ttfamily hwlib\+:\+:pin\+\_\+out\+\_\+dummy}}
+\end{DoxyParamCaption}
+)}\hypertarget{classmatrix_keypad_a02a1615e9c24d0d2e1aa939420cf818f}{}\label{classmatrix_keypad_a02a1615e9c24d0d2e1aa939420cf818f}
+
+
+Default constructor. 
+
+This constructor sets up all the pins on the Arduino Due. It takes the size of the keypad and the pins on wich it is attached. The last pin is setup with a dummy as default value to ensure that 4x3 keypads dont give errors. It als takes a buzzerpin for giving a little sound when a key is pressed. This pin also has a dummy as default. This makes sure the buzzer is not actually needed. 
+
+\subsection{Member Function Documentation}
+\index{matrix\+Keypad@{matrix\+Keypad}!get\+Key@{get\+Key}}
+\index{get\+Key@{get\+Key}!matrix\+Keypad@{matrix\+Keypad}}
+\subsubsection[{\texorpdfstring{get\+Key()}{getKey()}}]{\setlength{\rightskip}{0pt plus 5cm}char matrix\+Keypad\+::get\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmatrix_keypad_adb0562ac12409dd390afe759297d7a95}{}\label{classmatrix_keypad_adb0562ac12409dd390afe759297d7a95}
+
+
+Obtain seperate keys. 
+
+This function optains the seperate keys from the keypad. It waits for a key to be pressed and then returns the pressed key as an character. It knows what key was pressed by seting up 4 inputs and 4(or 3) outputs. The inputs have a pullup resistor. After that it checks for a row that is pulled down to 0. After that it has the pressed row. To know the pressed column, it switches the inputs to outputs and the outputs to inputs. That way it can check the pressed column. \index{matrix\+Keypad@{matrix\+Keypad}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!matrix\+Keypad@{matrix\+Keypad}}
+\subsubsection[{\texorpdfstring{get\+String(char $\ast$chararray, int len\+Char\+Array)}{getString(char *chararray, int lenCharArray)}}]{\setlength{\rightskip}{0pt plus 5cm}int matrix\+Keypad\+::get\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{chararray, }
+\item[{int}]{len\+Char\+Array}
+\end{DoxyParamCaption}
+)}\hypertarget{classmatrix_keypad_a85cb23086207b678f0a64f160d607c5d}{}\label{classmatrix_keypad_a85cb23086207b678f0a64f160d607c5d}
+
+
+Obtain a string. 
+
+This function uses the \hyperlink{classmatrix_keypad_adb0562ac12409dd390afe759297d7a95}{get\+Key()} function to obtain the seperate keys. It puts these pressed keys in a user defined array with a user defined array length. If the maximum length of the array -\/1 (for the \textquotesingle{}\textbackslash{}0\textquotesingle{} character) has been reached, it protects you from going out of the array. To stop with getting characters before the array is full you have to press the \textquotesingle{}\#\textquotesingle{} character. This will stops the process and adds a \textquotesingle{}\textbackslash{}0\textquotesingle{} after the last character. The function returns the array size usable with for loops to go through the array and execute operations on the array. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{matrix_keypad_8hpp}{matrix\+Keypad.\+hpp}\item 
+matrix\+Keypad.\+cpp\end{DoxyCompactItemize}

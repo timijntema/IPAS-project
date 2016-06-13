@@ -15,7 +15,8 @@
 ///Basic PWM signal
 //
 ///This class is for creating a basic PWN signal object and
-///then call seperate pules with a certain pulsewidth.
+///then call seperate pules with a certain pulsewidth. It
+/// uses a bit banged version of PWM.
 class PWM_signal{
 private:
 	hwlib::target::pin_out & pwmPin;

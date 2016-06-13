@@ -1,5 +1,5 @@
 /*
-* File:   matrixKeypad.hpp
+* File:   matrixKeypad.cpp
 * Author: Tim IJntema
 *
 * Created on 27 may 2016, 14:36
@@ -15,18 +15,20 @@ matrixKeypad::matrixKeypad( hwlib::pin_in_out & p0,
 							hwlib::pin_in_out & p5,
 							hwlib::pin_in_out & p6,
 							hwlib::pin_in_out & p7,
+							int colSize,
 							hwlib::pin_out & buzzerPin):
 pinColumn{&p4, &p5, &p6, &p7},
 pinRow{&p0, &p1, &p2, &p3},
+colSize(colSize),
 buzzerPin(buzzerPin)
 {}
 
 char matrixKeypad::getKey(){
 	while (1){
 		//Set al the columns as output and turn them off.
-		for (auto & pin :pinColumn){
-			pin->direction_set_output();
-			pin->set(0);
+		for (int i = 0; i < colSize; i++){
+			(pinColumn[i])->direction_set_output();
+			(pinColumn[i])->set(0);
 		}
 		
 		//Set the rows as input with pullup resistor.
@@ -37,7 +39,7 @@ char matrixKeypad::getKey(){
 		//Scan the rows for a pushed button.
 		//KeypadRow should be between 0 and 3 if any number or letter on the keypad is pressed.
 		keypadRow = -1;
-		for (int i = 0; i < size; i++){
+		for (int i = 0; i < rowSize; i++){
 			if ((pinRow[i])->get() == 0){
 				keypadRow = i;
 			}
@@ -49,8 +51,8 @@ char matrixKeypad::getKey(){
 		}
 		
 		//Set the columns as input with pull up resistor.
-		for (auto & pin :pinColumn){
-			pin->direction_set_input();
+		for (int i = 0; i < colSize; i++){
+			(pinColumn[i])->direction_set_input();
 		}
 		
 		//set the previous gathered keypad row as output and turn it off
@@ -60,7 +62,7 @@ char matrixKeypad::getKey(){
 		//Scan the columns for the pushed button.
 		//KeypadColumn should be between 0 and 3 as well.
 		keypadColumn = -1;
-		for (int i = 0; i <  size; i++){
+		for (int i = 0; i <  colSize; i++){
 			if ((pinColumn[i])->get() == 0){
 				keypadColumn = i;
 			}
@@ -69,14 +71,13 @@ char matrixKeypad::getKey(){
 		
 		//Check for a number unequal to -1 on both the column and row.
 		if ((keypadRow != -1) && (keypadColumn != -1)){
-			//sound the buzzer if attached to anounche the pressed key has been pressed
+			//Sound the buzzer, if attached, to anounche that a key has been pressed
 			buzzerPin.set(1);
 			hwlib::wait_ms(200);
 			buzzerPin.set(0);
 			//Return the pressed keypad character from the multidimensional array.
 			return keypad[keypadRow][keypadColumn];
 		}
-		//hwlib::wait_ms(500);
 	}
 }
 

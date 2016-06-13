@@ -11,12 +11,12 @@
 
 #include "hwlib.hpp"
 
-///Obtain pressed keys from 4x4 keypad
+///Obtain pressed keys from a keypad
 //
 ///This class that can be used to obtain pressed keys from a keypad using an Arduino Due board.
 ///The seperate keypresses can be obtained or an array of characters can be filled with pressed characters.
-///It uses a second class that make it capable of using Arduino Due pins. This second class has been made by
-/// Wouter Ooijen and not by me.
+///It uses another namespace containing classes that make it capable of using Arduino Due pins. This second
+/// namespace has been made by Wouter Ooijen and not by me.
 class matrixKeypad{
 private:
 	int keypadRow = -1;
@@ -24,9 +24,11 @@ private:
 	
 	hwlib::pin_in_out * pinColumn[4];
 	hwlib::pin_in_out * pinRow[4];
-	hwlib::pin_out & buzzerPin;
 	
-	const int size = 4;
+	const int rowSize = 4;
+	int colSize;
+	
+	hwlib::pin_out & buzzerPin;
 	
 	//The multidimensional array containing all the characters used by the keypad
 	char keypad[4][4] = {
@@ -51,7 +53,8 @@ public:
 				hwlib::pin_in_out & p4,
 				hwlib::pin_in_out & p5,
 				hwlib::pin_in_out & p6,
-				hwlib::pin_in_out & p7,
+				hwlib::pin_in_out & p7 = hwlib::pin_in_out_dummy,
+				int colSize = 3,
 				hwlib::pin_out & buzzerPin = hwlib::pin_out_dummy
 				);
 	

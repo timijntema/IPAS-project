@@ -1,0 +1,63 @@
+\hypertarget{class_p_w_m__signal}{}\section{P\+W\+M\+\_\+signal Class Reference}
+\label{class_p_w_m__signal}\index{P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}}
+
+
+Basic P\+WM signal.  
+
+
+
+
+{\ttfamily \#include $<$P\+W\+M\+\_\+signal.\+hpp$>$}
+
+Inheritance diagram for P\+W\+M\+\_\+signal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_p_w_m__signal}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_w_m__signal_ad64aad0e6fe9cf246715bc9cf0f78247}{P\+W\+M\+\_\+signal} (hwlib\+::target\+::pin\+\_\+out \&pwm\+Pin)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_p_w_m__signal_a82a9e4648b24a15992b59918e640157c}{P\+W\+M\+\_\+pulse} (int pulse\+Width)
+\begin{DoxyCompactList}\small\item\em One pulse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic P\+WM signal. 
+
+This class is for creating a basic P\+WN signal object and then call seperate pules with a certain pulsewidth. It uses a bit banged version of P\+WM. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}!P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}}
+\index{P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}!P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}}
+\subsubsection[{\texorpdfstring{P\+W\+M\+\_\+signal(hwlib\+::target\+::pin\+\_\+out \&pwm\+Pin)}{PWM_signal(hwlib::target::pin_out &pwmPin)}}]{\setlength{\rightskip}{0pt plus 5cm}P\+W\+M\+\_\+signal\+::\+P\+W\+M\+\_\+signal (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::target\+::pin\+\_\+out \&}]{pwm\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_w_m__signal_ad64aad0e6fe9cf246715bc9cf0f78247}{}\label{class_p_w_m__signal_ad64aad0e6fe9cf246715bc9cf0f78247}
+
+
+Default constructor. 
+
+This constructor sets up a pin to control using pwm. It does this using the pin\+\_\+out class in namespace hwlib. 
+
+\subsection{Member Function Documentation}
+\index{P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}!P\+W\+M\+\_\+pulse@{P\+W\+M\+\_\+pulse}}
+\index{P\+W\+M\+\_\+pulse@{P\+W\+M\+\_\+pulse}!P\+W\+M\+\_\+signal@{P\+W\+M\+\_\+signal}}
+\subsubsection[{\texorpdfstring{P\+W\+M\+\_\+pulse(int pulse\+Width)}{PWM_pulse(int pulseWidth)}}]{\setlength{\rightskip}{0pt plus 5cm}void P\+W\+M\+\_\+signal\+::\+P\+W\+M\+\_\+pulse (
+\begin{DoxyParamCaption}
+\item[{int}]{pulse\+Width}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_w_m__signal_a82a9e4648b24a15992b59918e640157c}{}\label{class_p_w_m__signal_a82a9e4648b24a15992b59918e640157c}
+
+
+One pulse. 
+
+This function is made to create one P\+WM pulse with a user specified pulsewidth. The wait time between every pulse is about 20 ms. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_p_w_m__signal_8hpp}{P\+W\+M\+\_\+signal.\+hpp}\item 
+P\+W\+M\+\_\+signal.\+cpp\end{DoxyCompactItemize}

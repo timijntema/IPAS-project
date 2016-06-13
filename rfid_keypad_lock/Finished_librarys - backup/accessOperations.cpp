@@ -7,10 +7,10 @@
 
 #include "accessOperations.hpp"
 
-accessOperations::accessOperations(matrixKeypad & keypad, char * rootPWDf, int lenRootPWD, hwlib::pin_out & ledGreen, hwlib::pin_out & ledRed):
+accessOperations::accessOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD, hwlib::pin_out & ledGreen, hwlib::pin_out & ledRed):
 		keypad(keypad),
 		lenRootPWD(lenRootPWD),
-		rootPWD(rootPWDf),
+		rootPWD(rootPWD),
 		ledGreen(ledGreen),
 		ledRed(ledRed)
 {}

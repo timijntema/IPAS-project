@@ -1,0 +1,63 @@
+\hypertarget{classservo}{}\section{servo Class Reference}
+\label{classservo}\index{servo@{servo}}
+
+
+Servo controll class.  
+
+
+
+
+{\ttfamily \#include $<$servo.\+hpp$>$}
+
+Inheritance diagram for servo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classservo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classservo_a99c6a39c75cd91b8b2c498cca77d7239}{servo} (hwlib\+::target\+::pin\+\_\+out \&pwm\+Pin)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classservo_ac0fa39642e5294471844d1fd56e9fec5}{turn\+Degrees} (int degrees)
+\begin{DoxyCompactList}\small\item\em Turn the servo to a amount of degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Servo controll class. 
+
+This class is meant to act as a decorator class to the \hyperlink{class_p_w_m__signal}{P\+W\+M\+\_\+signal} class. The idea is that it takes the pulse function and modifies it to send the correct signal for a servo. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{servo@{servo}!servo@{servo}}
+\index{servo@{servo}!servo@{servo}}
+\subsubsection[{\texorpdfstring{servo(hwlib\+::target\+::pin\+\_\+out \&pwm\+Pin)}{servo(hwlib::target::pin_out &pwmPin)}}]{\setlength{\rightskip}{0pt plus 5cm}servo\+::servo (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::target\+::pin\+\_\+out \&}]{pwm\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{classservo_a99c6a39c75cd91b8b2c498cca77d7239}{}\label{classservo_a99c6a39c75cd91b8b2c498cca77d7239}
+
+
+Default constructor. 
+
+This constructor gets a reference to pin on the Arduino Due. This pin is used to set up the P\+WM signal. 
+
+\subsection{Member Function Documentation}
+\index{servo@{servo}!turn\+Degrees@{turn\+Degrees}}
+\index{turn\+Degrees@{turn\+Degrees}!servo@{servo}}
+\subsubsection[{\texorpdfstring{turn\+Degrees(int degrees)}{turnDegrees(int degrees)}}]{\setlength{\rightskip}{0pt plus 5cm}void servo\+::turn\+Degrees (
+\begin{DoxyParamCaption}
+\item[{int}]{degrees}
+\end{DoxyParamCaption}
+)}\hypertarget{classservo_ac0fa39642e5294471844d1fd56e9fec5}{}\label{classservo_ac0fa39642e5294471844d1fd56e9fec5}
+
+
+Turn the servo to a amount of degrees. 
+
+This function get an amount of degrees and then it calculates the wait time. This wait time is beeing given to the pulse function. It also makes sure the servo gets more then one pulse to make sure it has enough time to turn to the set amount of degrees. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{servo_8hpp}{servo.\+hpp}\item 
+servo.\+cpp\end{DoxyCompactItemize}

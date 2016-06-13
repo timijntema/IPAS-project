@@ -1,0 +1,185 @@
+\hypertarget{class_r_f_i_d}{}\section{R\+F\+ID Class Reference}
+\label{class_r_f_i_d}\index{R\+F\+ID@{R\+F\+ID}}
+
+
+\hyperlink{class_r_f_i_d}{R\+F\+ID} superclass.  
+
+
+
+
+{\ttfamily \#include $<$R\+F\+I\+D.\+hpp$>$}
+
+Inheritance diagram for R\+F\+ID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_i_d}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}{R\+F\+ID} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&S\+DA)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_a8b244d38edcafaeb06637dbf33b5656f}{init} ()=0
+\begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_a3f1242db1a6bb7b57d6bfb7111d1fadd}{reset} (byte addr, byte reset\+Value)
+\begin{DoxyCompactList}\small\item\em Soft reset the reader. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_a44da5195bf18d4882f1b691904e993b6}{spi\+Write} (byte reg, byte value)
+\begin{DoxyCompactList}\small\item\em Write values to the \hyperlink{classmfrc522}{mfrc522}. \end{DoxyCompactList}\item 
+virtual byte \hyperlink{class_r_f_i_d_ac9d2c7f3589feef21aba37a95354c6c2}{spi\+Read} (byte addr)
+\begin{DoxyCompactList}\small\item\em Read values from \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_af8a78df3f2b79c1ffc8ea660693f43ec}{set\+Bit\+Mask} (byte addr, byte mask)
+\begin{DoxyCompactList}\small\item\em Set a bitmask. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_afa2560b026553dac1f6aa20d17f47438}{clear\+Bit\+Mask} (byte addr, byte mask)
+\begin{DoxyCompactList}\small\item\em Clear a bitmask. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_ad44955169cde018c9673ae5073fcac24}{to\+Card} (byte value, byte $\ast$send\+Data, int len\+Send\+Data, byte $\ast$card\+Ret\+Value, byte $\ast$back\+Data)=0
+\begin{DoxyCompactList}\small\item\em Send data to tag. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_r_f_i_d_a7e02863bc0f1f117b05d72f9063497f7}{wait\+For\+Card\+ID} (byte $\ast$ID, int len\+ID)=0
+\begin{DoxyCompactList}\small\item\em return a tag U\+ID \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \& {\bfseries spi}\hypertarget{class_r_f_i_d_ad2de95fbca075609eb41fa8d27d96077}{}\label{class_r_f_i_d_ad2de95fbca075609eb41fa8d27d96077}
+
+\item 
+hwlib\+::target\+::pin\+\_\+out \& {\bfseries S\+DA}\hypertarget{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}{}\label{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_r_f_i_d}{R\+F\+ID} superclass. 
+
+This is a superclass for \hyperlink{class_r_f_i_d}{R\+F\+ID} readers. It contains some basic functions an \hyperlink{class_r_f_i_d}{R\+F\+ID} reader needs to operate. Some of the functions in this class are abstract because the implementation will be different for different \hyperlink{class_r_f_i_d}{R\+F\+ID} readers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+F\+ID@{R\+F\+ID}!R\+F\+ID@{R\+F\+ID}}
+\index{R\+F\+ID@{R\+F\+ID}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{R\+F\+I\+D(hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&\+S\+D\+A)}{RFID(hwlib::spi_bus_bit_banged_sclk_mosi_miso &spi, hwlib::target::pin_out &SDA)}}]{\setlength{\rightskip}{0pt plus 5cm}R\+F\+I\+D\+::\+R\+F\+ID (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&}]{spi, }
+\item[{hwlib\+::target\+::pin\+\_\+out \&}]{S\+DA}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}{}\label{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}
+
+
+Default constructor. 
+
+This constructor takes a spi bus and a select pin as parameter. It sets the protected variables using these parameters. The protected variables can be used by the \hyperlink{class_r_f_i_d}{R\+F\+ID} class or any other class that inherits the \hyperlink{class_r_f_i_d}{R\+F\+ID} class. 
+
+\subsection{Member Function Documentation}
+\index{R\+F\+ID@{R\+F\+ID}!clear\+Bit\+Mask@{clear\+Bit\+Mask}}
+\index{clear\+Bit\+Mask@{clear\+Bit\+Mask}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{clear\+Bit\+Mask(byte addr, byte mask)}{clearBitMask(byte addr, byte mask)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+F\+I\+D\+::clear\+Bit\+Mask (
+\begin{DoxyParamCaption}
+\item[{byte}]{addr, }
+\item[{byte}]{mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_r_f_i_d_afa2560b026553dac1f6aa20d17f47438}{}\label{class_r_f_i_d_afa2560b026553dac1f6aa20d17f47438}
+
+
+Clear a bitmask. 
+
+This function turns certain bits of in the specified address and keeps the rest the same. It dus this by reading the specified register and then using a and operator on the returned value. The mask itself needs to be inverted to be correct. \index{R\+F\+ID@{R\+F\+ID}!init@{init}}
+\index{init@{init}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{init()=0}{init()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+F\+I\+D\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_r_f_i_d_a8b244d38edcafaeb06637dbf33b5656f}{}\label{class_r_f_i_d_a8b244d38edcafaeb06637dbf33b5656f}
+
+
+Initialize the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. 
+
+This function is meant to initialize the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. It can be used to set any settings needed to succesfully read an \hyperlink{class_r_f_i_d}{R\+F\+ID} tag. The function will have a different meaning for every \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. It will be dependent on the company who made the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. 
+
+Implemented in \hyperlink{classmfrc522_ac0a0cf7f16b98c37826ce0e160877269}{mfrc522}.
+
+\index{R\+F\+ID@{R\+F\+ID}!reset@{reset}}
+\index{reset@{reset}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{reset(byte addr, byte reset\+Value)}{reset(byte addr, byte resetValue)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+F\+I\+D\+::reset (
+\begin{DoxyParamCaption}
+\item[{byte}]{addr, }
+\item[{byte}]{reset\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_r_f_i_d_a3f1242db1a6bb7b57d6bfb7111d1fadd}{}\label{class_r_f_i_d_a3f1242db1a6bb7b57d6bfb7111d1fadd}
+
+
+Soft reset the reader. 
+
+This funtion is meant to make a soft reset easy to do. The register that has to be set will be different for every \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. But in the end they all have to send some value to an register address. \index{R\+F\+ID@{R\+F\+ID}!set\+Bit\+Mask@{set\+Bit\+Mask}}
+\index{set\+Bit\+Mask@{set\+Bit\+Mask}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{set\+Bit\+Mask(byte addr, byte mask)}{setBitMask(byte addr, byte mask)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+F\+I\+D\+::set\+Bit\+Mask (
+\begin{DoxyParamCaption}
+\item[{byte}]{addr, }
+\item[{byte}]{mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_r_f_i_d_af8a78df3f2b79c1ffc8ea660693f43ec}{}\label{class_r_f_i_d_af8a78df3f2b79c1ffc8ea660693f43ec}
+
+
+Set a bitmask. 
+
+This function reads the given address and then turns the mask bits in the return value on. After doing this it sends back the new data to the same adress. \index{R\+F\+ID@{R\+F\+ID}!spi\+Read@{spi\+Read}}
+\index{spi\+Read@{spi\+Read}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{spi\+Read(byte addr)}{spiRead(byte addr)}}]{\setlength{\rightskip}{0pt plus 5cm}byte R\+F\+I\+D\+::spi\+Read (
+\begin{DoxyParamCaption}
+\item[{byte}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_r_f_i_d_ac9d2c7f3589feef21aba37a95354c6c2}{}\label{class_r_f_i_d_ac9d2c7f3589feef21aba37a95354c6c2}
+
+
+Read values from \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. 
+
+This function reads values from a register that has been specified when the function is beeing called. Because the adresses from the spi interface need a 1 on the M\+SB spot to identify that information is beeing read, the address is beeing changed using a or operator (addr $\vert$ 0x80). After this two byte arrays are created. One for the outgoing adresses and the other one for the received information. The function returns the received value as one byte. \index{R\+F\+ID@{R\+F\+ID}!spi\+Write@{spi\+Write}}
+\index{spi\+Write@{spi\+Write}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{spi\+Write(byte reg, byte value)}{spiWrite(byte reg, byte value)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+F\+I\+D\+::spi\+Write (
+\begin{DoxyParamCaption}
+\item[{byte}]{reg, }
+\item[{byte}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_r_f_i_d_a44da5195bf18d4882f1b691904e993b6}{}\label{class_r_f_i_d_a44da5195bf18d4882f1b691904e993b6}
+
+
+Write values to the \hyperlink{classmfrc522}{mfrc522}. 
+
+This function writes values to the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader using the bit banged spi bus from the hwlib namespace. It takes a register to write the value to and the value itself. It puts these bytes in a byte array. The byte array gets send to the spi but from the hwlib namespace as 2 bytes of information that have to be send. \index{R\+F\+ID@{R\+F\+ID}!to\+Card@{to\+Card}}
+\index{to\+Card@{to\+Card}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{to\+Card(byte value, byte $\ast$send\+Data, int len\+Send\+Data, byte $\ast$card\+Ret\+Value, byte $\ast$back\+Data)=0}{toCard(byte value, byte *sendData, int lenSendData, byte *cardRetValue, byte *backData)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+F\+I\+D\+::to\+Card (
+\begin{DoxyParamCaption}
+\item[{byte}]{value, }
+\item[{byte $\ast$}]{send\+Data, }
+\item[{int}]{len\+Send\+Data, }
+\item[{byte $\ast$}]{card\+Ret\+Value, }
+\item[{byte $\ast$}]{back\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_r_f_i_d_ad44955169cde018c9673ae5073fcac24}{}\label{class_r_f_i_d_ad44955169cde018c9673ae5073fcac24}
+
+
+Send data to tag. 
+
+This function is meant to be used to send data to the \hyperlink{class_r_f_i_d}{R\+F\+ID} tag and if necessary return the data. It takes data to send and the length of this data. There also need to be given 2 byte arrays to return certain data. The first is meant to return a status for the data. So if there is an error it will be in the card\+Ret\+Value array on index 0. The second item in the first array is the length of back\+Data. Back\+Data will contain every bit of data the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader read off the tag. 
+
+Implemented in \hyperlink{classmfrc522_a6801b8481392f6310b40a6893f6544c2}{mfrc522}.
+
+\index{R\+F\+ID@{R\+F\+ID}!wait\+For\+Card\+ID@{wait\+For\+Card\+ID}}
+\index{wait\+For\+Card\+ID@{wait\+For\+Card\+ID}!R\+F\+ID@{R\+F\+ID}}
+\subsubsection[{\texorpdfstring{wait\+For\+Card\+I\+D(byte $\ast$\+I\+D, int len\+I\+D)=0}{waitForCardID(byte *ID, int lenID)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+F\+I\+D\+::wait\+For\+Card\+ID (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{ID, }
+\item[{int}]{len\+ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_r_f_i_d_a7e02863bc0f1f117b05d72f9063497f7}{}\label{class_r_f_i_d_a7e02863bc0f1f117b05d72f9063497f7}
+
+
+return a tag U\+ID 
+
+This function waits for a tag to be held against the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. It returns the U\+ID of that tag. It returns the U\+ID using the byte array ID. The implementation will be different for different \hyperlink{class_r_f_i_d}{R\+F\+ID} readers. 
+
+Implemented in \hyperlink{classmfrc522_a18665350caf822a716f2a72674a21647}{mfrc522}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_r_f_i_d_8hpp}{R\+F\+I\+D.\+hpp}\item 
+\hyperlink{_r_f_i_d_8cpp}{R\+F\+I\+D.\+cpp}\end{DoxyCompactItemize}

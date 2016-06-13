@@ -6,6 +6,10 @@
 * Created on 5 Juni 2016, 15:09
 */
 
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+
 #ifndef MFRC522_HPP
 #define MFRC522_HPP
 

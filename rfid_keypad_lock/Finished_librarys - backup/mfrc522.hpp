@@ -14,8 +14,8 @@
 
 ///Reading RFID tags with mfrc522
 //
-///This class can be used to read the UID of an RFID tag. It uses another class created by
-/// Wouter van Ooijen. The other class is used for reading from and writing values to the
+///This class can be used to read the UID of an RFID tag. It uses another set of classes created by
+/// Wouter van Ooijen. The other classes are used for reading from and writing values to the
 /// GPIO pins on the Arduino Due. This library is a recreation from a python original that
 /// can be found on this link: https://github.com/mxgxw/MFRC522-python.
 class mfrc522 : public RFID{
@@ -95,7 +95,8 @@ public:
 	///Check for collision and return the UID
 	//
 	///This function checks for collision errors and returns the UID of a tag. The return value is a byte that shows the
-	/// status. If the return value == MI_ERR of MI_NOTAGERR then something went wrong. The data it returns is 5 bytes long.
+	/// status. If the return value is equal to MI_ERR or MI_NOTAGERR then something went wrong. The data it returns is
+	/// 5 bytes long.
 	byte anticoll(byte * backData);
 	
 	///Wait for a tag to be found and read it

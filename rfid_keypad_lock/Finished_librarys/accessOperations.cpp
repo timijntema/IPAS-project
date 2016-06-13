@@ -5,6 +5,10 @@
 * Created on 30 may 2016, 17:13
 */
 
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+
 #include "accessOperations.hpp"
 
 accessOperations::accessOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD, hwlib::pin_out & ledGreen, hwlib::pin_out & ledRed):

@@ -15,7 +15,7 @@
 //
 ///This class is meant to make operations on passwords and with passwords
 /// a lot more easy. It uses the matrixKeypad library to obtain the passwords.
-///It also has functions for checking the RFID UID's.
+///It also contains functions for checking the RFID UID's.
 class accessOperations{
 private:
 	matrixKeypad & keypad;
@@ -28,7 +28,8 @@ public:
 	//
 	///The constructor of this class takes a reference to the matrix keypad to
 	/// make sure we can use all the functions of the keypad. It also takes a
-	/// root password meant for changing the user password(s)
+	/// root password meant for changing the user password(s). Two LEDs are
+	/// optional to indicate correct or incorrect passwords and UID's.
 	accessOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD, hwlib::pin_out & ledGreen = hwlib::pin_out_dummy, hwlib::pin_out & ledRed = hwlib::pin_out_dummy);
 	
 	///Get and check passwords
