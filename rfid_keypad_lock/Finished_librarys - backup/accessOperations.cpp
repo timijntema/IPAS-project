@@ -1,13 +1,13 @@
 /*
-* File:   passwordOperations.cpp
+* File:   accessOperations.cpp
 * Author: Tim IJntema
 *
 * Created on 30 may 2016, 17:13
 */
 
-#include "passwordOperations.hpp"
+#include "accessOperations.hpp"
 
-passwordOperations::passwordOperations(matrixKeypad & keypad, char * rootPWDf, int lenRootPWD, hwlib::pin_out & ledGreen, hwlib::pin_out & ledRed):
+accessOperations::accessOperations(matrixKeypad & keypad, char * rootPWDf, int lenRootPWD, hwlib::pin_out & ledGreen, hwlib::pin_out & ledRed):
 		keypad(keypad),
 		lenRootPWD(lenRootPWD),
 		rootPWD(rootPWDf),
@@ -15,7 +15,7 @@ passwordOperations::passwordOperations(matrixKeypad & keypad, char * rootPWDf, i
 		ledRed(ledRed)
 {}
 
-bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
+bool accessOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 	int lenCharArrayTmp = lenCharArrayClient+10;
 	char tempArray[lenCharArrayTmp];
 	int lenAfter = 0;
@@ -56,7 +56,7 @@ bool passwordOperations::getPassword(char * clientPWD, int lenCharArrayClient){
 	return false;
 }
 
-bool passwordOperations::setPassword(char * clientPWD, const int & lenCharArray, int *currentArrayLocation){//if it dusnt work do the currentlocation++ in main and if fail do --
+bool accessOperations::setPassword(char * clientPWD, const int & lenCharArray, int *currentArrayLocation){//if it dusnt work do the currentlocation++ in main and if fail do --
 	if (getPassword(rootPWD, lenRootPWD)){//check for root access
 		hwlib::cout << "\ntype the client PASSWORD\n";
 		ledRed.set(0);
@@ -70,6 +70,28 @@ bool passwordOperations::setPassword(char * clientPWD, const int & lenCharArray,
 		hwlib::cout << (int)*currentArrayLocation << '\n';
 		if(*currentArrayLocation < 10){
 			keypad.getString(clientPWD, lenCharArray);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool accessOperations::checkSingleID(byte * ID, int lenID, byte * checkID){
+	for(int i = 0; i < lenID; i++){
+		if(ID[i] != checkID[i]){
+			return false;
+		}
+		else if(i == (lenID-1)){
+			return true;
+		}
+	}
+	return false;
+}
+
+bool accessOperations::checkMultipleID(byte * ID, int lenID, int lenAccesIDs, byte (*accessIDs)[5], int * arrayLocation){
+	for(int j = 0; j < lenAccesIDs; j++){
+		if(checkSingleID(ID, lenID, accessIDs[j])){
+			*arrayLocation = j;
 			return true;
 		}
 	}

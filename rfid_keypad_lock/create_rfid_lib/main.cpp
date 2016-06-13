@@ -1,6 +1,6 @@
 #include "hwlib.hpp"
 #include "spiBus.hpp"
-#include "mfrc522v2.hpp"
+#include "mfrc522.hpp"
 
 /*
  * Information on the rfid reader

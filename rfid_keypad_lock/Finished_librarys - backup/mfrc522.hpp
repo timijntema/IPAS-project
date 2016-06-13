@@ -1,13 +1,13 @@
 ///@file
 /*
-* File:   mfrc522v2.hpp
+* File:   mfrc522.hpp
 * Author: Tim IJntema
 *
 * Created on 5 Juni 2016, 15:09
 */
 
-#ifndef MFRC522V2_HPP
-#define MFRC522V2_HPP
+#ifndef MFRC522_HPP
+#define MFRC522_HPP
 
 #include "hwlib.hpp"
 
@@ -17,7 +17,7 @@
 /// Wouter van Ooijen. The other class is used for reading from and writing values to the
 /// GPIO pins on the Arduino Due. This library is a recreation from a python original that
 /// can be found on this link: https://github.com/mxgxw/MFRC522-python.
-class mfrc522v2 {
+class mfrc522 {
 private:
 	hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi;
 	hwlib::target::pin_out & SDA;
@@ -28,12 +28,6 @@ public:
 	
 	//value's
 	const byte IDLE = 0X00;
-	//byte MEM = 0x01;
-	//byte RANDID = 0x02;
-	//byte CALCCRC = 0x03;
-	//byte TRANSMIT = 0X04;
-	//byte NOCMDCHANGE = 0X07;
-	//byte RECEIVE = 0x08;
 	const byte TRANSCEIVE = 0x0C;
 	const byte SOFTRESET = 0x0F;
 	const byte MFAUTHENT = 0x0E;
@@ -42,8 +36,8 @@ public:
 	
 	//request checks
 	const byte MI_OK = 0;
-	byte MI_NOTAGERR = 1;
-	byte MI_ERR = 2;
+	const byte MI_NOTAGERR = 1;
+	const byte MI_ERR = 2;
 	
 	//Setup all registers
 	//(for spi on the mfrc522 the LSB is not used so the addresses have to be shifted to the left 1 spot.
@@ -69,7 +63,7 @@ public:
 	///The constructor takes three items from the hwlib namespace, the already created spi interface,
 	/// the ss or chip select line that is attached to the SDA pin of the mfrc522 and the RESET pin.
 	///The RESET pin is for hard resetting the mfrc522.
-	mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET);
+	mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET);
 	
 	///Initialization of the mfrc522
 	//

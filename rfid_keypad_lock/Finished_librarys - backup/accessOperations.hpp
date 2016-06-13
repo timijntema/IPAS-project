@@ -1,21 +1,22 @@
 /*
-* File:   passwordOperations.hpp
+* File:   accessOperations.hpp
 * Author: Tim IJntema
 *
 * Created on 30 may 2016, 17:13
 */
 
-#ifndef PASSWORDOPERATIONS_HPP
-#define PASSWORDOPERATIONS_HPP
+#ifndef ACCESSOPERATIONS_HPP
+#define ACCESSOPERATIONS_HPP
 
 #include "matrixKeypad.hpp"
 #include "hwlib.hpp"
 
-///Operations on passwords
+///Operations on accessing the box
 //
 ///This class is meant to make operations on passwords and with passwords
 /// a lot more easy. It uses the matrixKeypad library to obtain the passwords.
-class passwordOperations{
+///It also has functions for checking the RFID UID's.
+class accessOperations{
 private:
 	matrixKeypad & keypad;
 	int lenRootPWD;
@@ -28,7 +29,7 @@ public:
 	///The constructor of this class takes a reference to the matrix keypad to
 	/// make sure we can use all the functions of the keypad. It also takes a
 	/// root password meant for changing the user password(s)
-	passwordOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD, hwlib::pin_out & ledGreen = hwlib::pin_out_dummy, hwlib::pin_out & ledRed = hwlib::pin_out_dummy);
+	accessOperations(matrixKeypad & keypad, char * rootPWD, int lenRootPWD, hwlib::pin_out & ledGreen = hwlib::pin_out_dummy, hwlib::pin_out & ledRed = hwlib::pin_out_dummy);
 	
 	///Get and check passwords
 	//
@@ -47,6 +48,10 @@ public:
 	/// root password was not filled in correctly the function will return false. If
 	/// everything word out correctly the function returns true.
 	bool setPassword(char * clientPWD, const int & lenCharArray, int *currentArrayLocation);
+	
+	bool checkSingleID(byte * ID, int lenID, byte * checkID);
+
+	bool checkMultipleID(byte * ID, int lenID, int lenAccesIDs, byte (*accessIDs)[5], int * arrayLocation);
 };
 
-#endif // PASSWORDOPERATIONS_HPP
+#endif // ACCESSSOPERATIONS_HPP

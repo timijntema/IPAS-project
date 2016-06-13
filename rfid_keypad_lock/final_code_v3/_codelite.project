@@ -61,16 +61,18 @@
       <File Name="../hwlib/hwlib-uno.hpp"/>
       <File Name="../hwlib/hwlib-wait.hpp"/>
     </VirtualDirectory>
-    <File Name="../Finished_librarys/passwordOperations.cpp"/>
     <File Name="../Finished_librarys/matrixKeypad.cpp"/>
     <File Name="../Finished_librarys/matrixKeypad.hpp"/>
-    <File Name="../Finished_librarys/mfrc522v2.cpp"/>
-    <File Name="../Finished_librarys/mfrc522v2.hpp"/>
-    <File Name="../Finished_librarys/passwordOperations.hpp"/>
     <File Name="../Finished_librarys/PWM_signal.cpp"/>
     <File Name="../Finished_librarys/PWM_signal.hpp"/>
     <File Name="../Finished_librarys/servo.cpp"/>
     <File Name="../Finished_librarys/servo.hpp"/>
+    <File Name="../Finished_librarys/accessOperations.cpp"/>
+    <File Name="../Finished_librarys/accessOperations.hpp"/>
+    <File Name="../Finished_librarys/mfrc522.hpp"/>
+    <File Name="../Finished_librarys/mfrc522.cpp"/>
+    <File Name="../Finished_librarys/RFID.cpp"/>
+    <File Name="../Finished_librarys/RFID.hpp"/>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">
     <GlobalSettings>

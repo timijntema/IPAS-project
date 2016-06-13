@@ -7,32 +7,10 @@
 
 #include "hwlib.hpp"
 #include "matrixKeypad.hpp"
-#include "passwordOperations.hpp"
+#include "accessOperations.hpp"
 #include "PWM_signal.hpp"
 #include "servo.hpp"
-#include "mfrc522v2.hpp"
-
-bool checkSingleID(byte * ID, int lenID, byte * checkID){
-	for(int i = 0; i < lenID; i++){
-		if(ID[i] != checkID[i]){
-			return false;
-		}
-		else if(i == (lenID-1)){
-			return true;
-		}
-	}
-	return false;
-}
-
-bool checkMultipleID(byte * ID, int lenID, int lenAccesIDs, byte (*accessIDs)[5], int * arrayLocation){
-	for(int j = 0; j < lenAccesIDs; j++){
-		if(checkSingleID(ID, lenID, accessIDs[j])){
-			*arrayLocation = j;
-			return true;
-		}
-	}
-	return false;
-}
+#include "mfrc522.hpp"
 
 int main(){
 	WDT->WDT_MR = WDT_MR_WDDIS;
@@ -41,8 +19,6 @@ int main(){
 	const int maxLen = 10;
 	char PWD[maxLen][maxLen] = {"9735"};
 	int PWDLen[maxLen] = {5};
-	//int lenRootPWD = sizeof(PWD[0])/sizeof(PWD[0][0]);
-	//char tempChar;
 	
 	//rfid
 	const auto maxIDLen = 5;
@@ -80,11 +56,11 @@ int main(){
 	
 	//keypad objects
 	matrixKeypad keypad(keypad0, keypad1, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, buzzerPin);
-	passwordOperations pswd(keypad, &PWD[0][0], PWDLen[0], ledGreen, ledRed);
+	accessOperations accesOps(keypad, &PWD[0][0], PWDLen[0], ledGreen, ledRed);
 	
 	//spi and RFID
 	auto spiBusSetup = hwlib::spi_bus_bit_banged_sclk_mosi_miso(CLK, MOSI, MISO);
-	mfrc522v2 RFID(spiBusSetup, SDA, RESET);
+	mfrc522 RFID(spiBusSetup, SDA, RESET);
 	
 	//servo object
 	servo servo1(servoPin);
@@ -96,19 +72,21 @@ int main(){
 		ledRed.set(1);
 		RFID.waitForCardID(ID, maxIDLen);
 		
-		if(checkMultipleID(ID, maxIDLen, maxLen, accessIDs, &arrayLocation)){
-			hwlib::cout << (int)arrayLocation << " Its in the id list\n";
+		if(accesOps.checkMultipleID(ID, maxIDLen, maxLen, accessIDs, &arrayLocation)){
+			hwlib::cout <<  "Its in the id list\n";
 			ledRed.set(0);
 			for(int i = 0; i < 5; i++){
-				ledGreen.set(0);
-				hwlib::wait_ms(50);
 				ledGreen.set(1);
 				hwlib::wait_ms(50);
+				ledGreen.set(0);
+				hwlib::wait_ms(50);
 			}
+			ledRed.set(1);
 			
-			hwlib::cout << "Type user password";
-			if(pswd.getPassword(PWD[ (arrayLocation) ], PWDLen[ (arrayLocation) ])){
-				hwlib::cout << "Opening box\n";
+			hwlib::cout << "Type user password\n";
+			if(accesOps.getPassword(PWD[ (arrayLocation) ], PWDLen[ (arrayLocation) ])){
+				hwlib::cout << "\nOpening box\n";
+				ledRed.set(0);
 				servo1.turnDegrees(168);
 				for(int i = 0; i<15; i++){
 					ledGreen.set(0);
@@ -121,7 +99,7 @@ int main(){
 				while(closePin.get() != 0){}
 				hwlib::cout << "Closing box\n";
 				hwlib::wait_ms(500);
-				servo1.turnDegrees(155);//might need to be lower
+				servo1.turnDegrees(155);
 			}
 			else{
 				ledGreen.set(0);
@@ -148,10 +126,16 @@ int main(){
 			
 			hwlib::cout << "Hold the root tag in front of the reader\n";
 			RFID.waitForCardID(ID2, maxIDLen);
-			if(checkSingleID(ID2, maxIDLen, &accessIDs[0][0])){
+			for(int i = 0; i < 5; i++){
+				ledGreen.set(1);
+				hwlib::wait_ms(70);
+				ledGreen.set(0);
+				hwlib::wait_ms(70);
+			}
+			if(accesOps.checkSingleID(ID2, maxIDLen, &accessIDs[0][0])){
 				hwlib::cout << "Type the root password\n";
 				currentArrayLocation++;
-				if(!(pswd.setPassword(PWD[ (currentArrayLocation) ], maxLen, &currentArrayLocation))){
+				if(!(accesOps.setPassword(PWD[ (currentArrayLocation) ], maxLen, &currentArrayLocation))){
 					hwlib::cout << "Something went wrong\n";
 					currentArrayLocation--;
 					for(int i = 0; i < 10; i++){
@@ -190,12 +174,6 @@ int main(){
 					hwlib::wait_ms(50);
 				}
 				continue;
-			}
-			for(int i = 0; i<maxIDLen; i++){
-				hwlib::cout << (int)accessIDs[1][i] << '\n';
-			}
-			for(int i = 1; i<PWDLen[1]; i++){
-				hwlib::cout << PWD[i] << '\n';
 			}
 		}
 	}

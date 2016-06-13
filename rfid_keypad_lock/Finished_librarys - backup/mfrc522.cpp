@@ -5,9 +5,9 @@
 * Created on 5 Juni 2016, 15:09
 */
 
-#include "mfrc522v2.hpp"
+#include "mfrc522.hpp"
 
-mfrc522v2::mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET):
+mfrc522::mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET):
 spi(spi),
 SDA(SDA),
 RESET(RESET)
@@ -15,7 +15,7 @@ RESET(RESET)
 	init();
 }
 
-void mfrc522v2::init(){
+void mfrc522::init(){
 	SDA.set(1);
 	RESET.set(1);//Turn the hardware reset pin on
 	
@@ -33,16 +33,16 @@ void mfrc522v2::init(){
 	antennaOn();//After the reset the antenna is off
 }
 
-void mfrc522v2::reset(){
+void mfrc522::reset(){
 	spiWrite(CommandReg, SOFTRESET);//Execute the softreset command
 }
 
-void mfrc522v2::spiWrite(byte reg, byte value){
+void mfrc522::spiWrite(byte reg, byte value){
 	byte temp[2] = {reg, value};
 	spi.write_and_read(SDA, 2, temp, nullptr);
 }
 
-byte mfrc522v2::spiRead(byte addr){
+byte mfrc522::spiRead(byte addr){
 	addr = (addr | 0x80); //The adresses need to have the 1st bit to 1 for reading
 	byte addrTemp[2] = {addr, 0x00};
 	byte temp[2];//For the return values
@@ -50,22 +50,22 @@ byte mfrc522v2::spiRead(byte addr){
 	return temp[1];//Return the value gotten from the mfrc522. Only the 2nd item is a return value the first is random data
 }
 
-void mfrc522v2::antennaOn(){
+void mfrc522::antennaOn(){
 	byte temp = spiRead(TxControlReg);
 	if (~(temp & 0x03)){//Check if the antenna is on already
 		setBitMask(TxControlReg, 0x03);//Turn it on
 	}
 }
 
-void mfrc522v2::setBitMask(byte addr, byte mask){
+void mfrc522::setBitMask(byte addr, byte mask){
 	spiWrite(addr, ((spiRead(addr)) | mask));//Turn the mask on
 }
 
-void mfrc522v2::clearBitMask(byte addr, byte mask){
+void mfrc522::clearBitMask(byte addr, byte mask){
 	spiWrite(addr, (spiRead(addr) & (~mask)));//Turn the mask off
 }
 
-byte mfrc522v2::request(byte mode, byte * backData){//BackData needs to be 2 bytes long
+byte mfrc522::request(byte mode, byte * backData){//BackData needs to be 2 bytes long
 	spiWrite(BitFramingReg, 0x07);//Define the amount of bits of the last byte that will be transmitted
 	byte cardRetValue[2];//The return values are (status, backBitsLen)
 	toCard(TRANSCEIVE, &mode, 1, cardRetValue, backData);//Run the toCard function in transceive mode
@@ -75,7 +75,7 @@ byte mfrc522v2::request(byte mode, byte * backData){//BackData needs to be 2 byt
 	return cardRetValue[0];//Return status
 }
 
-void mfrc522v2::toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData){
+void mfrc522::toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData){
 	byte status = MI_ERR;
 	byte irqEn = 0x77;
 	byte waitIRq = 0x30;
@@ -150,7 +150,7 @@ void mfrc522v2::toCard(byte value, byte * sendData, int lenSendData, byte * card
 	cardRetValue[1] = backLen;
 }
 
-byte mfrc522v2::anticoll(byte * backData){
+byte mfrc522::anticoll(byte * backData){
 	byte cardRetValue[2];
 	byte serNum[2] = {ANTICOLL, 0X20};//Put collision check data in the array
 	spiWrite(BitFramingReg, 0x00);//Change the amount of bits transmitted from the last byte
@@ -175,7 +175,7 @@ byte mfrc522v2::anticoll(byte * backData){
 	return cardRetValue[0]; //return the status
 }
 
-void mfrc522v2::waitForCardID(byte * ID, int lenID){
+void mfrc522::waitForCardID(byte * ID, int lenID){
 	while(1){
 		if(request(REQIDL, ID) == MI_OK){
 			if(anticoll(ID) == MI_OK){//Get the id

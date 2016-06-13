@@ -1,15 +1,16 @@
 ///@file
 /*
-* File:   mfrc522v2.hpp
+* File:   mfrc522.hpp
 * Author: Tim IJntema
 *
 * Created on 5 Juni 2016, 15:09
 */
 
-#ifndef MFRC522V2_HPP
-#define MFRC522V2_HPP
+#ifndef MFRC522_HPP
+#define MFRC522_HPP
 
 #include "hwlib.hpp"
+#include "RFID.hpp"
 
 ///Reading RFID tags with mfrc522
 //
@@ -17,59 +18,51 @@
 /// Wouter van Ooijen. The other class is used for reading from and writing values to the
 /// GPIO pins on the Arduino Due. This library is a recreation from a python original that
 /// can be found on this link: https://github.com/mxgxw/MFRC522-python.
-class mfrc522v2 {
+class mfrc522 : public RFID{
 private:
-	hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi;
-	hwlib::target::pin_out & SDA;
 	hwlib::target::pin_out & RESET;
 public:
 	//maximum length
 	int MAX_LEN = 16;
 	
 	//value's
-	byte IDLE = 0X00;
-	//byte MEM = 0x01;
-	//byte RANDID = 0x02;
-	//byte CALCCRC = 0x03;
-	//byte TRANSMIT = 0X04;
-	//byte NOCMDCHANGE = 0X07;
-	//byte RECEIVE = 0x08;
-	byte TRANSCEIVE = 0x0C;
-	byte SOFTRESET = 0x0F;
-	byte MFAUTHENT = 0x0E;
-	byte ANTICOLL = 0X93;
-	byte REQIDL = 0x26;
+	const byte IDLE = 0X00;
+	const byte TRANSCEIVE = 0x0C;
+	const byte SOFTRESET = 0x0F;
+	const byte MFAUTHENT = 0x0E;
+	const byte ANTICOLL = 0X93;
+	const byte REQIDL = 0x26;
 	
 	//request checks
-	byte MI_OK = 0;
-	byte MI_NOTAGERR = 1;
-	byte MI_ERR = 2;
+	const byte MI_OK = 0;
+	const byte MI_NOTAGERR = 1;
+	const byte MI_ERR = 2;
 	
 	//Setup all registers
 	//(for spi on the mfrc522 the LSB is not used so the addresses have to be shifted to the left 1 spot.
 	//The MSB of the address is used for indicating if you are trying to read or write, so thats why &0x7E is used)
-	byte CommandReg = ((0x01 << 1) & 0x7E);
-	byte FIFODataReg = ((0x09 << 1) & 0X7E);
-	byte TModeReg = ((0x2A << 1) & 0X7E);
-	byte TPrescalerReg = ((0x2B << 1) & 0X7E);
-	byte TReloadRegH = ((0x2C << 1) & 0X7E);
-	byte TReloadRegL = ((0x2D << 1) & 0X7E);
-	byte TxASKReg = ((0x15 << 1) & 0X7E);
-	byte ModeReg = ((0x11 << 1) & 0X7E);
-	byte TxControlReg = ((0x14 << 1) & 0X7E);
-	byte BitFramingReg = ((0x0D << 1) & 0x7E);
-	byte ComIEnReg = ((0x02 << 1) & 0x7E);
-	byte ComIrqReg = ((0x04 << 1) & 0x7E);
-	byte FIFOLevelReg = ((0x0A << 1) & 0x7E);
-	byte ErrorReg = ((0x06 << 1) & 0x7E);
-	byte ControlReg = ((0x0C << 1) & 0x7E);
+	const byte CommandReg = ((0x01 << 1) & 0x7E);
+	const byte FIFODataReg = ((0x09 << 1) & 0X7E);
+	const byte TModeReg = ((0x2A << 1) & 0X7E);
+	const byte TPrescalerReg = ((0x2B << 1) & 0X7E);
+	const byte TReloadRegH = ((0x2C << 1) & 0X7E);
+	const byte TReloadRegL = ((0x2D << 1) & 0X7E);
+	const byte TxASKReg = ((0x15 << 1) & 0X7E);
+	const byte ModeReg = ((0x11 << 1) & 0X7E);
+	const byte TxControlReg = ((0x14 << 1) & 0X7E);
+	const byte BitFramingReg = ((0x0D << 1) & 0x7E);
+	const byte ComIEnReg = ((0x02 << 1) & 0x7E);
+	const byte ComIrqReg = ((0x04 << 1) & 0x7E);
+	const byte FIFOLevelReg = ((0x0A << 1) & 0x7E);
+	const byte ErrorReg = ((0x06 << 1) & 0x7E);
+	const byte ControlReg = ((0x0C << 1) & 0x7E);
 	
 	///Default constructor
 	//
 	///The constructor takes three items from the hwlib namespace, the already created spi interface,
 	/// the ss or chip select line that is attached to the SDA pin of the mfrc522 and the RESET pin.
 	///The RESET pin is for hard resetting the mfrc522.
-	mfrc522v2(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET);
+	mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET);
 	
 	///Initialization of the mfrc522
 	//
@@ -77,13 +70,13 @@ public:
 	/// correct information. It is beeing called by the constructor automatically when the constructor
 	/// is beeing called. For more information about the different settings, check the cpp file.
 	///Comments have been added to every line that send something to the mfrc522.
-	void init();
+	void init() override;
 	
 	///Reset the mfrc522
 	//
 	///This function executes a soft reset on the mfrc522 using the previously created SOFTRESET byte.
 	///It sends this command to the command register using the spiWrite function.
-	void reset();
+	void reset() override;
 	
 	///Write values to the mfrc522
 	//
@@ -91,7 +84,7 @@ public:
 	///It takes a register to write the value to and the value itself. It puts these bytes in a byte array.
 	///The byte array gets send to the spi but from the hwlib namespace as 2 bytes of information that have
 	/// to be send.
-	void spiWrite(byte reg, byte value);
+	//void spiWrite(byte reg, byte value);
 	
 	///Read values from the mfrc522
 	//
@@ -100,7 +93,7 @@ public:
 	/// beeing read, the address is beeing changed using a or operator (addr | 0x80). After this two byte arrays
 	/// are created. One for the outgoing adresses and the other one for the received information. The function
 	/// returns the received value as one byte.
-	byte spiRead(byte addr);
+	//byte spiRead(byte addr);
 	
 	///Turn the antenna on
 	//
@@ -113,19 +106,19 @@ public:
 	//
 	///This function reads the given address and then turns the mask bits in the return value on. After doing this
 	/// it sends back the new data to the same adress.
-	void setBitMask(byte addr, byte mask);
+	//void setBitMask(byte addr, byte mask);
 	
 	///Clear a bitmask
 	//
 	///This function turns certain bits of in the specified address and keeps the rest the same. It dus this by reading
 	/// the specified register and then using a and operator on the returned value. The mask itself needs to be inverted
 	/// to be correct.
-	void clearBitMask(byte addr, byte mask);
+	//void clearBitMask(byte addr, byte mask);
 	
 	///Send data request
 	//
-	///This function sends a data request to the RFID tag. If we get MI_OK back and the return value of the tag is equal
-	/// to 0x10, we can start getting the UID data. That is done by the anticoll function. This function returns the status.
+	///This function sends a data request to the RFID tag. If we get MI_OK back and the length of the return data of the tag is equal
+	/// to 0x10 (in bits), we can start getting the UID data. That is done by the anticoll function. This function returns the status.
 	byte request(byte mode, byte * backData);
 	
 	///Send data to the RFID tag and get the returned information
@@ -133,7 +126,7 @@ public:
 	///We send data to the RFID tag and get the return data back from the tag. The data that comes back is beeing returned
 	/// using the cardRetValue and backData parameters. backData contains the bytes of data returned by the tag.
 	///cardRetValue contains the status and the length of the returned data.
-	void toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData);
+	void toCard(byte value, byte * sendData, int lenSendData, byte * cardRetValue, byte * backData) override;
 	
 	///Check for collision and return the UID
 	//
@@ -147,7 +140,7 @@ public:
 	///The function returns the UID. using a ID parameter on the function call. This ID parameter is a byte array
 	/// that is 5 bytes long. Notice: the function dus not have an actual return value, it uses the ID parameter to
 	/// return the UID.
-	void waitForCardID(byte * ID, int lenID);
+	void waitForCardID(byte * ID, int lenID) override;
 };
 
-#endif // MFRC522V2_HPP
+#endif // MFRC522_HPP
