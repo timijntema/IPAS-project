@@ -22,11 +22,11 @@
 ///It also contains functions for checking the RFID UID's.
 class accessOperations{
 private:
-	matrixKeypad & keypad;
-	int lenRootPWD;
-	char * rootPWD;
-	hwlib::pin_out & ledGreen;
-	hwlib::pin_out & ledRed;
+	matrixKeypad & keypad;///The reference to the keypad object
+	int lenRootPWD;///Length of the root password
+	char * rootPWD;///A character pointer containing the root password
+	hwlib::pin_out & ledGreen;///A reference to the pin containing the green LED
+	hwlib::pin_out & ledRed;///A reference to the pin containing the red LED
 public:
 	///Default constructor
 	//

@@ -18,8 +18,8 @@ Inheritance diagram for R\+F\+ID\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}{R\+F\+ID} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&S\+DA)
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}{R\+F\+ID} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&\hyperlink{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}{S\+DA})
+\begin{DoxyCompactList}\small\item\em Chip select pin. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_r_f_i_d_a8b244d38edcafaeb06637dbf33b5656f}{init} ()=0
 \begin{DoxyCompactList}\small\item\em Initialize the \hyperlink{class_r_f_i_d}{R\+F\+ID} reader. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_r_f_i_d_a3f1242db1a6bb7b57d6bfb7111d1fadd}{reset} (byte addr, byte reset\+Value)
@@ -42,9 +42,9 @@ virtual void \hyperlink{class_r_f_i_d_a7e02863bc0f1f117b05d72f9063497f7}{wait\+F
 hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \& {\bfseries spi}\hypertarget{class_r_f_i_d_ad2de95fbca075609eb41fa8d27d96077}{}\label{class_r_f_i_d_ad2de95fbca075609eb41fa8d27d96077}
 
 \item 
-hwlib\+::target\+::pin\+\_\+out \& {\bfseries S\+DA}\hypertarget{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}{}\label{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}
+hwlib\+::target\+::pin\+\_\+out \& \hyperlink{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}{S\+DA}\hypertarget{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}{}\label{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Variable for the usage of the bit banged spi bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -63,9 +63,9 @@ This is a superclass for \hyperlink{class_r_f_i_d}{R\+F\+ID} readers. It contain
 )}\hypertarget{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}{}\label{class_r_f_i_d_ad893852fc8a7c6a975a42cf3db951857}
 
 
-Default constructor. 
+Chip select pin. 
 
-This constructor takes a spi bus and a select pin as parameter. It sets the protected variables using these parameters. The protected variables can be used by the \hyperlink{class_r_f_i_d}{R\+F\+ID} class or any other class that inherits the \hyperlink{class_r_f_i_d}{R\+F\+ID} class. 
+Default constructor This constructor takes a spi bus and a select pin as parameter. It sets the protected variables using these parameters. The protected variables can be used by the \hyperlink{class_r_f_i_d}{R\+F\+ID} class or any other class that inherits the \hyperlink{class_r_f_i_d}{R\+F\+ID} class. 
 
 \subsection{Member Function Documentation}
 \index{R\+F\+ID@{R\+F\+ID}!clear\+Bit\+Mask@{clear\+Bit\+Mask}}
@@ -181,5 +181,5 @@ Implemented in \hyperlink{classmfrc522_a18665350caf822a716f2a72674a21647}{mfrc52
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_r_f_i_d_8hpp}{R\+F\+I\+D.\+hpp}\item 
-\hyperlink{_r_f_i_d_8cpp}{R\+F\+I\+D.\+cpp}\end{DoxyCompactItemize}
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/\hyperlink{_r_f_i_d_8hpp}{R\+F\+I\+D.\+hpp}\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/\hyperlink{_r_f_i_d_8cpp}{R\+F\+I\+D.\+cpp}\end{DoxyCompactItemize}

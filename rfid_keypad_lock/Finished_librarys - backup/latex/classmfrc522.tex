@@ -1,0 +1,227 @@
+\hypertarget{classmfrc522}{}\section{mfrc522 Class Reference}
+\label{classmfrc522}\index{mfrc522@{mfrc522}}
+
+
+Reading \hyperlink{class_r_f_i_d}{R\+F\+ID} tags with \hyperlink{classmfrc522}{mfrc522}.  
+
+
+
+
+{\ttfamily \#include $<$mfrc522.\+hpp$>$}
+
+Inheritance diagram for mfrc522\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmfrc522}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}{mfrc522} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&S\+DA, hwlib\+::target\+::pin\+\_\+out \&R\+E\+S\+ET)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classmfrc522_ac0a0cf7f16b98c37826ce0e160877269}{init} () override
+\begin{DoxyCompactList}\small\item\em Initialization of the \hyperlink{classmfrc522}{mfrc522}. \end{DoxyCompactList}\item 
+void \hyperlink{classmfrc522_a7b93914a7f2e1fd587392c2949f16ab1}{antenna\+On} ()
+\begin{DoxyCompactList}\small\item\em Turn the antenna on. \end{DoxyCompactList}\item 
+byte \hyperlink{classmfrc522_a0e19de4c39b37cf31d45af78f0fad524}{request} (byte mode, byte $\ast$back\+Data)
+\begin{DoxyCompactList}\small\item\em Send data request. \end{DoxyCompactList}\item 
+void \hyperlink{classmfrc522_a6801b8481392f6310b40a6893f6544c2}{to\+Card} (byte value, byte $\ast$send\+Data, int len\+Send\+Data, byte $\ast$card\+Ret\+Value, byte $\ast$back\+Data) override
+\begin{DoxyCompactList}\small\item\em Send data to the \hyperlink{class_r_f_i_d}{R\+F\+ID} tag and get the returned information. \end{DoxyCompactList}\item 
+byte \hyperlink{classmfrc522_a0ecbb86c1ad7fe15ea404f5bd8f30297}{anticoll} (byte $\ast$back\+Data)
+\begin{DoxyCompactList}\small\item\em Check for collision and return the U\+ID. \end{DoxyCompactList}\item 
+void \hyperlink{classmfrc522_a18665350caf822a716f2a72674a21647}{wait\+For\+Card\+ID} (byte $\ast$ID, int len\+ID) override
+\begin{DoxyCompactList}\small\item\em Wait for a tag to be found and read it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries M\+A\+X\+\_\+\+L\+EN} = 16\hypertarget{classmfrc522_ab5aeddf4462b8cbd6d4979a5aa591e2a}{}\label{classmfrc522_ab5aeddf4462b8cbd6d4979a5aa591e2a}
+
+\item 
+const byte {\bfseries I\+D\+LE} = 0\+X00\hypertarget{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}{}\label{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}
+
+\item 
+const byte {\bfseries T\+R\+A\+N\+S\+C\+E\+I\+VE} = 0x0C\hypertarget{classmfrc522_a4265ed9beb2068796f558866ecb7d599}{}\label{classmfrc522_a4265ed9beb2068796f558866ecb7d599}
+
+\item 
+const byte {\bfseries S\+O\+F\+T\+R\+E\+S\+ET} = 0x0F\hypertarget{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}{}\label{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}
+
+\item 
+const byte {\bfseries M\+F\+A\+U\+T\+H\+E\+NT} = 0x0E\hypertarget{classmfrc522_a65673200cf51c637d3998187b747f642}{}\label{classmfrc522_a65673200cf51c637d3998187b747f642}
+
+\item 
+const byte {\bfseries A\+N\+T\+I\+C\+O\+LL} = 0\+X93\hypertarget{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}{}\label{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}
+
+\item 
+const byte {\bfseries R\+E\+Q\+I\+DL} = 0x26\hypertarget{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}{}\label{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}
+
+\item 
+const byte {\bfseries M\+I\+\_\+\+OK} = 0\hypertarget{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}{}\label{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}
+
+\item 
+const byte {\bfseries M\+I\+\_\+\+N\+O\+T\+A\+G\+E\+RR} = 1\hypertarget{classmfrc522_abcdae51991b17be0222a25c351f36c08}{}\label{classmfrc522_abcdae51991b17be0222a25c351f36c08}
+
+\item 
+const byte {\bfseries M\+I\+\_\+\+E\+RR} = 2\hypertarget{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}{}\label{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}
+
+\item 
+const byte {\bfseries Command\+Reg} = ((0x01 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_abc418205b4d996c1541bfda1ce89c196}{}\label{classmfrc522_abc418205b4d996c1541bfda1ce89c196}
+
+\item 
+const byte {\bfseries F\+I\+F\+O\+Data\+Reg} = ((0x09 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}{}\label{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}
+
+\item 
+const byte {\bfseries T\+Mode\+Reg} = ((0x2\+A $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}{}\label{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}
+
+\item 
+const byte {\bfseries T\+Prescaler\+Reg} = ((0x2\+B $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}{}\label{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}
+
+\item 
+const byte {\bfseries T\+Reload\+RegH} = ((0x2\+C $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}{}\label{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}
+
+\item 
+const byte {\bfseries T\+Reload\+RegL} = ((0x2\+D $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}{}\label{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}
+
+\item 
+const byte {\bfseries Tx\+A\+S\+K\+Reg} = ((0x15 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a365974a47e52e69d7008df3b37019ecd}{}\label{classmfrc522_a365974a47e52e69d7008df3b37019ecd}
+
+\item 
+const byte {\bfseries Mode\+Reg} = ((0x11 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}{}\label{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}
+
+\item 
+const byte {\bfseries Tx\+Control\+Reg} = ((0x14 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}{}\label{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}
+
+\item 
+const byte {\bfseries Bit\+Framing\+Reg} = ((0x0\+D $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}{}\label{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}
+
+\item 
+const byte {\bfseries Com\+I\+En\+Reg} = ((0x02 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a746894aa1857a071ab9573ecf07621a0}{}\label{classmfrc522_a746894aa1857a071ab9573ecf07621a0}
+
+\item 
+const byte {\bfseries Com\+Irq\+Reg} = ((0x04 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}{}\label{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}
+
+\item 
+const byte {\bfseries F\+I\+F\+O\+Level\+Reg} = ((0x0\+A $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}{}\label{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}
+
+\item 
+const byte {\bfseries Error\+Reg} = ((0x06 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}{}\label{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}
+
+\item 
+const byte {\bfseries Control\+Reg} = ((0x0\+C $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}{}\label{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Reading \hyperlink{class_r_f_i_d}{R\+F\+ID} tags with \hyperlink{classmfrc522}{mfrc522}. 
+
+This class can be used to read the U\+ID of an \hyperlink{class_r_f_i_d}{R\+F\+ID} tag. It uses another set of classes created by Wouter van Ooijen. The other classes are used for reading from and writing values to the G\+P\+IO pins on the Arduino Due. This library is a recreation from a python original that can be found on this link\+: \href{https://github.com/mxgxw/MFRC522-python}{\tt https\+://github.\+com/mxgxw/\+M\+F\+R\+C522-\/python}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mfrc522@{mfrc522}!mfrc522@{mfrc522}}
+\index{mfrc522@{mfrc522}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{mfrc522(hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&\+S\+D\+A, hwlib\+::target\+::pin\+\_\+out \&\+R\+E\+S\+E\+T)}{mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso &spi, hwlib::target::pin_out &SDA, hwlib::target::pin_out &RESET)}}]{\setlength{\rightskip}{0pt plus 5cm}mfrc522\+::mfrc522 (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&}]{spi, }
+\item[{hwlib\+::target\+::pin\+\_\+out \&}]{S\+DA, }
+\item[{hwlib\+::target\+::pin\+\_\+out \&}]{R\+E\+S\+ET}
+\end{DoxyParamCaption}
+)}\hypertarget{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}{}\label{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}
+
+
+Default constructor. 
+
+The constructor takes three items from the hwlib namespace, the already created spi interface, the ss or chip select line that is attached to the S\+DA pin of the \hyperlink{classmfrc522}{mfrc522} and the R\+E\+S\+ET pin. The R\+E\+S\+ET pin is for hard resetting the \hyperlink{classmfrc522}{mfrc522}. 
+
+\subsection{Member Function Documentation}
+\index{mfrc522@{mfrc522}!antenna\+On@{antenna\+On}}
+\index{antenna\+On@{antenna\+On}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{antenna\+On()}{antennaOn()}}]{\setlength{\rightskip}{0pt plus 5cm}void mfrc522\+::antenna\+On (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmfrc522_a7b93914a7f2e1fd587392c2949f16ab1}{}\label{classmfrc522_a7b93914a7f2e1fd587392c2949f16ab1}
+
+
+Turn the antenna on. 
+
+After a softreset the antenna for reading the \hyperlink{class_r_f_i_d}{R\+F\+ID} tags is turned off. To turn it on we have the antenna\+On function. It reads the Tx\+Control\+Register and checks the returned value to see if the antenna is still on. If it is not on the set\+Bit\+Mask function turns it on. \index{mfrc522@{mfrc522}!anticoll@{anticoll}}
+\index{anticoll@{anticoll}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{anticoll(byte $\ast$back\+Data)}{anticoll(byte *backData)}}]{\setlength{\rightskip}{0pt plus 5cm}byte mfrc522\+::anticoll (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{back\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{classmfrc522_a0ecbb86c1ad7fe15ea404f5bd8f30297}{}\label{classmfrc522_a0ecbb86c1ad7fe15ea404f5bd8f30297}
+
+
+Check for collision and return the U\+ID. 
+
+This function checks for collision errors and returns the U\+ID of a tag. The return value is a byte that shows the status. If the return value is equal to M\+I\+\_\+\+E\+RR or M\+I\+\_\+\+N\+O\+T\+A\+G\+E\+RR then something went wrong. The data it returns is 5 bytes long. \index{mfrc522@{mfrc522}!init@{init}}
+\index{init@{init}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{init() override}{init() override}}]{\setlength{\rightskip}{0pt plus 5cm}void mfrc522\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classmfrc522_ac0a0cf7f16b98c37826ce0e160877269}{}\label{classmfrc522_ac0a0cf7f16b98c37826ce0e160877269}
+
+
+Initialization of the \hyperlink{classmfrc522}{mfrc522}. 
+
+This function contains al the setting that are needed to be done for the \hyperlink{classmfrc522}{mfrc522} to send the correct information. It is beeing called by the constructor automatically when the constructor is beeing called. For more information about the different settings, check the cpp file. Comments have been added to every line that send something to the \hyperlink{classmfrc522}{mfrc522}. 
+
+Implements \hyperlink{class_r_f_i_d_a8b244d38edcafaeb06637dbf33b5656f}{R\+F\+ID}.
+
+\index{mfrc522@{mfrc522}!request@{request}}
+\index{request@{request}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{request(byte mode, byte $\ast$back\+Data)}{request(byte mode, byte *backData)}}]{\setlength{\rightskip}{0pt plus 5cm}byte mfrc522\+::request (
+\begin{DoxyParamCaption}
+\item[{byte}]{mode, }
+\item[{byte $\ast$}]{back\+Data}
+\end{DoxyParamCaption}
+)}\hypertarget{classmfrc522_a0e19de4c39b37cf31d45af78f0fad524}{}\label{classmfrc522_a0e19de4c39b37cf31d45af78f0fad524}
+
+
+Send data request. 
+
+This function sends a data request to the \hyperlink{class_r_f_i_d}{R\+F\+ID} tag. If we get M\+I\+\_\+\+OK back and the length of the return data of the tag is equal to 0x10 (in bits), we can start getting the U\+ID data. That is done by the anticoll function. This function returns the status. \index{mfrc522@{mfrc522}!to\+Card@{to\+Card}}
+\index{to\+Card@{to\+Card}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{to\+Card(byte value, byte $\ast$send\+Data, int len\+Send\+Data, byte $\ast$card\+Ret\+Value, byte $\ast$back\+Data) override}{toCard(byte value, byte *sendData, int lenSendData, byte *cardRetValue, byte *backData) override}}]{\setlength{\rightskip}{0pt plus 5cm}void mfrc522\+::to\+Card (
+\begin{DoxyParamCaption}
+\item[{byte}]{value, }
+\item[{byte $\ast$}]{send\+Data, }
+\item[{int}]{len\+Send\+Data, }
+\item[{byte $\ast$}]{card\+Ret\+Value, }
+\item[{byte $\ast$}]{back\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classmfrc522_a6801b8481392f6310b40a6893f6544c2}{}\label{classmfrc522_a6801b8481392f6310b40a6893f6544c2}
+
+
+Send data to the \hyperlink{class_r_f_i_d}{R\+F\+ID} tag and get the returned information. 
+
+We send data to the \hyperlink{class_r_f_i_d}{R\+F\+ID} tag and get the return data back from the tag. The data that comes back is beeing returned using the card\+Ret\+Value and back\+Data parameters. back\+Data contains the bytes of data returned by the tag. card\+Ret\+Value contains the status and the length of the returned data. 
+
+Implements \hyperlink{class_r_f_i_d_ad44955169cde018c9673ae5073fcac24}{R\+F\+ID}.
+
+\index{mfrc522@{mfrc522}!wait\+For\+Card\+ID@{wait\+For\+Card\+ID}}
+\index{wait\+For\+Card\+ID@{wait\+For\+Card\+ID}!mfrc522@{mfrc522}}
+\subsubsection[{\texorpdfstring{wait\+For\+Card\+I\+D(byte $\ast$\+I\+D, int len\+I\+D) override}{waitForCardID(byte *ID, int lenID) override}}]{\setlength{\rightskip}{0pt plus 5cm}void mfrc522\+::wait\+For\+Card\+ID (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{ID, }
+\item[{int}]{len\+ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classmfrc522_a18665350caf822a716f2a72674a21647}{}\label{classmfrc522_a18665350caf822a716f2a72674a21647}
+
+
+Wait for a tag to be found and read it. 
+
+This function waits for a new \hyperlink{class_r_f_i_d}{R\+F\+ID} tag to be found. If it is found the function reads the U\+ID of the tag. The function returns the U\+ID. using a ID parameter on the function call. This ID parameter is a byte array that is 5 bytes long. Notice\+: the function dus not have an actual return value, it uses the ID parameter to return the U\+ID. 
+
+Implements \hyperlink{class_r_f_i_d_a7e02863bc0f1f117b05d72f9063497f7}{R\+F\+ID}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/\hyperlink{mfrc522_8hpp}{mfrc522.\+hpp}\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/mfrc522.\+cpp\end{DoxyCompactItemize}

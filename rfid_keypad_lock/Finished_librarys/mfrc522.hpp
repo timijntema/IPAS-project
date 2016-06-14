@@ -26,40 +26,38 @@ class mfrc522 : public RFID{
 private:
 	hwlib::target::pin_out & RESET;
 public:
-	//maximum length
-	int MAX_LEN = 16;
+	const int MAX_LEN = 16;///Maximum length
 	
 	//value's
-	const byte IDLE = 0X00;
-	const byte TRANSCEIVE = 0x0C;
-	const byte SOFTRESET = 0x0F;
-	const byte MFAUTHENT = 0x0E;
-	const byte ANTICOLL = 0X93;
-	const byte REQIDL = 0x26;
+	const byte IDLE = 0X00;///Idle command value
+	const byte TRANSCEIVE = 0x0C;///Tranceive command value
+	const byte SOFTRESET = 0x0F;///Softreset command value
+	const byte ANTICOLL = 0X93;///Anti collision command value
+	const byte REQIDL = 0x26;///Request data tag value
 	
 	//request checks
-	const byte MI_OK = 0;
-	const byte MI_NOTAGERR = 1;
-	const byte MI_ERR = 2;
+	const byte MI_OK = 0;///Everything is ok return value
+	const byte MI_NOTAGERR = 1;///Incorrect data error return value
+	const byte MI_ERR = 2;///Error return value
 	
 	//Setup all registers
 	//(for spi on the mfrc522 the LSB is not used so the addresses have to be shifted to the left 1 spot.
 	//The MSB of the address is used for indicating if you are trying to read or write, so thats why &0x7E is used)
-	const byte CommandReg = ((0x01 << 1) & 0x7E);
-	const byte FIFODataReg = ((0x09 << 1) & 0X7E);
-	const byte TModeReg = ((0x2A << 1) & 0X7E);
-	const byte TPrescalerReg = ((0x2B << 1) & 0X7E);
-	const byte TReloadRegH = ((0x2C << 1) & 0X7E);
-	const byte TReloadRegL = ((0x2D << 1) & 0X7E);
-	const byte TxASKReg = ((0x15 << 1) & 0X7E);
-	const byte ModeReg = ((0x11 << 1) & 0X7E);
-	const byte TxControlReg = ((0x14 << 1) & 0X7E);
-	const byte BitFramingReg = ((0x0D << 1) & 0x7E);
-	const byte ComIEnReg = ((0x02 << 1) & 0x7E);
-	const byte ComIrqReg = ((0x04 << 1) & 0x7E);
-	const byte FIFOLevelReg = ((0x0A << 1) & 0x7E);
-	const byte ErrorReg = ((0x06 << 1) & 0x7E);
-	const byte ControlReg = ((0x0C << 1) & 0x7E);
+	const byte CommandReg = ((0x01 << 1) & 0x7E);///Address for the command register
+	const byte FIFODataReg = ((0x09 << 1) & 0X7E);///Address for the first in firs out data register
+	const byte TModeReg = ((0x2A << 1) & 0X7E);///Address for one of the timer settings register
+	const byte TPrescalerReg = ((0x2B << 1) & 0X7E);///Address for one of the timer settings register
+	const byte TReloadRegH = ((0x2C << 1) & 0X7E);///Address for the higher bits of the timer reload value register
+	const byte TReloadRegL = ((0x2D << 1) & 0X7E);///Address for the lower bits of the timer reload value register
+	const byte TxASKReg = ((0x15 << 1) & 0X7E);///Address for the transmit modulation register
+	const byte ModeReg = ((0x11 << 1) & 0X7E);///Address for the general transmitting and receive settings register
+	const byte TxControlReg = ((0x14 << 1) & 0X7E);///Address for the register used for logic behaviour of the antenna
+	const byte BitFramingReg = ((0x0D << 1) & 0x7E);///Address for the register for bit oriented frames adjustments
+	const byte ComIEnReg = ((0x02 << 1) & 0x7E);///Address for the interrupt control bits register
+	const byte ComIrqReg = ((0x04 << 1) & 0x7E);///Seccond address for the interrupt control bits register
+	const byte FIFOLevelReg = ((0x0A << 1) & 0x7E);///Address for the FIFOdatareg pointer register
+	const byte ErrorReg = ((0x06 << 1) & 0x7E);///Address for the error register
+	const byte ControlReg = ((0x0C << 1) & 0x7E);///Address for the miscellaneous control bits register
 	
 	///Default constructor
 	//

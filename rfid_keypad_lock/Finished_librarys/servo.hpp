@@ -17,9 +17,9 @@
 #include "PWM_signal.hpp"
 #include "hwlib.hpp"
 
-//values can be different for other servo's
-#define MAX_DEGREES 249
-#define MIN_DEGREES 0
+
+#define MAX_DEGREES 249///This macro contains the max amount of degrees that can be used (specific to my servo)
+#define MIN_DEGREES 0///This macro contains the minimum amount of degrees that can be used
 
 ///Servo controll class
 //

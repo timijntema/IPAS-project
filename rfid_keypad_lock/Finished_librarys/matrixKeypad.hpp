@@ -17,25 +17,24 @@
 
 ///Obtain pressed keys from a keypad
 //
-///This class that can be used to obtain pressed keys from a keypad using an Arduino Due board.
+///This is a class that can be used to obtain pressed keys from a keypad using an Arduino Due board.
 ///The seperate keypresses can be obtained or an array of characters can be filled with pressed characters.
 ///It uses another namespace containing classes that make it capable of using Arduino Due pins. This second
 /// namespace has been made by Wouter Ooijen and not by me.
 class matrixKeypad{
 private:
-	int keypadRow = -1;
-	int keypadColumn = -1;
+	int keypadRow = -1;///A integer variable for containing the pressed row in the future
+	int keypadColumn = -1;///A integer variable for containing the pressed column in the future
 	
-	hwlib::pin_in_out * pinColumn[4];
-	hwlib::pin_in_out * pinRow[4];
+	hwlib::pin_in_out * pinColumn[4];///A pointer array containing all the pins of the keypad column
+	hwlib::pin_in_out * pinRow[4];///A pointer array containing all the pins of the keypad row
 	
-	const int rowSize = 4;
-	int colSize;
+	const int rowSize = 4;///The total amount of rows
+	int colSize;///The total amount of colums (needs to be set by the constructor)
 	
-	hwlib::pin_out & buzzerPin;
+	hwlib::pin_out & buzzerPin;///A pin for buzzer
 	
-	//The multidimensional array containing all the characters used by the keypad
-	char keypad[4][4] = {
+	char keypad[4][4] = {///The multidimensional array containing all the characters used by the keypad
 		{'1', '2', '3', 'A'},
 		{'4', '5', '6', 'B'},
 		{'7', '8', '9', 'C'},

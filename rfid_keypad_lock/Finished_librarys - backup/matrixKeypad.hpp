@@ -6,6 +6,10 @@
 * Created on 27 may 2016, 14:36
 */
 
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+
 #ifndef MATRIXKEYPAD_HPP
 #define	MATRIXKEYPAD_HPP
 
@@ -13,7 +17,7 @@
 
 ///Obtain pressed keys from a keypad
 //
-///This class that can be used to obtain pressed keys from a keypad using an Arduino Due board.
+///This is a class that can be used to obtain pressed keys from a keypad using an Arduino Due board.
 ///The seperate keypresses can be obtained or an array of characters can be filled with pressed characters.
 ///It uses another namespace containing classes that make it capable of using Arduino Due pins. This second
 /// namespace has been made by Wouter Ooijen and not by me.

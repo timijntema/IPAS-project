@@ -878,7 +878,7 @@ END GROUP
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000     0x1400
+.text           0x00000000     0x13f8
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -990,168 +990,167 @@ END GROUP
                 0x0000077e       0x20 mfrc522.o
                 0x0000077e                mfrc522::antennaOn()
  .text._ZN7mfrc5224initEv
-                0x0000079e       0x80 mfrc522.o
+                0x0000079e       0x7e mfrc522.o
                 0x0000079e                mfrc522::init()
- *fill*         0x0000081e        0x2 
  .text._ZN7mfrc522C2ERN5hwlib33spi_bus_bit_banged_sclk_mosi_misoERN3due7pin_outES5_
-                0x00000820       0x94 mfrc522.o
-                0x00000820                mfrc522::mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
-                0x00000820                mfrc522::mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
+                0x0000081c       0x90 mfrc522.o
+                0x0000081c                mfrc522::mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
+                0x0000081c                mfrc522::mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&, due::pin_out&)
  .text._ZN7mfrc5227requestEhPh
-                0x000008b4       0x4e mfrc522.o
-                0x000008b4                mfrc522::request(unsigned char, unsigned char*)
+                0x000008ac       0x4e mfrc522.o
+                0x000008ac                mfrc522::request(unsigned char, unsigned char*)
  .text._ZN7mfrc5228anticollEPh
-                0x00000902       0x76 mfrc522.o
-                0x00000902                mfrc522::anticoll(unsigned char*)
+                0x000008fa       0x76 mfrc522.o
+                0x000008fa                mfrc522::anticoll(unsigned char*)
  .text._ZN7mfrc52213waitForCardIDEPhi
-                0x00000978       0x84 mfrc522.o
-                0x00000978                mfrc522::waitForCardID(unsigned char*, int)
+                0x00000970       0x84 mfrc522.o
+                0x00000970                mfrc522::waitForCardID(unsigned char*, int)
  .text._ZN4RFID5resetEhh
-                0x000009fc        0x6 RFID.o
-                0x000009fc                RFID::reset(unsigned char, unsigned char)
+                0x000009f4        0x6 RFID.o
+                0x000009f4                RFID::reset(unsigned char, unsigned char)
  .text._ZN4RFID8spiWriteEhh
-                0x00000a02       0x24 RFID.o
-                0x00000a02                RFID::spiWrite(unsigned char, unsigned char)
+                0x000009fa       0x24 RFID.o
+                0x000009fa                RFID::spiWrite(unsigned char, unsigned char)
  .text._ZN4RFID7spiReadEh
-                0x00000a26       0x2e RFID.o
-                0x00000a26                RFID::spiRead(unsigned char)
+                0x00000a1e       0x2e RFID.o
+                0x00000a1e                RFID::spiRead(unsigned char)
  .text._ZN4RFID10setBitMaskEhh
-                0x00000a54       0x24 RFID.o
-                0x00000a54                RFID::setBitMask(unsigned char, unsigned char)
+                0x00000a4c       0x24 RFID.o
+                0x00000a4c                RFID::setBitMask(unsigned char, unsigned char)
  .text._ZN4RFID12clearBitMaskEhh
-                0x00000a78       0x24 RFID.o
-                0x00000a78                RFID::clearBitMask(unsigned char, unsigned char)
+                0x00000a70       0x24 RFID.o
+                0x00000a70                RFID::clearBitMask(unsigned char, unsigned char)
  .text._ZN4RFIDC2ERN5hwlib33spi_bus_bit_banged_sclk_mosi_misoERN3due7pin_outE
-                0x00000a9c       0x10 RFID.o
-                0x00000a9c                RFID::RFID(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&)
-                0x00000a9c                RFID::RFID(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&)
+                0x00000a94       0x10 RFID.o
+                0x00000a94                RFID::RFID(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&)
+                0x00000a94                RFID::RFID(hwlib::spi_bus_bit_banged_sclk_mosi_miso&, due::pin_out&)
  .text._ZN3due6pin_in3getEv
-                0x00000aac       0x10 main.o
-                0x00000aac                due::pin_in::get()
+                0x00000aa4       0x10 main.o
+                0x00000aa4                due::pin_in::get()
  .text._ZN3due10pin_in_out19direction_set_inputEv
-                0x00000abc        0x8 main.o
-                0x00000abc                due::pin_in_out::direction_set_input()
+                0x00000ab4        0x8 main.o
+                0x00000ab4                due::pin_in_out::direction_set_input()
  .text._ZN3due10pin_in_out3getEv
-                0x00000ac4       0x10 main.o
-                0x00000ac4                due::pin_in_out::get()
+                0x00000abc       0x10 main.o
+                0x00000abc                due::pin_in_out::get()
  .text._ZN3due10pin_in_out20direction_set_outputEv
-                0x00000ad4        0x8 main.o
-                0x00000ad4                due::pin_in_out::direction_set_output()
+                0x00000acc        0x8 main.o
+                0x00000acc                due::pin_in_out::direction_set_output()
  .text._ZN3due10pin_in_out3setEb
-                0x00000adc        0xe main.o
-                0x00000adc                due::pin_in_out::set(bool)
- *fill*         0x00000aea        0x2 
+                0x00000ad4        0xe main.o
+                0x00000ad4                due::pin_in_out::set(bool)
+ *fill*         0x00000ae2        0x2 
  .text._ZN3due6pin_inC2ENS_4pinsE
-                0x00000aec       0x34 main.o
-                0x00000aec                due::pin_in::pin_in(due::pins)
-                0x00000aec                due::pin_in::pin_in(due::pins)
+                0x00000ae4       0x34 main.o
+                0x00000ae4                due::pin_in::pin_in(due::pins)
+                0x00000ae4                due::pin_in::pin_in(due::pins)
  .text._ZN3due7pin_outC2ENS_4pinsE
-                0x00000b20       0x34 main.o
-                0x00000b20                due::pin_out::pin_out(due::pins)
-                0x00000b20                due::pin_out::pin_out(due::pins)
+                0x00000b18       0x34 main.o
+                0x00000b18                due::pin_out::pin_out(due::pins)
+                0x00000b18                due::pin_out::pin_out(due::pins)
  .text._ZN3due10pin_in_outC2ENS_4pinsE
-                0x00000b54       0x30 main.o
-                0x00000b54                due::pin_in_out::pin_in_out(due::pins)
-                0x00000b54                due::pin_in_out::pin_in_out(due::pins)
+                0x00000b4c       0x30 main.o
+                0x00000b4c                due::pin_in_out::pin_in_out(due::pins)
+                0x00000b4c                due::pin_in_out::pin_in_out(due::pins)
  .text._ZN5hwlib33spi_bus_bit_banged_sclk_mosi_miso14write_and_readERNS_7pin_outEiPKhPh
-                0x00000b84       0xa2 main.o
-                0x00000b84                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
- *fill*         0x00000c26        0x2 
+                0x00000b7c       0xa2 main.o
+                0x00000b7c                hwlib::spi_bus_bit_banged_sclk_mosi_miso::write_and_read(hwlib::pin_out&, int, unsigned char const*, unsigned char*)
+ *fill*         0x00000c1e        0x2 
  .text.startup.main
-                0x00000c28      0x448 main.o
-                0x00000c28                main
+                0x00000c20      0x448 main.o
+                0x00000c20                main
  .text.__startup
-                0x00001070       0x48 bmptk_cortex.o
-                0x00001070                __startup
+                0x00001068       0x48 bmptk_cortex.o
+                0x00001068                __startup
  .text.__cxa_pure_virtual
-                0x000010b8        0x2 bmptk_cortex.o
-                0x000010b8                __cxa_pure_virtual
- *fill*         0x000010ba        0x2 
- .text.memset   0x000010bc       0x9c c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
-                0x000010bc                memset
-                0x00001158                . = ALIGN (0x4)
+                0x000010b0        0x2 bmptk_cortex.o
+                0x000010b0                __cxa_pure_virtual
+ *fill*         0x000010b2        0x2 
+ .text.memset   0x000010b4       0x9c c:/program files (x86)/gnu tools arm embedded/5.3 2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv7-m\libc.a(lib_a-memset.o)
+                0x000010b4                memset
+                0x00001150                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00001158        0x0 linker stubs
- .glue_7t       0x00001158        0x0 linker stubs
-                0x00001158                . = ALIGN (0x4)
+ .glue_7        0x00001150        0x0 linker stubs
+ .glue_7t       0x00001150        0x0 linker stubs
+                0x00001150                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZTVN5hwlib23_pin_in_out_dummy_classE
-                0x00001158       0x18 matrixKeypad.o
-                0x00001158                vtable for hwlib::_pin_in_out_dummy_class
+                0x00001150       0x18 matrixKeypad.o
+                0x00001150                vtable for hwlib::_pin_in_out_dummy_class
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00001170       0x10 matrixKeypad.o
-                0x00001170                vtable for hwlib::cout_using_uart_putc
+                0x00001168       0x10 matrixKeypad.o
+                0x00001168                vtable for hwlib::cout_using_uart_putc
  .rodata._ZTVN3due7pin_outE
-                0x00001180        0xc matrixKeypad.o
-                0x00001180                vtable for due::pin_out
- .rodata        0x0000118c       0x10 matrixKeypad.o
+                0x00001178        0xc matrixKeypad.o
+                0x00001178                vtable for due::pin_out
+ .rodata        0x00001184       0x10 matrixKeypad.o
  .rodata.str1.1
-                0x0000119c       0x17 matrixKeypad.o
+                0x00001194       0x17 matrixKeypad.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x000011b3       0xa4 matrixKeypad.o
+                0x000011ab       0xa4 matrixKeypad.o
  .rodata.str1.1
-                0x00001257       0x27 accessOperations.o
+                0x0000124f       0x27 accessOperations.o
                                  0x3e (size before relaxing)
  .rodata.str1.1
-                0x0000127e       0x18 mfrc522.o
+                0x00001276       0x18 mfrc522.o
                                  0x2f (size before relaxing)
- *fill*         0x00001296        0x2 
+ *fill*         0x0000128e        0x2 
  .rodata._ZTV7mfrc522
-                0x00001298       0x28 mfrc522.o
-                0x00001298                vtable for mfrc522
+                0x00001290       0x28 mfrc522.o
+                0x00001290                vtable for mfrc522
  .rodata._ZTV4RFID
-                0x000012c0       0x28 RFID.o
-                0x000012c0                vtable for RFID
+                0x000012b8       0x28 RFID.o
+                0x000012b8                vtable for RFID
  .rodata._ZTVN5hwlib33spi_bus_bit_banged_sclk_mosi_misoE
-                0x000012e8        0xc main.o
-                0x000012e8                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
+                0x000012e0        0xc main.o
+                0x000012e0                vtable for hwlib::spi_bus_bit_banged_sclk_mosi_miso
  .rodata._ZTVN3due6pin_inE
-                0x000012f4        0xc main.o
-                0x000012f4                vtable for due::pin_in
+                0x000012ec        0xc main.o
+                0x000012ec                vtable for due::pin_in
  .rodata._ZTVN3due10pin_in_outE
-                0x00001300       0x18 main.o
-                0x00001300                vtable for due::pin_in_out
- .rodata        0x00001318        0xa main.o
+                0x000012f8       0x18 main.o
+                0x000012f8                vtable for due::pin_in_out
+ .rodata        0x00001310        0xa main.o
  .rodata.str1.1
-                0x00001322       0xde main.o
+                0x0000131a       0xde main.o
                                  0xf5 (size before relaxing)
-                0x00001400                . = ALIGN (0x4)
+                0x000013f8                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00001400                . = ALIGN (0x4)
+                0x000013f8                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00001400                . = ALIGN (0x4)
+                0x000013f8                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00001400                . = ALIGN (0x4)
+                0x000013f8                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00001400                . = ALIGN (0x4)
-                0x00001400                __text_end = .
+                0x000013f8                . = ALIGN (0x4)
+                0x000013f8                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00001400        0x0
- .vfp11_veneer  0x00001400        0x0 linker stubs
+.vfp11_veneer   0x000013f8        0x0
+ .vfp11_veneer  0x000013f8        0x0 linker stubs
 
-.v4_bx          0x00001400        0x0
- .v4_bx         0x00001400        0x0 linker stubs
+.v4_bx          0x000013f8        0x0
+ .v4_bx         0x000013f8        0x0 linker stubs
 
-.iplt           0x00001400        0x0
- .iplt          0x00001400        0x0 matrixKeypad.o
+.iplt           0x000013f8        0x0
+ .iplt          0x000013f8        0x0 matrixKeypad.o
 
-.rel.dyn        0x00001400        0x0
- .rel.iplt      0x00001400        0x0 matrixKeypad.o
+.rel.dyn        0x000013f8        0x0
+ .rel.iplt      0x000013f8        0x0 matrixKeypad.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00001400                . = ALIGN (0x4)
-                0x00001400                __exidx_start = .
+                0x000013f8                . = ALIGN (0x4)
+                0x000013f8                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00001400                . = ALIGN (0x4)
-                0x00001400                __exidx_end = .
+                0x000013f8                . = ALIGN (0x4)
+                0x000013f8                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x12010
@@ -1183,9 +1182,9 @@ END GROUP
                 0x20012010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20012010       0x14 load address 0x00001400
+.data           0x20012010       0x14 load address 0x000013f8
                 0x20012010                . = ALIGN (0x4)
-                0x00001400                __data_init_start = LOADADDR (.data)
+                0x000013f8                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20012010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -1197,13 +1196,13 @@ END GROUP
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00001400                __data_init_end = LOADADDR (.data)
+                0x000013f8                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x00000014                PROVIDE (__data_size, (__data_end - __data_start))
                 0x00000014                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20012024        0x0 load address 0x00001414
+.igot.plt       0x20012024        0x0 load address 0x0000140c
  .igot.plt      0x20012024        0x0 matrixKeypad.o
                 0x20012024                . = ALIGN (0x4)
                 0x20012024                __heap_start = .

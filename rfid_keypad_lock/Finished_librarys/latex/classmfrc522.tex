@@ -18,8 +18,8 @@ Inheritance diagram for mfrc522\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}{mfrc522} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&S\+DA, hwlib\+::target\+::pin\+\_\+out \&R\+E\+S\+ET)
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}{mfrc522} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi, hwlib\+::target\+::pin\+\_\+out \&\hyperlink{class_r_f_i_d_a4367d5ca78409b651a56920886e8fac2}{S\+DA}, hwlib\+::target\+::pin\+\_\+out \&R\+E\+S\+ET)
+\begin{DoxyCompactList}\small\item\em Address for the miscellaneous control bits register. \end{DoxyCompactList}\item 
 void \hyperlink{classmfrc522_ac0a0cf7f16b98c37826ce0e160877269}{init} () override
 \begin{DoxyCompactList}\small\item\em Initialization of the \hyperlink{classmfrc522}{mfrc522}. \end{DoxyCompactList}\item 
 void \hyperlink{classmfrc522_a7b93914a7f2e1fd587392c2949f16ab1}{antenna\+On} ()
@@ -35,81 +35,78 @@ void \hyperlink{classmfrc522_a18665350caf822a716f2a72674a21647}{wait\+For\+Card\
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int {\bfseries M\+A\+X\+\_\+\+L\+EN} = 16\hypertarget{classmfrc522_ab5aeddf4462b8cbd6d4979a5aa591e2a}{}\label{classmfrc522_ab5aeddf4462b8cbd6d4979a5aa591e2a}
+const int {\bfseries M\+A\+X\+\_\+\+L\+EN} = 16\hypertarget{classmfrc522_a165ae8f5802c1cb70602248bbe602aa5}{}\label{classmfrc522_a165ae8f5802c1cb70602248bbe602aa5}
 
 \item 
-const byte {\bfseries I\+D\+LE} = 0\+X00\hypertarget{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}{}\label{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}
+const byte \hyperlink{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}{I\+D\+LE} = 0\+X00\hypertarget{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}{}\label{classmfrc522_a2db7d04e72f02ce2cd1d2f3c2a142d9b}
 
-\item 
-const byte {\bfseries T\+R\+A\+N\+S\+C\+E\+I\+VE} = 0x0C\hypertarget{classmfrc522_a4265ed9beb2068796f558866ecb7d599}{}\label{classmfrc522_a4265ed9beb2068796f558866ecb7d599}
+\begin{DoxyCompactList}\small\item\em Maximum length. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a4265ed9beb2068796f558866ecb7d599}{T\+R\+A\+N\+S\+C\+E\+I\+VE} = 0x0C\hypertarget{classmfrc522_a4265ed9beb2068796f558866ecb7d599}{}\label{classmfrc522_a4265ed9beb2068796f558866ecb7d599}
 
-\item 
-const byte {\bfseries S\+O\+F\+T\+R\+E\+S\+ET} = 0x0F\hypertarget{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}{}\label{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}
+\begin{DoxyCompactList}\small\item\em Idle command value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}{S\+O\+F\+T\+R\+E\+S\+ET} = 0x0F\hypertarget{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}{}\label{classmfrc522_a5636b5a1e9382e1cc842fa20723d63bb}
 
-\item 
-const byte {\bfseries M\+F\+A\+U\+T\+H\+E\+NT} = 0x0E\hypertarget{classmfrc522_a65673200cf51c637d3998187b747f642}{}\label{classmfrc522_a65673200cf51c637d3998187b747f642}
+\begin{DoxyCompactList}\small\item\em Tranceive command value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}{A\+N\+T\+I\+C\+O\+LL} = 0\+X93\hypertarget{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}{}\label{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}
 
-\item 
-const byte {\bfseries A\+N\+T\+I\+C\+O\+LL} = 0\+X93\hypertarget{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}{}\label{classmfrc522_a19f4e763eb734d352e9c0bf4694030b1}
+\begin{DoxyCompactList}\small\item\em Softreset command value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}{R\+E\+Q\+I\+DL} = 0x26\hypertarget{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}{}\label{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}
 
-\item 
-const byte {\bfseries R\+E\+Q\+I\+DL} = 0x26\hypertarget{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}{}\label{classmfrc522_ad0ab76f65c6fff489ac36b763e588e17}
+\begin{DoxyCompactList}\small\item\em Anti collision command value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}{M\+I\+\_\+\+OK} = 0\hypertarget{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}{}\label{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}
 
-\item 
-const byte {\bfseries M\+I\+\_\+\+OK} = 0\hypertarget{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}{}\label{classmfrc522_ae9691458db3d46de5632ef531c0a06bc}
+\begin{DoxyCompactList}\small\item\em Request data tag value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_abcdae51991b17be0222a25c351f36c08}{M\+I\+\_\+\+N\+O\+T\+A\+G\+E\+RR} = 1\hypertarget{classmfrc522_abcdae51991b17be0222a25c351f36c08}{}\label{classmfrc522_abcdae51991b17be0222a25c351f36c08}
 
-\item 
-const byte {\bfseries M\+I\+\_\+\+N\+O\+T\+A\+G\+E\+RR} = 1\hypertarget{classmfrc522_abcdae51991b17be0222a25c351f36c08}{}\label{classmfrc522_abcdae51991b17be0222a25c351f36c08}
+\begin{DoxyCompactList}\small\item\em Everything is ok return value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}{M\+I\+\_\+\+E\+RR} = 2\hypertarget{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}{}\label{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}
 
-\item 
-const byte {\bfseries M\+I\+\_\+\+E\+RR} = 2\hypertarget{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}{}\label{classmfrc522_a6a308a9c089dea6dbab9366fc939c313}
+\begin{DoxyCompactList}\small\item\em Incorrect data error return value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_abc418205b4d996c1541bfda1ce89c196}{Command\+Reg} = ((0x01 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_abc418205b4d996c1541bfda1ce89c196}{}\label{classmfrc522_abc418205b4d996c1541bfda1ce89c196}
 
-\item 
-const byte {\bfseries Command\+Reg} = ((0x01 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_abc418205b4d996c1541bfda1ce89c196}{}\label{classmfrc522_abc418205b4d996c1541bfda1ce89c196}
+\begin{DoxyCompactList}\small\item\em Error return value. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}{F\+I\+F\+O\+Data\+Reg} = ((0x09 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}{}\label{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}
 
-\item 
-const byte {\bfseries F\+I\+F\+O\+Data\+Reg} = ((0x09 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}{}\label{classmfrc522_aa1dd9bd0fb405bc8217cc6c655c0b434}
+\begin{DoxyCompactList}\small\item\em Address for the command register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}{T\+Mode\+Reg} = ((0x2\+A $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}{}\label{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}
 
-\item 
-const byte {\bfseries T\+Mode\+Reg} = ((0x2\+A $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}{}\label{classmfrc522_ab4ce527983527c3db68f7541cb6b62fc}
+\begin{DoxyCompactList}\small\item\em Address for the first in firs out data register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}{T\+Prescaler\+Reg} = ((0x2\+B $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}{}\label{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}
 
-\item 
-const byte {\bfseries T\+Prescaler\+Reg} = ((0x2\+B $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}{}\label{classmfrc522_a1b54b9b1e82ebc217c280928d1f567f1}
+\begin{DoxyCompactList}\small\item\em Address for one of the timer settings register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}{T\+Reload\+RegH} = ((0x2\+C $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}{}\label{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}
 
-\item 
-const byte {\bfseries T\+Reload\+RegH} = ((0x2\+C $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}{}\label{classmfrc522_a491eb14159868a7aaf5c0d23ea5679f5}
+\begin{DoxyCompactList}\small\item\em Address for one of the timer settings register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}{T\+Reload\+RegL} = ((0x2\+D $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}{}\label{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}
 
-\item 
-const byte {\bfseries T\+Reload\+RegL} = ((0x2\+D $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}{}\label{classmfrc522_a1bfa3adaddcb782565d871c0efed53d1}
+\begin{DoxyCompactList}\small\item\em Address for the higher bits of the timer reload value register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a365974a47e52e69d7008df3b37019ecd}{Tx\+A\+S\+K\+Reg} = ((0x15 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a365974a47e52e69d7008df3b37019ecd}{}\label{classmfrc522_a365974a47e52e69d7008df3b37019ecd}
 
-\item 
-const byte {\bfseries Tx\+A\+S\+K\+Reg} = ((0x15 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a365974a47e52e69d7008df3b37019ecd}{}\label{classmfrc522_a365974a47e52e69d7008df3b37019ecd}
+\begin{DoxyCompactList}\small\item\em Address for the lower bits of the timer reload value register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}{Mode\+Reg} = ((0x11 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}{}\label{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}
 
-\item 
-const byte {\bfseries Mode\+Reg} = ((0x11 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}{}\label{classmfrc522_a89d0eb6565c3c0c37dfde546f4cab24f}
+\begin{DoxyCompactList}\small\item\em Address for the transmit modulation register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}{Tx\+Control\+Reg} = ((0x14 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}{}\label{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}
 
-\item 
-const byte {\bfseries Tx\+Control\+Reg} = ((0x14 $<$$<$ 1) \& 0\+X7\+E)\hypertarget{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}{}\label{classmfrc522_a50e31c19c5289374ea3f8e397b30ae5a}
+\begin{DoxyCompactList}\small\item\em Address for the general transmitting and receive settings register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}{Bit\+Framing\+Reg} = ((0x0\+D $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}{}\label{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}
 
-\item 
-const byte {\bfseries Bit\+Framing\+Reg} = ((0x0\+D $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}{}\label{classmfrc522_a1147f52a011b9cf58a3bfe39886bfa55}
+\begin{DoxyCompactList}\small\item\em Address for the register used for logic behaviour of the antenna. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a746894aa1857a071ab9573ecf07621a0}{Com\+I\+En\+Reg} = ((0x02 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a746894aa1857a071ab9573ecf07621a0}{}\label{classmfrc522_a746894aa1857a071ab9573ecf07621a0}
 
-\item 
-const byte {\bfseries Com\+I\+En\+Reg} = ((0x02 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a746894aa1857a071ab9573ecf07621a0}{}\label{classmfrc522_a746894aa1857a071ab9573ecf07621a0}
+\begin{DoxyCompactList}\small\item\em Address for the register for bit oriented frames adjustments. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}{Com\+Irq\+Reg} = ((0x04 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}{}\label{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}
 
-\item 
-const byte {\bfseries Com\+Irq\+Reg} = ((0x04 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}{}\label{classmfrc522_a4fb04a221dc26dee599d32119eebe0cc}
+\begin{DoxyCompactList}\small\item\em Address for the interrupt control bits register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}{F\+I\+F\+O\+Level\+Reg} = ((0x0\+A $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}{}\label{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}
 
-\item 
-const byte {\bfseries F\+I\+F\+O\+Level\+Reg} = ((0x0\+A $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}{}\label{classmfrc522_a75a41a00f61652eec99c887d98df8ed4}
+\begin{DoxyCompactList}\small\item\em Seccond address for the interrupt control bits register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}{Error\+Reg} = ((0x06 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}{}\label{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}
 
-\item 
-const byte {\bfseries Error\+Reg} = ((0x06 $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}{}\label{classmfrc522_a91f4e4c517d9f583250a6f5b022c590d}
+\begin{DoxyCompactList}\small\item\em Address for the F\+I\+F\+Odatareg pointer register. \end{DoxyCompactList}\item 
+const byte \hyperlink{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}{Control\+Reg} = ((0x0\+C $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}{}\label{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}
 
-\item 
-const byte {\bfseries Control\+Reg} = ((0x0\+C $<$$<$ 1) \& 0x7\+E)\hypertarget{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}{}\label{classmfrc522_ad2e13b4fb8a39ed0200b467666266346}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Address for the error register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -130,9 +127,9 @@ This class can be used to read the U\+ID of an \hyperlink{class_r_f_i_d}{R\+F\+I
 )}\hypertarget{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}{}\label{classmfrc522_a7939e9c2b9c197a409489af7fe3c9da7}
 
 
-Default constructor. 
+Address for the miscellaneous control bits register. 
 
-The constructor takes three items from the hwlib namespace, the already created spi interface, the ss or chip select line that is attached to the S\+DA pin of the \hyperlink{classmfrc522}{mfrc522} and the R\+E\+S\+ET pin. The R\+E\+S\+ET pin is for hard resetting the \hyperlink{classmfrc522}{mfrc522}. 
+Default constructor The constructor takes three items from the hwlib namespace, the already created spi interface, the ss or chip select line that is attached to the S\+DA pin of the \hyperlink{classmfrc522}{mfrc522} and the R\+E\+S\+ET pin. The R\+E\+S\+ET pin is for hard resetting the \hyperlink{classmfrc522}{mfrc522}. 
 
 \subsection{Member Function Documentation}
 \index{mfrc522@{mfrc522}!antenna\+On@{antenna\+On}}
@@ -223,5 +220,5 @@ Implements \hyperlink{class_r_f_i_d_a7e02863bc0f1f117b05d72f9063497f7}{R\+F\+ID}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{mfrc522_8hpp}{mfrc522.\+hpp}\item 
-mfrc522.\+cpp\end{DoxyCompactItemize}
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/\hyperlink{mfrc522_8hpp}{mfrc522.\+hpp}\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/mfrc522.\+cpp\end{DoxyCompactItemize}

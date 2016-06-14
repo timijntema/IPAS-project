@@ -13,7 +13,7 @@ Operations on accessing the box.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classaccess_operations_a42622d8277e50d7e01118139ab2fd57e}{access\+Operations} (\hyperlink{classmatrix_keypad}{matrix\+Keypad} \&keypad, char $\ast$root\+P\+WD, int len\+Root\+P\+WD, hwlib\+::pin\+\_\+out \&led\+Green=hwlib\+::pin\+\_\+out\+\_\+dummy, hwlib\+::pin\+\_\+out \&led\+Red=hwlib\+::pin\+\_\+out\+\_\+dummy)
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A reference to the pin containing the red L\+ED. \end{DoxyCompactList}\item 
 bool \hyperlink{classaccess_operations_a23a9545b9b8636b995aa6e3d007ea524}{get\+Password} (char $\ast$client\+P\+WD, int len\+Char\+Array)
 \begin{DoxyCompactList}\small\item\em Get and check passwords. \end{DoxyCompactList}\item 
 bool \hyperlink{classaccess_operations_a93b1c64a9598739a34c09757fe1f4ac1}{set\+Password} (char $\ast$client\+P\+WD, const int \&len\+Char\+Array, int $\ast$current\+Array\+Location)
@@ -43,9 +43,9 @@ This class is meant to make operations on passwords and with passwords a lot mor
 )}\hypertarget{classaccess_operations_a42622d8277e50d7e01118139ab2fd57e}{}\label{classaccess_operations_a42622d8277e50d7e01118139ab2fd57e}
 
 
-Default constructor. 
+A reference to the pin containing the red L\+ED. 
 
-The constructor of this class takes a reference to the matrix keypad to make sure we can use all the functions of the keypad. It also takes a root password meant for changing the user password(s). Two L\+E\+Ds are optional to indicate correct or incorrect passwords and U\+ID\textquotesingle{}s. 
+Default constructor The constructor of this class takes a reference to the matrix keypad to make sure we can use all the functions of the keypad. It also takes a root password meant for changing the user password(s). Two L\+E\+Ds are optional to indicate correct or incorrect passwords and U\+ID\textquotesingle{}s. 
 
 \subsection{Member Function Documentation}
 \index{access\+Operations@{access\+Operations}!check\+Multiple\+ID@{check\+Multiple\+ID}}
@@ -105,5 +105,5 @@ This function can be used to change a clients password. It first checks the root
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-access\+Operations.\+hpp\item 
-access\+Operations.\+cpp\end{DoxyCompactItemize}
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/access\+Operations.\+hpp\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/access\+Operations.\+cpp\end{DoxyCompactItemize}

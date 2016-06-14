@@ -22,8 +22,8 @@
 /// RFID readers.
 class RFID{
 protected:
-	hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi;
-	hwlib::target::pin_out & SDA;
+	hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi;///Variable for the usage of the bit banged spi bus
+	hwlib::target::pin_out & SDA;///Chip select pin
 public:
 	///Default constructor
 	//

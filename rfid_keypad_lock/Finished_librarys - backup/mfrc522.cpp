@@ -5,6 +5,10 @@
 * Created on 5 Juni 2016, 15:09
 */
 
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+
 #include "mfrc522.hpp"
 
 mfrc522::mfrc522(hwlib::spi_bus_bit_banged_sclk_mosi_miso & spi, hwlib::target::pin_out & SDA, hwlib::target::pin_out & RESET):

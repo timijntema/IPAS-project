@@ -43,7 +43,7 @@ int main(){
 	auto keypad4 = hwlib::target::pin_in_out(hwlib::target::pins::d30);
 	auto keypad5 = hwlib::target::pin_in_out(hwlib::target::pins::d34);
 	auto keypad6 = hwlib::target::pin_in_out(hwlib::target::pins::d26);
-	auto keypad7 = hwlib::pin_in_out_dummy;//Had to create it because of me using the buzzer
+	auto keypad7 = hwlib::pin_in_out_dummy;//Had to create this pin because of me using the buzzer
 	
 	//Remaining pins
 	auto servoPin = hwlib::target::pin_out(hwlib::target::pins::d52);

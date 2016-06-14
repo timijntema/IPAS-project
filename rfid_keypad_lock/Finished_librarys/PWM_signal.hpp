@@ -23,7 +23,7 @@
 /// uses a bit banged version of PWM.
 class PWM_signal{
 private:
-	hwlib::target::pin_out & pwmPin;
+	hwlib::target::pin_out & pwmPin;///The pin to wich the PWM device has been attached
 public:
 
 	///Default constructor

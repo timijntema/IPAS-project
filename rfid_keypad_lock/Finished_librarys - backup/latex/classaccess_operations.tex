@@ -1,0 +1,109 @@
+\hypertarget{classaccess_operations}{}\section{access\+Operations Class Reference}
+\label{classaccess_operations}\index{access\+Operations@{access\+Operations}}
+
+
+Operations on accessing the box.  
+
+
+
+
+{\ttfamily \#include $<$access\+Operations.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaccess_operations_a42622d8277e50d7e01118139ab2fd57e}{access\+Operations} (\hyperlink{classmatrix_keypad}{matrix\+Keypad} \&keypad, char $\ast$root\+P\+WD, int len\+Root\+P\+WD, hwlib\+::pin\+\_\+out \&led\+Green=hwlib\+::pin\+\_\+out\+\_\+dummy, hwlib\+::pin\+\_\+out \&led\+Red=hwlib\+::pin\+\_\+out\+\_\+dummy)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classaccess_operations_a23a9545b9b8636b995aa6e3d007ea524}{get\+Password} (char $\ast$client\+P\+WD, int len\+Char\+Array)
+\begin{DoxyCompactList}\small\item\em Get and check passwords. \end{DoxyCompactList}\item 
+bool \hyperlink{classaccess_operations_a93b1c64a9598739a34c09757fe1f4ac1}{set\+Password} (char $\ast$client\+P\+WD, const int \&len\+Char\+Array, int $\ast$current\+Array\+Location)
+\begin{DoxyCompactList}\small\item\em Set a new client password. \end{DoxyCompactList}\item 
+bool \hyperlink{classaccess_operations_a44956d25fa01c97b6755fbbc30fa7bf7}{check\+Single\+ID} (byte $\ast$ID, int len\+ID, byte $\ast$check\+ID)
+\begin{DoxyCompactList}\small\item\em Check one U\+ID. \end{DoxyCompactList}\item 
+bool \hyperlink{classaccess_operations_aa1967ef877d37bf37721cde1e41665b0}{check\+Multiple\+ID} (byte $\ast$ID, int len\+ID, int len\+Acces\+I\+Ds, byte($\ast$access\+I\+Ds)\mbox{[}5\mbox{]}, int $\ast$array\+Location)
+\begin{DoxyCompactList}\small\item\em Check more than one U\+ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Operations on accessing the box. 
+
+This class is meant to make operations on passwords and with passwords a lot more easy. It uses the \hyperlink{classmatrix_keypad}{matrix\+Keypad} library to obtain the passwords. It also contains functions for checking the \hyperlink{class_r_f_i_d}{R\+F\+ID} U\+ID\textquotesingle{}s. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{access\+Operations@{access\+Operations}!access\+Operations@{access\+Operations}}
+\index{access\+Operations@{access\+Operations}!access\+Operations@{access\+Operations}}
+\subsubsection[{\texorpdfstring{access\+Operations(matrix\+Keypad \&keypad, char $\ast$root\+P\+W\+D, int len\+Root\+P\+W\+D, hwlib\+::pin\+\_\+out \&led\+Green=hwlib\+::pin\+\_\+out\+\_\+dummy, hwlib\+::pin\+\_\+out \&led\+Red=hwlib\+::pin\+\_\+out\+\_\+dummy)}{accessOperations(matrixKeypad &keypad, char *rootPWD, int lenRootPWD, hwlib::pin_out &ledGreen=hwlib::pin_out_dummy, hwlib::pin_out &ledRed=hwlib::pin_out_dummy)}}]{\setlength{\rightskip}{0pt plus 5cm}access\+Operations\+::access\+Operations (
+\begin{DoxyParamCaption}
+\item[{{\bf matrix\+Keypad} \&}]{keypad, }
+\item[{char $\ast$}]{root\+P\+WD, }
+\item[{int}]{len\+Root\+P\+WD, }
+\item[{hwlib\+::pin\+\_\+out \&}]{led\+Green = {\ttfamily hwlib\+:\+:pin\+\_\+out\+\_\+dummy}, }
+\item[{hwlib\+::pin\+\_\+out \&}]{led\+Red = {\ttfamily hwlib\+:\+:pin\+\_\+out\+\_\+dummy}}
+\end{DoxyParamCaption}
+)}\hypertarget{classaccess_operations_a42622d8277e50d7e01118139ab2fd57e}{}\label{classaccess_operations_a42622d8277e50d7e01118139ab2fd57e}
+
+
+Default constructor. 
+
+The constructor of this class takes a reference to the matrix keypad to make sure we can use all the functions of the keypad. It also takes a root password meant for changing the user password(s). Two L\+E\+Ds are optional to indicate correct or incorrect passwords and U\+ID\textquotesingle{}s. 
+
+\subsection{Member Function Documentation}
+\index{access\+Operations@{access\+Operations}!check\+Multiple\+ID@{check\+Multiple\+ID}}
+\index{check\+Multiple\+ID@{check\+Multiple\+ID}!access\+Operations@{access\+Operations}}
+\subsubsection[{\texorpdfstring{check\+Multiple\+I\+D(byte $\ast$\+I\+D, int len\+I\+D, int len\+Acces\+I\+Ds, byte($\ast$access\+I\+Ds)[5], int $\ast$array\+Location)}{checkMultipleID(byte *ID, int lenID, int lenAccesIDs, byte(*accessIDs)[5], int *arrayLocation)}}]{\setlength{\rightskip}{0pt plus 5cm}bool access\+Operations\+::check\+Multiple\+ID (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{ID, }
+\item[{int}]{len\+ID, }
+\item[{int}]{len\+Acces\+I\+Ds, }
+\item[{byte($\ast$)}]{access\+I\+Ds\mbox{[}5\mbox{]}, }
+\item[{int $\ast$}]{array\+Location}
+\end{DoxyParamCaption}
+)}\hypertarget{classaccess_operations_aa1967ef877d37bf37721cde1e41665b0}{}\label{classaccess_operations_aa1967ef877d37bf37721cde1e41665b0}
+
+
+Check more than one U\+ID. 
+
+The first parameter of this function is the ID that has to be compared to the rest. The length of the ID to compare has to be given as well. The third and fourth parameter are the multidimensional array filled with U\+ID\textquotesingle{}s (or not depending on the amount of users) and the length of that array (first index). The function returns two values. One is a boolean for if statement use and the seccond one is the array location. This location is a parameter that indicates what the index is the ID is found on in the multidimensional array. \index{access\+Operations@{access\+Operations}!check\+Single\+ID@{check\+Single\+ID}}
+\index{check\+Single\+ID@{check\+Single\+ID}!access\+Operations@{access\+Operations}}
+\subsubsection[{\texorpdfstring{check\+Single\+I\+D(byte $\ast$\+I\+D, int len\+I\+D, byte $\ast$check\+I\+D)}{checkSingleID(byte *ID, int lenID, byte *checkID)}}]{\setlength{\rightskip}{0pt plus 5cm}bool access\+Operations\+::check\+Single\+ID (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{ID, }
+\item[{int}]{len\+ID, }
+\item[{byte $\ast$}]{check\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{classaccess_operations_a44956d25fa01c97b6755fbbc30fa7bf7}{}\label{classaccess_operations_a44956d25fa01c97b6755fbbc30fa7bf7}
+
+
+Check one U\+ID. 
+
+This function can be used to check one single U\+ID from an \hyperlink{class_r_f_i_d}{R\+F\+ID} tag. The function requires the ID itself, the length of the ID and the ID to compare the first ID with. It returns true if the 2 ID\textquotesingle{}s match. \index{access\+Operations@{access\+Operations}!get\+Password@{get\+Password}}
+\index{get\+Password@{get\+Password}!access\+Operations@{access\+Operations}}
+\subsubsection[{\texorpdfstring{get\+Password(char $\ast$client\+P\+W\+D, int len\+Char\+Array)}{getPassword(char *clientPWD, int lenCharArray)}}]{\setlength{\rightskip}{0pt plus 5cm}bool access\+Operations\+::get\+Password (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{client\+P\+WD, }
+\item[{int}]{len\+Char\+Array}
+\end{DoxyParamCaption}
+)}\hypertarget{classaccess_operations_a23a9545b9b8636b995aa6e3d007ea524}{}\label{classaccess_operations_a23a9545b9b8636b995aa6e3d007ea524}
+
+
+Get and check passwords. 
+
+This function is meant to take a user password and check it against the input it gets from the keypad library. If the input is incorrect it gives you 2 more tries. (for security purposes a long waiting time could be added after 3 wrong tries) The function gives true back if the password was correct and false if the password was incorrect. \index{access\+Operations@{access\+Operations}!set\+Password@{set\+Password}}
+\index{set\+Password@{set\+Password}!access\+Operations@{access\+Operations}}
+\subsubsection[{\texorpdfstring{set\+Password(char $\ast$client\+P\+W\+D, const int \&len\+Char\+Array, int $\ast$current\+Array\+Location)}{setPassword(char *clientPWD, const int &lenCharArray, int *currentArrayLocation)}}]{\setlength{\rightskip}{0pt plus 5cm}bool access\+Operations\+::set\+Password (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{client\+P\+WD, }
+\item[{const int \&}]{len\+Char\+Array, }
+\item[{int $\ast$}]{current\+Array\+Location}
+\end{DoxyParamCaption}
+)}\hypertarget{classaccess_operations_a93b1c64a9598739a34c09757fe1f4ac1}{}\label{classaccess_operations_a93b1c64a9598739a34c09757fe1f4ac1}
+
+
+Set a new client password. 
+
+This function can be used to change a clients password. It first checks the root password using the \hyperlink{classaccess_operations_a23a9545b9b8636b995aa6e3d007ea524}{get\+Password()} function and if it is correct it will ask you for the new client password. For that is uses the matrix keypad library. If the root password was not filled in correctly the function will return false. If everything word out correctly the function returns true. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/access\+Operations.\+hpp\item 
+D\+:/programmeren/\+Projecten/\+I\+P\+A\+S-\/project/rfid\+\_\+keypad\+\_\+lock/\+Finished\+\_\+librarys/access\+Operations.\+cpp\end{DoxyCompactItemize}

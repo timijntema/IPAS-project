@@ -5,6 +5,10 @@
 * Created on 30 may 2016, 17:13
 */
 
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
+
 #ifndef ACCESSOPERATIONS_HPP
 #define ACCESSOPERATIONS_HPP
 
